@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Opaque Types &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Opaque Types &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <a class="dashingAutolink" name="autolink-147"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
+      <a class="dashingAutolink" name="autolink-145"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -34,7 +34,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -107,10 +107,10 @@
 
         
   <div class="section" id="opaque-types">
-<a class="dashingAutolink" name="autolink-148"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Opaque%20Types"></a><h1>Opaque Types<a class="headerlink" href="OpaqueTypes.html#opaque-types" title="Permalink to this headline"></a></h1>
+<a class="dashingAutolink" name="autolink-146"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Opaque%20Types"></a><h1>Opaque Types<a class="headerlink" href="OpaqueTypes.html#opaque-types" title="Permalink to this headline"></a></h1>
 <p>A function or method with an opaque return type hides its return value&rsquo;s type information. Instead of providing a concrete type as the function&rsquo;s return type, the return value is described in terms of the protocols it supports. Hiding type information is useful at boundaries between a module and code that calls into the module, because the underlying type of the return value can remain private. Unlike returning a value whose type is a protocol type, opaque types preserve type identity&mdash;the compiler has access to the type information, but clients of the module don&rsquo;t.</p>
 <div class="section" id="ID613">
-<a class="dashingAutolink" name="autolink-144"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/The%20Problem%20That%20Opaque%20Types%20Solve"></a><h2>The Problem That Opaque Types Solve<a class="headerlink" href="OpaqueTypes.html#ID613" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-147"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/The%20Problem%20That%20Opaque%20Types%20Solve"></a><h2>The Problem That Opaque Types Solve<a class="headerlink" href="OpaqueTypes.html#ID613" title="Permalink to this headline"></a></h2>
 <p>For example, suppose you&rsquo;re writing a module that draws ASCII art shapes. The basic characteristic of an ASCII art shape is a <code class="docutils literal notranslate"><span class="pre">draw()</span></code> function that returns the string representation of that shape, which you can use as the requirement for the <code class="docutils literal notranslate"><span class="pre">Shape</span></code> protocol:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">protocol</span> <span class="nv">Shape</span> {
 </li><li>    <span class="k">func</span> <span class="nv">draw</span>() -&gt; <span class="nc">String</span>
@@ -166,7 +166,7 @@
 <p>Exposing detailed information about the creation of a shape allows types that aren&rsquo;t meant to be part of the ASCII art module&rsquo;s public interface to leak out because of the need to state the full return type. The code inside the module could build up the same shape in a variety of ways, and other code outside the module that uses the shape shouldn&rsquo;t have to account for the implementation details about the list of transformations. Wrapper types like <code class="docutils literal notranslate"><span class="pre">JoinedShape</span></code> and <code class="docutils literal notranslate"><span class="pre">FlippedShape</span></code> don&rsquo;t matter to the module&rsquo;s users, and they shouldn&rsquo;t be visible. The module&rsquo;s public interface consists of operations like joining and flipping a shape, and those operations return another <code class="docutils literal notranslate"><span class="pre">Shape</span></code> value.</p>
 </div>
 <div class="section" id="ID614">
-<a class="dashingAutolink" name="autolink-145"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Returning%20an%20Opaque%20Type"></a><h2>Returning an Opaque Type<a class="headerlink" href="OpaqueTypes.html#ID614" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-148"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Returning%20an%20Opaque%20Type"></a><h2>Returning an Opaque Type<a class="headerlink" href="OpaqueTypes.html#ID614" title="Permalink to this headline"></a></h2>
 <p>You can think of an opaque type like being the reverse of a generic type. Generic types let the code that calls a function pick the type for that function&rsquo;s parameters and return value in a way that&rsquo;s abstracted away from the function implementation. For example, the function in the following code returns a type that depends on its caller:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">func</span> <span class="nv">max</span>&lt;<span class="nv">T</span>&gt;(<span class="k">_</span> <span class="nv">x</span>: <span class="nc">T</span>, <span class="k">_</span> <span class="nv">y</span>: <span class="nc">T</span>) -&gt; <span class="nc">T</span> <span class="k">where</span> <span class="nc">T</span>: <span class="nc">Comparable</span> { ... }
 </li></ol></div></div></div>
@@ -248,7 +248,7 @@
 <p>In this case, the underlying type of the return value varies depending on <code class="docutils literal notranslate"><span class="pre">T</span></code>: Whatever shape is passed it, <code class="docutils literal notranslate"><span class="pre">repeat(shape:count:)</span></code> creates and returns an array of that shape. Nevertheless, the return value always has the same underlying type of <code class="docutils literal notranslate"><span class="pre">[T]</span></code>, so it follows the requirement that functions with opaque return types must return values of only a single type.</p>
 </div>
 <div class="section" id="ID615">
-<a class="dashingAutolink" name="autolink-146"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Differences%20Between%20Opaque%20Types%20and%20Protocol%20Types"></a><h2>Differences Between Opaque Types and Protocol Types<a class="headerlink" href="OpaqueTypes.html#ID615" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-149"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Differences%20Between%20Opaque%20Types%20and%20Protocol%20Types"></a><h2>Differences Between Opaque Types and Protocol Types<a class="headerlink" href="OpaqueTypes.html#ID615" title="Permalink to this headline"></a></h2>
 <p>Returning an opaque type looks very similar to using a protocol type as the return type of a function, but these two kinds of return type differ in whether they preserve type identity. An opaque type refers to one specific type, although the caller of the function isn&rsquo;t able to see which type; a protocol type can refer to any type that conforms to the protocol. Generally speaking, protocol types give you more flexibility about the underlying types of the values they store, and opaque types let you make stronger guarantees about those underlying types.</p>
 <p>For example, here&rsquo;s a version of <code class="docutils literal notranslate"><span class="pre">flip(_:)</span></code> that uses a protocol type as its return type instead of an opaque return type:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">func</span> <span class="nv">protoFlip</span>&lt;<span class="nv">T</span>: <span class="nc">Shape</span>&gt;(<span class="k">_</span> <span class="nv">shape</span>: <span class="nc">T</span>) -&gt; <span class="nc">Shape</span> {
@@ -310,6 +310,14 @@
         <p class="previous"><a href="Generics.html">Generics</a></p>
         <p class="next"><a href="AutomaticReferenceCounting.html">Automatic Reference Counting</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple&#39;s beta software</a></p>
+    </div>
 </main>
 
 
@@ -319,7 +327,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
@@ -329,5 +337,4 @@
 <div id="jump_to_overlay"></div>
 <script src="../_static/javascripts/application.js"></script>
   
-
 </body></html>

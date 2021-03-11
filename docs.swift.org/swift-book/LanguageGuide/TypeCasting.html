@@ -9,7 +9,7 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>Type Casting &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Type Casting &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
@@ -40,7 +40,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -121,7 +121,7 @@
 <div class="section" id="ID339">
 <h2>Defining a Class Hierarchy for Type Casting<a class="headerlink" href="TypeCasting.html#ID339" title="Permalink to this headline"></a></h2>
 <p>You can use type casting with a hierarchy of classes and subclasses to check the type of a particular class instance and to cast that instance to another class within the same hierarchy. The three code snippets below define a hierarchy of classes and an array containing instances of those classes, for use in an example of type casting.</p>
-<p>The first snippet defines a new base class called <code class="docutils literal notranslate"><span class="pre">MediaItem</span></code>. This class provides basic functionality for any kind of item that appears in a digital media library. Specifically, it declares a <code class="docutils literal notranslate"><span class="pre">name</span></code> property of type <code class="docutils literal notranslate"><span class="pre">String</span></code>, and an <code class="docutils literal notranslate"><span class="pre">init</span> <span class="pre">name</span></code> initializer. (It is assumed that all media items, including all movies and songs, will have a name.)</p>
+<p>The first snippet defines a new base class called <code class="docutils literal notranslate"><span class="pre">MediaItem</span></code>. This class provides basic functionality for any kind of item that appears in a digital media library. Specifically, it declares a <code class="docutils literal notranslate"><span class="pre">name</span></code> property of type <code class="docutils literal notranslate"><span class="pre">String</span></code>, and an <code class="docutils literal notranslate"><span class="pre">init</span> <span class="pre">name</span></code> initializer. (It’s assumed that all media items, including all movies and songs, will have a name.)</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">MediaItem</span> {
 </li><li>    <span class="k">var</span> <span class="nv">name</span>: <span class="nc">String</span>
 </li><li>    <span class="k">init</span>(<span class="nv">name</span>: <span class="nc">String</span>) {
@@ -160,7 +160,7 @@
 </div>
 <div class="section" id="ID340">
 <h2>Checking Type<a class="headerlink" href="TypeCasting.html#ID340" title="Permalink to this headline"></a></h2>
-<p>Use the <em>type check operator</em> (<code class="docutils literal notranslate"><span class="pre">is</span></code>) to check whether an instance is of a certain subclass type. The type check operator returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the instance is of that subclass type and <code class="docutils literal notranslate"><span class="pre">false</span></code> if it is not.</p>
+<p>Use the <em>type check operator</em> (<code class="docutils literal notranslate"><span class="pre">is</span></code>) to check whether an instance is of a certain subclass type. The type check operator returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the instance is of that subclass type and <code class="docutils literal notranslate"><span class="pre">false</span></code> if it’s not.</p>
 <p>The example below defines two variables, <code class="docutils literal notranslate"><span class="pre">movieCount</span></code> and <code class="docutils literal notranslate"><span class="pre">songCount</span></code>, which count the number of <code class="docutils literal notranslate"><span class="pre">Movie</span></code> and <code class="docutils literal notranslate"><span class="pre">Song</span></code> instances in the <code class="docutils literal notranslate"><span class="pre">library</span></code> array:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">movieCount</span> = <span class="m">0</span>
 </li><li><span class="k">var</span> <span class="nv">songCount</span> = <span class="m">0</span>
@@ -177,16 +177,16 @@
 </li><li><span class="c">// Prints &quot;Media library contains 2 movies and 3 songs&quot;</span>
 </li></ol></div></div></div>
 <p>This example iterates through all items in the <code class="docutils literal notranslate"><span class="pre">library</span></code> array. On each pass, the <code class="docutils literal notranslate"><span class="pre">for</span></code>-<code class="docutils literal notranslate"><span class="pre">in</span></code> loop sets the <code class="docutils literal notranslate"><span class="pre">item</span></code> constant to the next <code class="docutils literal notranslate"><span class="pre">MediaItem</span></code> in the array.</p>
-<p><code class="docutils literal notranslate"><span class="pre">item</span> <span class="pre">is</span> <span class="pre">Movie</span></code> returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the current <code class="docutils literal notranslate"><span class="pre">MediaItem</span></code> is a <code class="docutils literal notranslate"><span class="pre">Movie</span></code> instance and <code class="docutils literal notranslate"><span class="pre">false</span></code> if it is not. Similarly, <code class="docutils literal notranslate"><span class="pre">item</span> <span class="pre">is</span> <span class="pre">Song</span></code> checks whether the item is a <code class="docutils literal notranslate"><span class="pre">Song</span></code> instance. At the end of the <code class="docutils literal notranslate"><span class="pre">for</span></code>-<code class="docutils literal notranslate"><span class="pre">in</span></code> loop, the values of <code class="docutils literal notranslate"><span class="pre">movieCount</span></code> and <code class="docutils literal notranslate"><span class="pre">songCount</span></code> contain a count of how many <code class="docutils literal notranslate"><span class="pre">MediaItem</span></code> instances were found of each type.</p>
+<p><code class="docutils literal notranslate"><span class="pre">item</span> <span class="pre">is</span> <span class="pre">Movie</span></code> returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the current <code class="docutils literal notranslate"><span class="pre">MediaItem</span></code> is a <code class="docutils literal notranslate"><span class="pre">Movie</span></code> instance and <code class="docutils literal notranslate"><span class="pre">false</span></code> if it’s not. Similarly, <code class="docutils literal notranslate"><span class="pre">item</span> <span class="pre">is</span> <span class="pre">Song</span></code> checks whether the item is a <code class="docutils literal notranslate"><span class="pre">Song</span></code> instance. At the end of the <code class="docutils literal notranslate"><span class="pre">for</span></code>-<code class="docutils literal notranslate"><span class="pre">in</span></code> loop, the values of <code class="docutils literal notranslate"><span class="pre">movieCount</span></code> and <code class="docutils literal notranslate"><span class="pre">songCount</span></code> contain a count of how many <code class="docutils literal notranslate"><span class="pre">MediaItem</span></code> instances were found of each type.</p>
 </div>
 <div class="section" id="ID341">
 <h2>Downcasting<a class="headerlink" href="TypeCasting.html#ID341" title="Permalink to this headline"></a></h2>
 <p>A constant or variable of a certain class type may actually refer to an instance of a subclass behind the scenes. Where you believe this is the case, you can try to <em>downcast</em> to the subclass type with a <em>type cast operator</em> (<code class="docutils literal notranslate"><span class="pre">as?</span></code> or <code class="docutils literal notranslate"><span class="pre">as!</span></code>).</p>
 <p>Because downcasting can fail, the type cast operator comes in two different forms. The conditional form, <code class="docutils literal notranslate"><span class="pre">as?</span></code>, returns an optional value of the type you are trying to downcast to. The forced form, <code class="docutils literal notranslate"><span class="pre">as!</span></code>, attempts the downcast and force-unwraps the result as a single compound action.</p>
-<p>Use the conditional form of the type cast operator (<code class="docutils literal notranslate"><span class="pre">as?</span></code>) when you are not sure if the downcast will succeed. This form of the operator will always return an optional value, and the value will be <code class="docutils literal notranslate"><span class="pre">nil</span></code> if the downcast was not possible. This enables you to check for a successful downcast.</p>
+<p>Use the conditional form of the type cast operator (<code class="docutils literal notranslate"><span class="pre">as?</span></code>) when you aren’t sure if the downcast will succeed. This form of the operator will always return an optional value, and the value will be <code class="docutils literal notranslate"><span class="pre">nil</span></code> if the downcast was not possible. This enables you to check for a successful downcast.</p>
 <p>Use the forced form of the type cast operator (<code class="docutils literal notranslate"><span class="pre">as!</span></code>) only when you are sure that the downcast will always succeed. This form of the operator will trigger a runtime error if you try to downcast to an incorrect class type.</p>
 <p>The example below iterates over each <code class="docutils literal notranslate"><span class="pre">MediaItem</span></code> in <code class="docutils literal notranslate"><span class="pre">library</span></code>, and prints an appropriate description for each item. To do this, it needs to access each item as a true <code class="docutils literal notranslate"><span class="pre">Movie</span></code> or <code class="docutils literal notranslate"><span class="pre">Song</span></code>, and not just as a <code class="docutils literal notranslate"><span class="pre">MediaItem</span></code>. This is necessary in order for it to be able to access the <code class="docutils literal notranslate"><span class="pre">director</span></code> or <code class="docutils literal notranslate"><span class="pre">artist</span></code> property of a <code class="docutils literal notranslate"><span class="pre">Movie</span></code> or <code class="docutils literal notranslate"><span class="pre">Song</span></code> for use in the description.</p>
-<p>In this example, each item in the array might be a <code class="docutils literal notranslate"><span class="pre">Movie</span></code>, or it might be a <code class="docutils literal notranslate"><span class="pre">Song</span></code>. You don’t know in advance which actual class to use for each item, and so it is appropriate to use the conditional form of the type cast operator (<code class="docutils literal notranslate"><span class="pre">as?</span></code>) to check the downcast each time through the loop:</p>
+<p>In this example, each item in the array might be a <code class="docutils literal notranslate"><span class="pre">Movie</span></code>, or it might be a <code class="docutils literal notranslate"><span class="pre">Song</span></code>. You don’t know in advance which actual class to use for each item, and so it’s appropriate to use the conditional form of the type cast operator (<code class="docutils literal notranslate"><span class="pre">as?</span></code>) to check the downcast each time through the loop:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">for</span> <span class="nv">item</span> <span class="k">in</span> <span class="nv">library</span> {
 </li><li>    <span class="k">if</span> <span class="k">let</span> <span class="nv">movie</span> = <span class="nv">item</span> <span class="k">as</span>? <span class="nc">Movie</span> {
 </li><li>        <span class="nv">print</span>(<span class="s">&quot;Movie: </span>\<span class="p">(</span><span class="nv">movie</span>.<span class="nv">name</span><span class="p">)</span><span class="s">, dir. </span>\<span class="p">(</span><span class="nv">movie</span>.<span class="nv">director</span><span class="p">)</span><span class="s">&quot;</span>)
@@ -207,7 +207,7 @@
 <p>If the downcasting succeeds, the properties of <code class="docutils literal notranslate"><span class="pre">movie</span></code> are then used to print a description for that <code class="docutils literal notranslate"><span class="pre">Movie</span></code> instance, including the name of its <code class="docutils literal notranslate"><span class="pre">director</span></code>. A similar principle is used to check for <code class="docutils literal notranslate"><span class="pre">Song</span></code> instances, and to print an appropriate description (including <code class="docutils literal notranslate"><span class="pre">artist</span></code> name) whenever a <code class="docutils literal notranslate"><span class="pre">Song</span></code> is found in the library.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Casting does not actually modify the instance or change its values. The underlying instance remains the same; it is simply treated and accessed as an instance of the type to which it has been cast.</p>
+<p class="last">Casting doesn’t actually modify the instance or change its values. The underlying instance remains the same; it’s simply treated and accessed as an instance of the type to which it has been cast.</p>
 </div>
 </div>
 <div class="section" id="ID342">
@@ -217,7 +217,7 @@
 <li><code class="docutils literal notranslate"><span class="pre">Any</span></code> can represent an instance of any type at all, including function types.</li>
 <li><code class="docutils literal notranslate"><span class="pre">AnyObject</span></code> can represent an instance of any class type.</li>
 </ul>
-<p>Use <code class="docutils literal notranslate"><span class="pre">Any</span></code> and <code class="docutils literal notranslate"><span class="pre">AnyObject</span></code> only when you explicitly need the behavior and capabilities they provide. It is always better to be specific about the types you expect to work with in your code.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">Any</span></code> and <code class="docutils literal notranslate"><span class="pre">AnyObject</span></code> only when you explicitly need the behavior and capabilities they provide. It’s always better to be specific about the types you expect to work with in your code.</p>
 <p>Here’s an example of using <code class="docutils literal notranslate"><span class="pre">Any</span></code> to work with a mix of different types, including function types and nonclass types. The example creates an array called <code class="docutils literal notranslate"><span class="pre">things</span></code>, which can store values of type <code class="docutils literal notranslate"><span class="pre">Any</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">things</span> = [<span class="k">Any</span>]()
 </li><li>
@@ -231,7 +231,7 @@
 </li><li><span class="nv">things</span>.<span class="nv">append</span>({ (<span class="nv">name</span>: <span class="nc">String</span>) -&gt; <span class="nc">String</span> <span class="k">in</span> <span class="s">&quot;Hello, </span>\<span class="p">(</span><span class="nv">name</span><span class="p">)</span><span class="s">&quot;</span> })
 </li></ol></div></div></div>
 <p>The <code class="docutils literal notranslate"><span class="pre">things</span></code> array contains two <code class="docutils literal notranslate"><span class="pre">Int</span></code> values, two <code class="docutils literal notranslate"><span class="pre">Double</span></code> values, a <code class="docutils literal notranslate"><span class="pre">String</span></code> value, a tuple of type <code class="docutils literal notranslate"><span class="pre">(Double,</span> <span class="pre">Double)</span></code>, the movie “Ghostbusters”, and a closure expression that takes a <code class="docutils literal notranslate"><span class="pre">String</span></code> value and returns another <code class="docutils literal notranslate"><span class="pre">String</span></code> value.</p>
-<p>To discover the specific type of a constant or variable that is known only to be of type <code class="docutils literal notranslate"><span class="pre">Any</span></code> or <code class="docutils literal notranslate"><span class="pre">AnyObject</span></code>, you can use an <code class="docutils literal notranslate"><span class="pre">is</span></code> or <code class="docutils literal notranslate"><span class="pre">as</span></code> pattern in a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement’s cases. The example below iterates over the items in the <code class="docutils literal notranslate"><span class="pre">things</span></code> array and queries the type of each item with a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement. Several of the <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement’s cases bind their matched value to a constant of the specified type to enable its value to be printed:</p>
+<p>To discover the specific type of a constant or variable that’s known only to be of type <code class="docutils literal notranslate"><span class="pre">Any</span></code> or <code class="docutils literal notranslate"><span class="pre">AnyObject</span></code>, you can use an <code class="docutils literal notranslate"><span class="pre">is</span></code> or <code class="docutils literal notranslate"><span class="pre">as</span></code> pattern in a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement’s cases. The example below iterates over the items in the <code class="docutils literal notranslate"><span class="pre">things</span></code> array and queries the type of each item with a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement. Several of the <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement’s cases bind their matched value to a constant of the specified type to enable its value to be printed:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">for</span> <span class="nv">thing</span> <span class="k">in</span> <span class="nv">things</span> {
 </li><li>    <span class="k">switch</span> <span class="nv">thing</span> {
 </li><li>    <span class="k">case</span> <span class="m">0</span> <span class="k">as</span> <span class="nc">Int</span>:
@@ -283,6 +283,14 @@
         <p class="previous"><a href="ErrorHandling.html">Error Handling</a></p>
         <p class="next"><a href="NestedTypes.html">Nested Types</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple's beta software</a></p>
+    </div>
 </main>
 
 
@@ -292,7 +300,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

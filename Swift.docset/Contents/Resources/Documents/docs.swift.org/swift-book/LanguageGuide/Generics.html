@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Generics &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Generics &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <a class="dashingAutolink" name="autolink-99"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
+      <a class="dashingAutolink" name="autolink-100"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -34,7 +34,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -127,11 +127,11 @@
 
         
   <div class="section" id="generics">
-<a class="dashingAutolink" name="autolink-100"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Generics"></a><h1>Generics<a class="headerlink" href="Generics.html#generics" title="Permalink to this headline"></a></h1>
+<a class="dashingAutolink" name="autolink-101"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Generics"></a><h1>Generics<a class="headerlink" href="Generics.html#generics" title="Permalink to this headline"></a></h1>
 <p><em>Generic code</em> enables you to write flexible, reusable functions and types that can work with any type, subject to requirements that you define. You can write code that avoids duplication and expresses its intent in a clear, abstracted manner.</p>
 <p>Generics are one of the most powerful features of Swift, and much of the Swift standard library is built with generic code. In fact, you&rsquo;ve been using generics throughout the <em>Language Guide</em>, even if you didn&rsquo;t realize it. For example, Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">Array</span></code> and <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> types are both generic collections. You can create an array that holds <code class="docutils literal notranslate"><span class="pre">Int</span></code> values, or an array that holds <code class="docutils literal notranslate"><span class="pre">String</span></code> values, or indeed an array for any other type that can be created in Swift. Similarly, you can create a dictionary to store values of any specified type, and there are no limitations on what that type can be.</p>
 <div class="section" id="ID180">
-<a class="dashingAutolink" name="autolink-101"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/The%20Problem%20That%20Generics%20Solve"></a><h2>The Problem That Generics Solve<a class="headerlink" href="Generics.html#ID180" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-102"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/The%20Problem%20That%20Generics%20Solve"></a><h2>The Problem That Generics Solve<a class="headerlink" href="Generics.html#ID180" title="Permalink to this headline"></a></h2>
 <p>Here&rsquo;s a standard, nongeneric function called <code class="docutils literal notranslate"><span class="pre">swapTwoInts(_:_:)</span></code>, which swaps two <code class="docutils literal notranslate"><span class="pre">Int</span></code> values:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">func</span> <span class="nv">swapTwoInts</span>(<span class="k">_</span> <span class="nv">a</span>: <span class="k">inout</span> <span class="nc">Int</span>, <span class="k">_</span> <span class="nv">b</span>: <span class="k">inout</span> <span class="nc">Int</span>) {
 </li><li>    <span class="k">let</span> <span class="nv">temporaryA</span> = <span class="nv">a</span>
@@ -168,7 +168,7 @@
 </div>
 </div>
 <div class="section" id="ID181">
-<a class="dashingAutolink" name="autolink-102"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Generic%20Functions"></a><h2>Generic Functions<a class="headerlink" href="Generics.html#ID181" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-103"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Generic%20Functions"></a><h2>Generic Functions<a class="headerlink" href="Generics.html#ID181" title="Permalink to this headline"></a></h2>
 <p><em>Generic functions</em> can work with any type. Here&rsquo;s a generic version of the <code class="docutils literal notranslate"><span class="pre">swapTwoInts(_:_:)</span></code> function from above, called <code class="docutils literal notranslate"><span class="pre">swapTwoValues(_:_:)</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">func</span> <span class="nv">swapTwoValues</span>&lt;<span class="nv">T</span>&gt;(<span class="k">_</span> <span class="nv">a</span>: <span class="k">inout</span> <span class="nc">T</span>, <span class="k">_</span> <span class="nv">b</span>: <span class="k">inout</span> <span class="nc">T</span>) {
 </li><li>    <span class="k">let</span> <span class="nv">temporaryA</span> = <span class="nv">a</span>
@@ -200,13 +200,13 @@
 </div>
 </div>
 <div class="section" id="ID182">
-<a class="dashingAutolink" name="autolink-103"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Parameters"></a><h2>Type Parameters<a class="headerlink" href="Generics.html#ID182" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-104"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Parameters"></a><h2>Type Parameters<a class="headerlink" href="Generics.html#ID182" title="Permalink to this headline"></a></h2>
 <p>In the <code class="docutils literal notranslate"><span class="pre">swapTwoValues(_:_:)</span></code> example above, the placeholder type <code class="docutils literal notranslate"><span class="pre">T</span></code> is an example of a <em>type parameter</em>. Type parameters specify and name a placeholder type, and are written immediately after the function&rsquo;s name, between a pair of matching angle brackets (such as <code class="docutils literal notranslate"><span class="pre">&lt;T&gt;</span></code>).</p>
 <p>Once you specify a type parameter, you can use it to define the type of a function&rsquo;s parameters (such as the <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> parameters of the <code class="docutils literal notranslate"><span class="pre">swapTwoValues(_:_:)</span></code> function), or as the function&rsquo;s return type, or as a type annotation within the body of the function. In each case, the type parameter is replaced with an <em>actual</em> type whenever the function is called. (In the <code class="docutils literal notranslate"><span class="pre">swapTwoValues(_:_:)</span></code> example above, <code class="docutils literal notranslate"><span class="pre">T</span></code> was replaced with <code class="docutils literal notranslate"><span class="pre">Int</span></code> the first time the function was called, and was replaced with <code class="docutils literal notranslate"><span class="pre">String</span></code> the second time it was called.)</p>
 <p>You can provide more than one type parameter by writing multiple type parameter names within the angle brackets, separated by commas.</p>
 </div>
 <div class="section" id="ID183">
-<a class="dashingAutolink" name="autolink-104"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Naming%20Type%20Parameters"></a><h2>Naming Type Parameters<a class="headerlink" href="Generics.html#ID183" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-105"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Naming%20Type%20Parameters"></a><h2>Naming Type Parameters<a class="headerlink" href="Generics.html#ID183" title="Permalink to this headline"></a></h2>
 <p>In most cases, type parameters have descriptive names, such as <code class="docutils literal notranslate"><span class="pre">Key</span></code> and <code class="docutils literal notranslate"><span class="pre">Value</span></code> in <code class="docutils literal notranslate"><span class="pre">Dictionary&lt;Key,</span> <span class="pre">Value&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">Element</span></code> in <code class="docutils literal notranslate"><span class="pre">Array&lt;Element&gt;</span></code>, which tells the reader about the relationship between the type parameter and the generic type or function it&rsquo;s used in. However, when there isn&rsquo;t a meaningful relationship between them, it&rsquo;s traditional to name them using single letters such as <code class="docutils literal notranslate"><span class="pre">T</span></code>, <code class="docutils literal notranslate"><span class="pre">U</span></code>, and <code class="docutils literal notranslate"><span class="pre">V</span></code>, such as <code class="docutils literal notranslate"><span class="pre">T</span></code> in the <code class="docutils literal notranslate"><span class="pre">swapTwoValues(_:_:)</span></code> function above.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -214,7 +214,7 @@
 </div>
 </div>
 <div class="section" id="ID184">
-<a class="dashingAutolink" name="autolink-105"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Generic%20Types"></a><h2>Generic Types<a class="headerlink" href="Generics.html#ID184" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-106"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Generic%20Types"></a><h2>Generic Types<a class="headerlink" href="Generics.html#ID184" title="Permalink to this headline"></a></h2>
 <p>In addition to generic functions, Swift enables you to define your own <em>generic types</em>. These are custom classes, structures, and enumerations that can work with <em>any</em> type, in a similar way to <code class="docutils literal notranslate"><span class="pre">Array</span></code> and <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code>.</p>
 <p>This section shows you how to write a generic collection type called <code class="docutils literal notranslate"><span class="pre">Stack</span></code>. A stack is an ordered set of values, similar to an array, but with a more restricted set of operations than Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">Array</span></code> type. An array allows new items to be inserted and removed at any location in the array. A stack, however, allows new items to be appended only to the end of the collection (known as <em>pushing</em> a new value on to the stack). Similarly, a stack allows items to be removed only from the end of the collection (known as <em>popping</em> a value off the stack).</p>
 <div class="admonition note">
@@ -280,7 +280,7 @@
 <img alt="../_images/stackPoppedOneString_2x.png" class="align-center" src="../_images/stackPoppedOneString_2x.png" style="width: 405px;"/>
 </div>
 <div class="section" id="ID185">
-<a class="dashingAutolink" name="autolink-106"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Extending%20a%20Generic%20Type"></a><h2>Extending a Generic Type<a class="headerlink" href="Generics.html#ID185" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-107"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Extending%20a%20Generic%20Type"></a><h2>Extending a Generic Type<a class="headerlink" href="Generics.html#ID185" title="Permalink to this headline"></a></h2>
 <p>When you extend a generic type, you don&rsquo;t provide a type parameter list as part of the extension&rsquo;s definition. Instead, the type parameter list from the <em>original</em> type definition is available within the body of the extension, and the original type parameter names are used to refer to the type parameters from the original definition.</p>
 <p>The following example extends the generic <code class="docutils literal notranslate"><span class="pre">Stack</span></code> type to add a read-only computed property called <code class="docutils literal notranslate"><span class="pre">topItem</span></code>, which returns the top item on the stack without popping it from the stack:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">Stack</span> {
@@ -300,9 +300,9 @@
 <p>Extensions of a generic type can also include requirements that instances of the extended type must satisfy in order to gain the new functionality, as discussed in <a class="reference internal" href="Generics.html#ID553"><span class="std std-ref">Extensions with a Generic Where Clause</span></a> below.</p>
 </div>
 <div class="section" id="ID186">
-<a class="dashingAutolink" name="autolink-107"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Constraints"></a><h2>Type Constraints<a class="headerlink" href="Generics.html#ID186" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-108"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Constraints"></a><h2>Type Constraints<a class="headerlink" href="Generics.html#ID186" title="Permalink to this headline"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">swapTwoValues(_:_:)</span></code> function and the <code class="docutils literal notranslate"><span class="pre">Stack</span></code> type can work with any type. However, it&rsquo;s sometimes useful to enforce certain <em>type constraints</em> on the types that can be used with generic functions and generic types. Type constraints specify that a type parameter must inherit from a specific class, or conform to a particular protocol or protocol composition.</p>
-<p>For example, Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> type places a limitation on the types that can be used as keys for a dictionary. As described in <a class="reference internal" href="CollectionTypes.html#ID113"><span class="std std-ref">Dictionaries</span></a>, the type of a dictionary&rsquo;s keys must be <em>hashable</em>. That is, it must provide a way to make itself uniquely representable. <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> needs its keys to be hashable so that it can check whether it already contains a value for a particular key. Without this requirement, <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> could not tell whether it should insert or replace a value for a particular key, nor would it be able to find a value for a given key that is already in the dictionary.</p>
+<p>For example, Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> type places a limitation on the types that can be used as keys for a dictionary. As described in <a class="reference internal" href="CollectionTypes.html#ID113"><span class="std std-ref">Dictionaries</span></a>, the type of a dictionary&rsquo;s keys must be <em>hashable</em>. That is, it must provide a way to make itself uniquely representable. <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> needs its keys to be hashable so that it can check whether it already contains a value for a particular key. Without this requirement, <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> couldn&rsquo;t tell whether it should insert or replace a value for a particular key, nor would it be able to find a value for a given key that&rsquo;s already in the dictionary.</p>
 <p>This requirement is enforced by a type constraint on the key type for <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code>, which specifies that the key type must conform to the <code class="docutils literal notranslate"><span class="pre">Hashable</span></code> protocol, a special protocol defined in the Swift standard library. All of Swift&rsquo;s basic types (such as <code class="docutils literal notranslate"><span class="pre">String</span></code>, <code class="docutils literal notranslate"><span class="pre">Int</span></code>, <code class="docutils literal notranslate"><span class="pre">Double</span></code>, and <code class="docutils literal notranslate"><span class="pre">Bool</span></code>) are hashable by default. For information about making your own custom types conform to the <code class="docutils literal notranslate"><span class="pre">Hashable</span></code> protocol, see <a class="reference external" href="https://developer.apple.com/documentation/swift/hashable#2849490">Conforming to the Hashable Protocol</a>.</p>
 <p>You can define your own type constraints when creating custom generic types, and these constraints provide much of the power of generic programming. Abstract concepts like <code class="docutils literal notranslate"><span class="pre">Hashable</span></code> characterize types in terms of their conceptual characteristics, rather than their concrete type.</p>
 <div class="section" id="ID187">
@@ -346,7 +346,7 @@
 </li></ol></div></div></div>
 <p>This function doesn&rsquo;t compile as written above. The problem lies with the equality check, &ldquo;<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">value</span> <span class="pre">==</span> <span class="pre">valueToFind</span></code>&rdquo;. Not every type in Swift can be compared with the equal to operator (<code class="docutils literal notranslate"><span class="pre">==</span></code>). If you create your own class or structure to represent a complex data model, for example, then the meaning of &ldquo;equal to&rdquo; for that class or structure isn&rsquo;t something that Swift can guess for you. Because of this, it isn&rsquo;t possible to guarantee that this code will work for <em>every</em> possible type <code class="docutils literal notranslate"><span class="pre">T</span></code>, and an appropriate error is reported when you try to compile the code.</p>
 <p>All is not lost, however. The Swift standard library defines a protocol called <code class="docutils literal notranslate"><span class="pre">Equatable</span></code>, which requires any conforming type to implement the equal to operator (<code class="docutils literal notranslate"><span class="pre">==</span></code>) and the not equal to operator (<code class="docutils literal notranslate"><span class="pre">!=</span></code>) to compare any two values of that type. All of Swift&rsquo;s standard types automatically support the <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> protocol.</p>
-<p>Any type that is <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> can be used safely with the <code class="docutils literal notranslate"><span class="pre">findIndex(of:in:)</span></code> function, because it&rsquo;s guaranteed to support the equal to operator. To express this fact, you write a type constraint of <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> as part of the type parameter&rsquo;s definition when you define the function:</p>
+<p>Any type that&rsquo;s <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> can be used safely with the <code class="docutils literal notranslate"><span class="pre">findIndex(of:in:)</span></code> function, because it&rsquo;s guaranteed to support the equal to operator. To express this fact, you write a type constraint of <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> as part of the type parameter&rsquo;s definition when you define the function:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">func</span> <span class="nv">findIndex</span>&lt;<span class="nv">T</span>: <span class="nc">Equatable</span>&gt;(<span class="nv">of</span> <span class="nv">valueToFind</span>: <span class="nc">T</span>, <span class="nv">in</span> <span class="nv">array</span>:[<span class="nc">T</span>]) -&gt; <span class="nc">Int</span>? {
 </li><li>    <span class="k">for</span> (<span class="nv">index</span>, <span class="nv">value</span>) <span class="k">in</span> <span class="nv">array</span>.<span class="nv">enumerated</span>() {
 </li><li>        <span class="k">if</span> <span class="nv">value</span> == <span class="nv">valueToFind</span> {
@@ -357,7 +357,7 @@
 </li><li>}
 </li></ol></div></div></div>
 <p>The single type parameter for <code class="docutils literal notranslate"><span class="pre">findIndex(of:in:)</span></code> is written as <code class="docutils literal notranslate"><span class="pre">T:</span> <span class="pre">Equatable</span></code>, which means &ldquo;any type <code class="docutils literal notranslate"><span class="pre">T</span></code> that conforms to the <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> protocol.&rdquo;</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">findIndex(of:in:)</span></code> function now compiles successfully and can be used with any type that is <code class="docutils literal notranslate"><span class="pre">Equatable</span></code>, such as <code class="docutils literal notranslate"><span class="pre">Double</span></code> or <code class="docutils literal notranslate"><span class="pre">String</span></code>:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">findIndex(of:in:)</span></code> function now compiles successfully and can be used with any type that&rsquo;s <code class="docutils literal notranslate"><span class="pre">Equatable</span></code>, such as <code class="docutils literal notranslate"><span class="pre">Double</span></code> or <code class="docutils literal notranslate"><span class="pre">String</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">doubleIndex</span> = <span class="nv">findIndex</span>(<span class="nv">of</span>: <span class="m">9.3</span>, <span class="nv">in</span>: [<span class="m">3.14159</span>, <span class="m">0.1</span>, <span class="m">0.25</span>])
 </li><li><span class="c">// doubleIndex is an optional Int with no value, because 9.3 isn&#39;t in the array</span>
 </li><li><span class="k">let</span> <span class="nv">stringIndex</span> = <span class="nv">findIndex</span>(<span class="nv">of</span>: <span class="s">&#34;Andrea&#34;</span>, <span class="nv">in</span>: [<span class="s">&#34;Mike&#34;</span>, <span class="s">&#34;Malcolm&#34;</span>, <span class="s">&#34;Andrea&#34;</span>])
@@ -366,8 +366,8 @@
 </div>
 </div>
 <div class="section" id="ID189">
-<a class="dashingAutolink" name="autolink-108"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Associated%20Types"></a><h2>Associated Types<a class="headerlink" href="Generics.html#ID189" title="Permalink to this headline"></a></h2>
-<p>When defining a protocol, it&rsquo;s sometimes useful to declare one or more associated types as part of the protocol&rsquo;s definition. An <em>associated type</em> gives a placeholder name to a type that is used as part of the protocol. The actual type to use for that associated type isn&rsquo;t specified until the protocol is adopted. Associated types are specified with the <code class="docutils literal notranslate"><span class="pre">associatedtype</span></code> keyword.</p>
+<a class="dashingAutolink" name="autolink-109"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Associated%20Types"></a><h2>Associated Types<a class="headerlink" href="Generics.html#ID189" title="Permalink to this headline"></a></h2>
+<p>When defining a protocol, it&rsquo;s sometimes useful to declare one or more associated types as part of the protocol&rsquo;s definition. An <em>associated type</em> gives a placeholder name to a type that&rsquo;s used as part of the protocol. The actual type to use for that associated type isn&rsquo;t specified until the protocol is adopted. Associated types are specified with the <code class="docutils literal notranslate"><span class="pre">associatedtype</span></code> keyword.</p>
 <div class="section" id="ID190">
 <h3>Associated Types in Action<a class="headerlink" href="Generics.html#ID190" title="Permalink to this headline"></a></h3>
 <p>Here&rsquo;s an example of a protocol called <code class="docutils literal notranslate"><span class="pre">Container</span></code>, which declares an associated type called <code class="docutils literal notranslate"><span class="pre">Item</span></code>:</p>
@@ -500,7 +500,7 @@
 </div>
 </div>
 <div class="section" id="ID192">
-<a class="dashingAutolink" name="autolink-109"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Generic%20Where%20Clauses"></a><h2>Generic Where Clauses<a class="headerlink" href="Generics.html#ID192" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-110"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Generic%20Where%20Clauses"></a><h2>Generic Where Clauses<a class="headerlink" href="Generics.html#ID192" title="Permalink to this headline"></a></h2>
 <p>Type constraints, as described in <a class="reference internal" href="Generics.html#ID186"><span class="std std-ref">Type Constraints</span></a>, enable you to define requirements on the type parameters associated with a generic function, subscript, or type.</p>
 <p>It can also be useful to define requirements for associated types. You do this by defining a <em>generic where clause</em>. A generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause enables you to require that an associated type must conform to a certain protocol, or that certain type parameters and associated types must be the same. A generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause starts with the <code class="docutils literal notranslate"><span class="pre">where</span></code> keyword, followed by constraints for associated types or equality relationships between types and associated types. You write a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause right before the opening curly brace of a type or function&rsquo;s body.</p>
 <p>The example below defines a generic function called <code class="docutils literal notranslate"><span class="pre">allItemsMatch</span></code>, which checks to see if two <code class="docutils literal notranslate"><span class="pre">Container</span></code> instances contain the same items in the same order. The function returns a Boolean value of <code class="docutils literal notranslate"><span class="pre">true</span></code> if all items match and a value of <code class="docutils literal notranslate"><span class="pre">false</span></code> if they don&rsquo;t.</p>
@@ -564,7 +564,7 @@
 <p>The example above creates a <code class="docutils literal notranslate"><span class="pre">Stack</span></code> instance to store <code class="docutils literal notranslate"><span class="pre">String</span></code> values, and pushes three strings onto the stack. The example also creates an <code class="docutils literal notranslate"><span class="pre">Array</span></code> instance initialized with an array literal containing the same three strings as the stack. Even though the stack and the array are of a different type, they both conform to the <code class="docutils literal notranslate"><span class="pre">Container</span></code> protocol, and both contain the same type of values. You can therefore call the <code class="docutils literal notranslate"><span class="pre">allItemsMatch(_:_:)</span></code> function with these two containers as its arguments. In the example above, the <code class="docutils literal notranslate"><span class="pre">allItemsMatch(_:_:)</span></code> function correctly reports that all of the items in the two containers match.</p>
 </div>
 <div class="section" id="ID553">
-<a class="dashingAutolink" name="autolink-110"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Extensions%20with%20a%20Generic%20Where%20Clause"></a><h2>Extensions with a Generic Where Clause<a class="headerlink" href="Generics.html#ID553" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-111"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Extensions%20with%20a%20Generic%20Where%20Clause"></a><h2>Extensions with a Generic Where Clause<a class="headerlink" href="Generics.html#ID553" title="Permalink to this headline"></a></h2>
 <p>You can also use a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause as part of an extension. The example below extends the generic <code class="docutils literal notranslate"><span class="pre">Stack</span></code> structure from the previous examples to add an <code class="docutils literal notranslate"><span class="pre">isTop(_:)</span></code> method.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">Stack</span> <span class="k">where</span> <span class="nc">Element</span>: <span class="nc">Equatable</span> {
 </li><li>    <span class="k">func</span> <span class="nv">isTop</span>(<span class="k">_</span> <span class="nv">item</span>: <span class="nc">Element</span>) -&gt; <span class="nc">Bool</span> {
@@ -620,10 +620,10 @@
 </li><li><span class="c">// Prints &#34;648.9&#34;</span>
 </li></ol></div></div></div>
 <p>This example adds an <code class="docutils literal notranslate"><span class="pre">average()</span></code> method to containers whose <code class="docutils literal notranslate"><span class="pre">Item</span></code> type is <code class="docutils literal notranslate"><span class="pre">Double</span></code>. It iterates over the items in the container to add them up, and divides by the container&rsquo;s count to compute the average. It explicitly converts the count from <code class="docutils literal notranslate"><span class="pre">Int</span></code> to <code class="docutils literal notranslate"><span class="pre">Double</span></code> to be able to do floating-point division.</p>
-<p>You can include multiple requirements in a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause that is part of an extension, just like you can for a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause that you write elsewhere. Separate each requirement in the list with a comma.</p>
+<p>You can include multiple requirements in a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause that&rsquo;s part of an extension, just like you can for a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause that you write elsewhere. Separate each requirement in the list with a comma.</p>
 </div>
 <div class="section" id="ID628">
-<a class="dashingAutolink" name="autolink-111"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Contextual%20Where%20Clauses"></a><h2>Contextual Where Clauses<a class="headerlink" href="Generics.html#ID628" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-112"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Contextual%20Where%20Clauses"></a><h2>Contextual Where Clauses<a class="headerlink" href="Generics.html#ID628" title="Permalink to this headline"></a></h2>
 <p>You can write a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause as part of a declaration that doesn&rsquo;t have its own generic type constraints, when you&rsquo;re already working in the context of generic types. For example, you can write a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause on a subscript of a generic type or on a method in an extension to a generic type. The <code class="docutils literal notranslate"><span class="pre">Container</span></code> structure is generic, and the <code class="docutils literal notranslate"><span class="pre">where</span></code> clauses in the example below specify what type constraints have to be satisfied to make these new methods available on a container.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">Container</span> {
 </li><li>    <span class="k">func</span> <span class="nv">average</span>() -&gt; <span class="nc">Double</span> <span class="k">where</span> <span class="nv">Item</span> == <span class="nv">Int</span> {
@@ -663,7 +663,7 @@
 <p>In the version of this example that uses contextual <code class="docutils literal notranslate"><span class="pre">where</span></code> clauses, the implementation of <code class="docutils literal notranslate"><span class="pre">average()</span></code> and <code class="docutils literal notranslate"><span class="pre">endsWith(_:)</span></code> are both in the same extension because each method&rsquo;s generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause states the requirements that need to be satisfied to make that method available. Moving those requirements to the extensions&rsquo; generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clauses makes the methods available in the same situations, but requires one extension per requirement.</p>
 </div>
 <div class="section" id="ID557">
-<a class="dashingAutolink" name="autolink-112"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Associated%20Types%20with%20a%20Generic%20Where%20Clause"></a><h2>Associated Types with a Generic Where Clause<a class="headerlink" href="Generics.html#ID557" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-113"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Associated%20Types%20with%20a%20Generic%20Where%20Clause"></a><h2>Associated Types with a Generic Where Clause<a class="headerlink" href="Generics.html#ID557" title="Permalink to this headline"></a></h2>
 <p>You can include a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause on an associated type. For example, suppose you want to make a version of <code class="docutils literal notranslate"><span class="pre">Container</span></code> that includes an iterator, like what the <code class="docutils literal notranslate"><span class="pre">Sequence</span></code> protocol uses in the standard library. Here&rsquo;s how you write that:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">protocol</span> <span class="nv">Container</span> {
 </li><li>    <span class="k">associatedtype</span> <span class="nv">Item</span>
@@ -681,7 +681,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID558">
-<a class="dashingAutolink" name="autolink-113"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Generic%20Subscripts"></a><h2>Generic Subscripts<a class="headerlink" href="Generics.html#ID558" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-114"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Generic%20Subscripts"></a><h2>Generic Subscripts<a class="headerlink" href="Generics.html#ID558" title="Permalink to this headline"></a></h2>
 <p>Subscripts can be generic, and they can include generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clauses. You write the placeholder type name inside angle brackets after <code class="docutils literal notranslate"><span class="pre">subscript</span></code>, and you write a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause right before the opening curly brace of the subscript&rsquo;s body. For example:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">Container</span> {
 </li><li>    <span class="k">subscript</span>&lt;<span class="nv">Indices</span>: <span class="nc">Sequence</span>&gt;(<span class="nv">indices</span>: <span class="nc">Indices</span>) -&gt; [<span class="nc">Item</span>]
@@ -710,6 +710,14 @@
         <p class="previous"><a href="Protocols.html">Protocols</a></p>
         <p class="next"><a href="OpaqueTypes.html">Opaque Types</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple&#39;s beta software</a></p>
+    </div>
 </main>
 
 
@@ -719,7 +727,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
@@ -729,5 +737,4 @@
 <div id="jump_to_overlay"></div>
 <script src="../_static/javascripts/application.js"></script>
   
-
 </body></html>

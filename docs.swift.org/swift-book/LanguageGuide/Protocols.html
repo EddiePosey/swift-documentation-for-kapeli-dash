@@ -9,7 +9,7 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>Protocols &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Protocols &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
@@ -40,7 +40,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -188,7 +188,7 @@
 </li><li><span class="c">// john.fullName is &quot;John Appleseed&quot;</span>
 </li></ol></div></div></div>
 <p>This example defines a structure called <code class="docutils literal notranslate"><span class="pre">Person</span></code>, which represents a specific named person. It states that it adopts the <code class="docutils literal notranslate"><span class="pre">FullyNamed</span></code> protocol as part of the first line of its definition.</p>
-<p>Each instance of <code class="docutils literal notranslate"><span class="pre">Person</span></code> has a single stored property called <code class="docutils literal notranslate"><span class="pre">fullName</span></code>, which is of type <code class="docutils literal notranslate"><span class="pre">String</span></code>. This matches the single requirement of the <code class="docutils literal notranslate"><span class="pre">FullyNamed</span></code> protocol, and means that <code class="docutils literal notranslate"><span class="pre">Person</span></code> has correctly conformed to the protocol. (Swift reports an error at compile-time if a protocol requirement is not fulfilled.)</p>
+<p>Each instance of <code class="docutils literal notranslate"><span class="pre">Person</span></code> has a single stored property called <code class="docutils literal notranslate"><span class="pre">fullName</span></code>, which is of type <code class="docutils literal notranslate"><span class="pre">String</span></code>. This matches the single requirement of the <code class="docutils literal notranslate"><span class="pre">FullyNamed</span></code> protocol, and means that <code class="docutils literal notranslate"><span class="pre">Person</span></code> has correctly conformed to the protocol. (Swift reports an error at compile time if a protocol requirement isn’t fulfilled.)</p>
 <p>Here’s a more complex class, which also adopts and conforms to the <code class="docutils literal notranslate"><span class="pre">FullyNamed</span></code> protocol:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">Starship</span>: <span class="nc">FullyNamed</span> {
 </li><li>    <span class="k">var</span> <span class="nv">prefix</span>: <span class="nc">String</span>?
@@ -243,7 +243,7 @@
 <div class="section" id="ID271">
 <h2>Mutating Method Requirements<a class="headerlink" href="Protocols.html#ID271" title="Permalink to this headline"></a></h2>
 <p>It’s sometimes necessary for a method to modify (or <em>mutate</em>) the instance it belongs to. For instance methods on value types (that is, structures and enumerations) you place the <code class="docutils literal notranslate"><span class="pre">mutating</span></code> keyword before a method’s <code class="docutils literal notranslate"><span class="pre">func</span></code> keyword to indicate that the method is allowed to modify the instance it belongs to and any properties of that instance. This process is described in <a class="reference internal" href="Methods.html#ID239"><span class="std std-ref">Modifying Value Types from Within Instance Methods</span></a>.</p>
-<p>If you define a protocol instance method requirement that is intended to mutate instances of any type that adopts the protocol, mark the method with the <code class="docutils literal notranslate"><span class="pre">mutating</span></code> keyword as part of the protocol’s definition. This enables structures and enumerations to adopt the protocol and satisfy that method requirement.</p>
+<p>If you define a protocol instance method requirement that’s intended to mutate instances of any type that adopts the protocol, mark the method with the <code class="docutils literal notranslate"><span class="pre">mutating</span></code> keyword as part of the protocol’s definition. This enables structures and enumerations to adopt the protocol and satisfy that method requirement.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If you mark a protocol instance method requirement as <code class="docutils literal notranslate"><span class="pre">mutating</span></code>, you don’t need to write the <code class="docutils literal notranslate"><span class="pre">mutating</span></code> keyword when writing an implementation of that method for a class. The <code class="docutils literal notranslate"><span class="pre">mutating</span></code> keyword is only used by structures and enumerations.</p>
@@ -254,7 +254,7 @@
 </li><li>    <span class="k">mutating</span> <span class="k">func</span> <span class="nv">toggle</span>()
 </li><li>}
 </li></ol></div></div></div>
-<p>If you implement the <code class="docutils literal notranslate"><span class="pre">Togglable</span></code> protocol for a structure or enumeration, that structure or enumeration can conform to the protocol by providing an implementation of the <code class="docutils literal notranslate"><span class="pre">toggle()</span></code> method that is also marked as <code class="docutils literal notranslate"><span class="pre">mutating</span></code>.</p>
+<p>If you implement the <code class="docutils literal notranslate"><span class="pre">Togglable</span></code> protocol for a structure or enumeration, that structure or enumeration can conform to the protocol by providing an implementation of the <code class="docutils literal notranslate"><span class="pre">toggle()</span></code> method that’s also marked as <code class="docutils literal notranslate"><span class="pre">mutating</span></code>.</p>
 <p>The example below defines an enumeration called <code class="docutils literal notranslate"><span class="pre">OnOffSwitch</span></code>. This enumeration toggles between two states, indicated by the enumeration cases <code class="docutils literal notranslate"><span class="pre">on</span></code> and <code class="docutils literal notranslate"><span class="pre">off</span></code>. The enumeration’s <code class="docutils literal notranslate"><span class="pre">toggle</span></code> implementation is marked as <code class="docutils literal notranslate"><span class="pre">mutating</span></code>, to match the <code class="docutils literal notranslate"><span class="pre">Togglable</span></code> protocol’s requirements:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">enum</span> <span class="nv">OnOffSwitch</span>: <span class="nc">Togglable</span> {
 </li><li>    <span class="k">case</span> <span class="nv">off</span>, <span class="nv">on</span>
@@ -435,7 +435,7 @@
 </li><li>}
 </li></ol></div></div></div>
 <p><code class="docutils literal notranslate"><span class="pre">DiceGameTracker</span></code> implements all three methods required by <code class="docutils literal notranslate"><span class="pre">DiceGameDelegate</span></code>. It uses these methods to keep track of the number of turns a game has taken. It resets a <code class="docutils literal notranslate"><span class="pre">numberOfTurns</span></code> property to zero when the game starts, increments it each time a new turn begins, and prints out the total number of turns once the game has ended.</p>
-<p>The implementation of <code class="docutils literal notranslate"><span class="pre">gameDidStart(_:)</span></code> shown above uses the <code class="docutils literal notranslate"><span class="pre">game</span></code> parameter to print some introductory information about the game that is about to be played. The <code class="docutils literal notranslate"><span class="pre">game</span></code> parameter has a type of <code class="docutils literal notranslate"><span class="pre">DiceGame</span></code>, not <code class="docutils literal notranslate"><span class="pre">SnakesAndLadders</span></code>, and so <code class="docutils literal notranslate"><span class="pre">gameDidStart(_:)</span></code> can access and use only methods and properties that are implemented as part of the <code class="docutils literal notranslate"><span class="pre">DiceGame</span></code> protocol. However, the method is still able to use type casting to query the type of the underlying instance. In this example, it checks whether <code class="docutils literal notranslate"><span class="pre">game</span></code> is actually an instance of <code class="docutils literal notranslate"><span class="pre">SnakesAndLadders</span></code> behind the scenes, and prints an appropriate message if so.</p>
+<p>The implementation of <code class="docutils literal notranslate"><span class="pre">gameDidStart(_:)</span></code> shown above uses the <code class="docutils literal notranslate"><span class="pre">game</span></code> parameter to print some introductory information about the game that’s about to be played. The <code class="docutils literal notranslate"><span class="pre">game</span></code> parameter has a type of <code class="docutils literal notranslate"><span class="pre">DiceGame</span></code>, not <code class="docutils literal notranslate"><span class="pre">SnakesAndLadders</span></code>, and so <code class="docutils literal notranslate"><span class="pre">gameDidStart(_:)</span></code> can access and use only methods and properties that are implemented as part of the <code class="docutils literal notranslate"><span class="pre">DiceGame</span></code> protocol. However, the method is still able to use type casting to query the type of the underlying instance. In this example, it checks whether <code class="docutils literal notranslate"><span class="pre">game</span></code> is actually an instance of <code class="docutils literal notranslate"><span class="pre">SnakesAndLadders</span></code> behind the scenes, and prints an appropriate message if so.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">gameDidStart(_:)</span></code> method also accesses the <code class="docutils literal notranslate"><span class="pre">dice</span></code> property of the passed <code class="docutils literal notranslate"><span class="pre">game</span></code> parameter. Because <code class="docutils literal notranslate"><span class="pre">game</span></code> is known to conform to the <code class="docutils literal notranslate"><span class="pre">DiceGame</span></code> protocol, it’s guaranteed to have a <code class="docutils literal notranslate"><span class="pre">dice</span></code> property, and so the <code class="docutils literal notranslate"><span class="pre">gameDidStart(_:)</span></code> method is able to access and print the dice’s <code class="docutils literal notranslate"><span class="pre">sides</span></code> property, regardless of what kind of game is being played.</p>
 <p>Here’s how <code class="docutils literal notranslate"><span class="pre">DiceGameTracker</span></code> looks in action:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">tracker</span> = <span class="nv">DiceGameTracker</span>()
@@ -502,7 +502,7 @@
 </div>
 <div class="section" id="ID278">
 <h3>Declaring Protocol Adoption with an Extension<a class="headerlink" href="Protocols.html#ID278" title="Permalink to this headline"></a></h3>
-<p>If a type already conforms to all of the requirements of a protocol, but has not yet stated that it adopts that protocol, you can make it adopt the protocol with an empty extension:</p>
+<p>If a type already conforms to all of the requirements of a protocol, but hasn’t yet stated that it adopts that protocol, you can make it adopt the protocol with an empty extension:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">Hamster</span> {
 </li><li>    <span class="k">var</span> <span class="nv">name</span>: <span class="nc">String</span>
 </li><li>    <span class="k">var</span> <span class="nv">textualDescription</span>: <span class="nc">String</span> {
@@ -583,7 +583,7 @@
 </li><li><span class="c">// A 12-sided dice</span>
 </li><li><span class="c">// A hamster named Simon</span>
 </li></ol></div></div></div>
-<p>Note that the <code class="docutils literal notranslate"><span class="pre">thing</span></code> constant is of type <code class="docutils literal notranslate"><span class="pre">TextRepresentable</span></code>. It’s not of type <code class="docutils literal notranslate"><span class="pre">Dice</span></code>, or <code class="docutils literal notranslate"><span class="pre">DiceGame</span></code>, or <code class="docutils literal notranslate"><span class="pre">Hamster</span></code>, even if the actual instance behind the scenes is of one of those types. Nonetheless, because it’s of type <code class="docutils literal notranslate"><span class="pre">TextRepresentable</span></code>, and anything that is <code class="docutils literal notranslate"><span class="pre">TextRepresentable</span></code> is known to have a <code class="docutils literal notranslate"><span class="pre">textualDescription</span></code> property, it’s safe to access <code class="docutils literal notranslate"><span class="pre">thing.textualDescription</span></code> each time through the loop.</p>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">thing</span></code> constant is of type <code class="docutils literal notranslate"><span class="pre">TextRepresentable</span></code>. It’s not of type <code class="docutils literal notranslate"><span class="pre">Dice</span></code>, or <code class="docutils literal notranslate"><span class="pre">DiceGame</span></code>, or <code class="docutils literal notranslate"><span class="pre">Hamster</span></code>, even if the actual instance behind the scenes is of one of those types. Nonetheless, because it’s of type <code class="docutils literal notranslate"><span class="pre">TextRepresentable</span></code>, and anything that’s <code class="docutils literal notranslate"><span class="pre">TextRepresentable</span></code> is known to have a <code class="docutils literal notranslate"><span class="pre">textualDescription</span></code> property, it’s safe to access <code class="docutils literal notranslate"><span class="pre">thing.textualDescription</span></code> each time through the loop.</p>
 </div>
 <div class="section" id="ID280">
 <h2>Protocol Inheritance<a class="headerlink" href="Protocols.html#ID280" title="Permalink to this headline"></a></h2>
@@ -616,7 +616,7 @@
 </li><li>    }
 </li><li>}
 </li></ol></div></div></div>
-<p>This extension states that it adopts the <code class="docutils literal notranslate"><span class="pre">PrettyTextRepresentable</span></code> protocol and provides an implementation of the <code class="docutils literal notranslate"><span class="pre">prettyTextualDescription</span></code> property for the <code class="docutils literal notranslate"><span class="pre">SnakesAndLadders</span></code> type. Anything that is <code class="docutils literal notranslate"><span class="pre">PrettyTextRepresentable</span></code> must also be <code class="docutils literal notranslate"><span class="pre">TextRepresentable</span></code>, and so the implementation of <code class="docutils literal notranslate"><span class="pre">prettyTextualDescription</span></code> starts by accessing the <code class="docutils literal notranslate"><span class="pre">textualDescription</span></code> property from the <code class="docutils literal notranslate"><span class="pre">TextRepresentable</span></code> protocol to begin an output string. It appends a colon and a line break, and uses this as the start of its pretty text representation. It then iterates through the array of board squares, and appends a geometric shape to represent the contents of each square:</p>
+<p>This extension states that it adopts the <code class="docutils literal notranslate"><span class="pre">PrettyTextRepresentable</span></code> protocol and provides an implementation of the <code class="docutils literal notranslate"><span class="pre">prettyTextualDescription</span></code> property for the <code class="docutils literal notranslate"><span class="pre">SnakesAndLadders</span></code> type. Anything that’s <code class="docutils literal notranslate"><span class="pre">PrettyTextRepresentable</span></code> must also be <code class="docutils literal notranslate"><span class="pre">TextRepresentable</span></code>, and so the implementation of <code class="docutils literal notranslate"><span class="pre">prettyTextualDescription</span></code> starts by accessing the <code class="docutils literal notranslate"><span class="pre">textualDescription</span></code> property from the <code class="docutils literal notranslate"><span class="pre">TextRepresentable</span></code> protocol to begin an output string. It appends a colon and a line break, and uses this as the start of its pretty text representation. It then iterates through the array of board squares, and appends a geometric shape to represent the contents of each square:</p>
 <ul class="simple">
 <li>If the square’s value is greater than <code class="docutils literal notranslate"><span class="pre">0</span></code>, it’s the base of a ladder, and is represented by <code class="docutils literal notranslate"><span class="pre">▲</span></code>.</li>
 <li>If the square’s value is less than <code class="docutils literal notranslate"><span class="pre">0</span></code>, it’s the head of a snake, and is represented by <code class="docutils literal notranslate"><span class="pre">▼</span></code>.</li>
@@ -902,6 +902,14 @@
         <p class="previous"><a href="Extensions.html">Extensions</a></p>
         <p class="next"><a href="Generics.html">Generics</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple's beta software</a></p>
+    </div>
 </main>
 
 
@@ -911,7 +919,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

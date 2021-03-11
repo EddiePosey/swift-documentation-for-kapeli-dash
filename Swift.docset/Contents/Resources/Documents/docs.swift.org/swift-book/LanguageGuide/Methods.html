@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Methods &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Methods &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <a class="dashingAutolink" name="autolink-136"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
+      <a class="dashingAutolink" name="autolink-137"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -34,7 +34,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -111,13 +111,13 @@
 
         
   <div class="section" id="methods">
-<a class="dashingAutolink" name="autolink-137"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Methods"></a><h1>Methods<a class="headerlink" href="Methods.html#methods" title="Permalink to this headline"></a></h1>
+<a class="dashingAutolink" name="autolink-138"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Methods"></a><h1>Methods<a class="headerlink" href="Methods.html#methods" title="Permalink to this headline"></a></h1>
 <p><em>Methods</em> are functions that are associated with a particular type. Classes, structures, and enumerations can all define instance methods, which encapsulate specific tasks and functionality for working with an instance of a given type. Classes, structures, and enumerations can also define type methods, which are associated with the type itself. Type methods are similar to class methods in Objective-C.</p>
 <p>The fact that structures and enumerations can define methods in Swift is a major difference from C and Objective-C. In Objective-C, classes are the only types that can define methods. In Swift, you can choose whether to define a class, structure, or enumeration, and still have the flexibility to define methods on the type you create.</p>
 <div class="section" id="ID235">
-<a class="dashingAutolink" name="autolink-138"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Instance%20Methods"></a><h2>Instance Methods<a class="headerlink" href="Methods.html#ID235" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-139"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Instance%20Methods"></a><h2>Instance Methods<a class="headerlink" href="Methods.html#ID235" title="Permalink to this headline"></a></h2>
 <p><em>Instance methods</em> are functions that belong to instances of a particular class, structure, or enumeration. They support the functionality of those instances, either by providing ways to access and modify instance properties, or by providing functionality related to the instance&rsquo;s purpose. Instance methods have exactly the same syntax as functions, as described in <a class="reference internal" href="Functions.html"><span class="doc">Functions</span></a>.</p>
-<p>You write an instance method within the opening and closing braces of the type it belongs to. An instance method has implicit access to all other instance methods and properties of that type. An instance method can be called only on a specific instance of the type it belongs to. It cannot be called in isolation without an existing instance.</p>
+<p>You write an instance method within the opening and closing braces of the type it belongs to. An instance method has implicit access to all other instance methods and properties of that type. An instance method can be called only on a specific instance of the type it belongs to. It can&rsquo;t be called in isolation without an existing instance.</p>
 <p>Here&rsquo;s an example that defines a simple <code class="docutils literal notranslate"><span class="pre">Counter</span></code> class, which can be used to count the number of times an action occurs:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">Counter</span> {
 </li><li>    <span class="k">var</span> <span class="nv">count</span> = <span class="m">0</span>
@@ -160,7 +160,7 @@
 </li></ol></div></div></div>
 <p>In practice, you don&rsquo;t need to write <code class="docutils literal notranslate"><span class="pre">self</span></code> in your code very often. If you don&rsquo;t explicitly write <code class="docutils literal notranslate"><span class="pre">self</span></code>, Swift assumes that you are referring to a property or method of the current instance whenever you use a known property or method name within a method. This assumption is demonstrated by the use of <code class="docutils literal notranslate"><span class="pre">count</span></code> (rather than <code class="docutils literal notranslate"><span class="pre">self.count</span></code>) inside the three instance methods for <code class="docutils literal notranslate"><span class="pre">Counter</span></code>.</p>
 <p>The main exception to this rule occurs when a parameter name for an instance method has the same name as a property of that instance. In this situation, the parameter name takes precedence, and it becomes necessary to refer to the property in a more qualified way. You use the <code class="docutils literal notranslate"><span class="pre">self</span></code> property to distinguish between the parameter name and the property name.</p>
-<p>Here, <code class="docutils literal notranslate"><span class="pre">self</span></code> disambiguates between a method parameter called <code class="docutils literal notranslate"><span class="pre">x</span></code> and an instance property that is also called <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">self</span></code> disambiguates between a method parameter called <code class="docutils literal notranslate"><span class="pre">x</span></code> and an instance property that&rsquo;s also called <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">Point</span> {
 </li><li>    <span class="k">var</span> <span class="nv">x</span> = <span class="m">0.0</span>, <span class="nv">y</span> = <span class="m">0.0</span>
 </li><li>    <span class="k">func</span> <span class="nv">isToTheRightOf</span>(<span class="nv">x</span>: <span class="nc">Double</span>) -&gt; <span class="nc">Bool</span> {
@@ -177,7 +177,7 @@
 </div>
 <div class="section" id="ID239">
 <h3>Modifying Value Types from Within Instance Methods<a class="headerlink" href="Methods.html#ID239" title="Permalink to this headline"></a></h3>
-<p>Structures and enumerations are <em>value types</em>. By default, the properties of a value type cannot be modified from within its instance methods.</p>
+<p>Structures and enumerations are <em>value types</em>. By default, the properties of a value type can&rsquo;t be modified from within its instance methods.</p>
 <p>However, if you need to modify the properties of your structure or enumeration within a particular method, you can opt in to <em>mutating</em> behavior for that method. The method can then mutate (that is, change) its properties from within the method, and any changes that it makes are written back to the original structure when the method ends. The method can also assign a completely new instance to its implicit <code class="docutils literal notranslate"><span class="pre">self</span></code> property, and this new instance will replace the existing one when the method ends.</p>
 <p>You can opt in to this behavior by placing the <code class="docutils literal notranslate"><span class="pre">mutating</span></code> keyword before the <code class="docutils literal notranslate"><span class="pre">func</span></code> keyword for that method:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">Point</span> {
@@ -192,8 +192,8 @@
 </li><li><span class="nv">print</span>(<span class="s">&#34;The point is now at (</span>\<span class="p">(</span><span class="nv">somePoint</span>.<span class="nv">x</span><span class="p">)</span><span class="s">, </span>\<span class="p">(</span><span class="nv">somePoint</span>.<span class="nv">y</span><span class="p">)</span><span class="s">)&#34;</span>)
 </li><li><span class="c">// Prints &#34;The point is now at (3.0, 4.0)&#34;</span>
 </li></ol></div></div></div>
-<p>The <code class="docutils literal notranslate"><span class="pre">Point</span></code> structure above defines a mutating <code class="docutils literal notranslate"><span class="pre">moveBy(x:y:)</span></code> method, which moves a <code class="docutils literal notranslate"><span class="pre">Point</span></code> instance by a certain amount. Instead of returning a new point, this method actually modifies the point on which it is called. The <code class="docutils literal notranslate"><span class="pre">mutating</span></code> keyword is added to its definition to enable it to modify its properties.</p>
-<p>Note that you cannot call a mutating method on a constant of structure type, because its properties cannot be changed, even if they are variable properties, as described in <a class="reference internal" href="Properties.html#ID256"><span class="std std-ref">Stored Properties of Constant Structure Instances</span></a>:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Point</span></code> structure above defines a mutating <code class="docutils literal notranslate"><span class="pre">moveBy(x:y:)</span></code> method, which moves a <code class="docutils literal notranslate"><span class="pre">Point</span></code> instance by a certain amount. Instead of returning a new point, this method actually modifies the point on which it&rsquo;s called. The <code class="docutils literal notranslate"><span class="pre">mutating</span></code> keyword is added to its definition to enable it to modify its properties.</p>
+<p>Note that you can&rsquo;t call a mutating method on a constant of structure type, because its properties can&rsquo;t be changed, even if they&rsquo;re variable properties, as described in <a class="reference internal" href="Properties.html#ID256"><span class="std std-ref">Stored Properties of Constant Structure Instances</span></a>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">fixedPoint</span> = <span class="nv">Point</span>(<span class="nv">x</span>: <span class="m">3.0</span>, <span class="nv">y</span>: <span class="m">3.0</span>)
 </li><li><span class="nv">fixedPoint</span>.<span class="nv">moveBy</span>(<span class="nv">x</span>: <span class="m">2.0</span>, <span class="nv">y</span>: <span class="m">3.0</span>)
 </li><li><span class="c">// this will report an error</span>
@@ -234,7 +234,7 @@
 </div>
 </div>
 <div class="section" id="ID241">
-<a class="dashingAutolink" name="autolink-139"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Methods"></a><h2>Type Methods<a class="headerlink" href="Methods.html#ID241" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-140"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Methods"></a><h2>Type Methods<a class="headerlink" href="Methods.html#ID241" title="Permalink to this headline"></a></h2>
 <p>Instance methods, as described above, are methods that you call on an instance of a particular type. You can also define methods that are called on the type itself. These kinds of methods are called <em>type methods</em>. You indicate type methods by writing the <code class="docutils literal notranslate"><span class="pre">static</span></code> keyword before the method&rsquo;s <code class="docutils literal notranslate"><span class="pre">func</span></code> keyword. Classes can use the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword instead, to allow subclasses to override the superclass&rsquo;s implementation of that method.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -250,7 +250,7 @@
 </li></ol></div></div></div>
 <p>Within the body of a type method, the implicit <code class="docutils literal notranslate"><span class="pre">self</span></code> property refers to the type itself, rather than an instance of that type. This means that you can use <code class="docutils literal notranslate"><span class="pre">self</span></code> to disambiguate between type properties and type method parameters, just as you do for instance properties and instance method parameters.</p>
 <p>More generally, any unqualified method and property names that you use within the body of a type method will refer to other type-level methods and properties. A type method can call another type method with the other method&rsquo;s name, without needing to prefix it with the type name. Similarly, type methods on structures and enumerations can access type properties by using the type property&rsquo;s name without a type name prefix.</p>
-<p>The example below defines a structure called <code class="docutils literal notranslate"><span class="pre">LevelTracker</span></code>, which tracks a player&rsquo;s progress through the different levels or stages of a game. It is a single-player game, but can store information for multiple players on a single device.</p>
+<p>The example below defines a structure called <code class="docutils literal notranslate"><span class="pre">LevelTracker</span></code>, which tracks a player&rsquo;s progress through the different levels or stages of a game. It&rsquo;s a single-player game, but can store information for multiple players on a single device.</p>
 <p>All of the game&rsquo;s levels (apart from level one) are locked when the game is first played. Every time a player finishes a level, that level is unlocked for all players on the device. The <code class="docutils literal notranslate"><span class="pre">LevelTracker</span></code> structure uses type properties and methods to keep track of which levels of the game have been unlocked. It also tracks the current level for an individual player.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">LevelTracker</span> {
 </li><li>    <span class="k">static</span> <span class="k">var</span> <span class="nv">highestUnlockedLevel</span> = <span class="m">1</span>
@@ -299,14 +299,14 @@
 </li><li><span class="nv">print</span>(<span class="s">&#34;highest unlocked level is now </span>\<span class="p">(</span><span class="nv">LevelTracker</span>.<span class="nv">highestUnlockedLevel</span><span class="p">)</span><span class="s">&#34;</span>)
 </li><li><span class="c">// Prints &#34;highest unlocked level is now 2&#34;</span>
 </li></ol></div></div></div>
-<p>If you create a second player, whom you try to move to a level that is not yet unlocked by any player in the game, the attempt to set the player&rsquo;s current level fails:</p>
+<p>If you create a second player, whom you try to move to a level that&rsquo;s not yet unlocked by any player in the game, the attempt to set the player&rsquo;s current level fails:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">player</span> = <span class="nv">Player</span>(<span class="nv">name</span>: <span class="s">&#34;Beto&#34;</span>)
 </li><li><span class="k">if</span> <span class="nv">player</span>.<span class="nv">tracker</span>.<span class="nv">advance</span>(<span class="nv">to</span>: <span class="m">6</span>) {
 </li><li>    <span class="nv">print</span>(<span class="s">&#34;player is now on level 6&#34;</span>)
 </li><li>} <span class="k">else</span> {
-</li><li>    <span class="nv">print</span>(<span class="s">&#34;level 6 has not yet been unlocked&#34;</span>)
+</li><li>    <span class="nv">print</span>(<span class="s">&#34;level 6 hasn&#39;t yet been unlocked&#34;</span>)
 </li><li>}
-</li><li><span class="c">// Prints &#34;level 6 has not yet been unlocked&#34;</span>
+</li><li><span class="c">// Prints &#34;level 6 hasn&#39;t yet been unlocked&#34;</span>
 </li></ol></div></div></div>
 </div>
 </div>
@@ -317,6 +317,14 @@
         <p class="previous"><a href="Properties.html">Properties</a></p>
         <p class="next"><a href="Subscripts.html">Subscripts</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple&#39;s beta software</a></p>
+    </div>
 </main>
 
 
@@ -326,7 +334,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
@@ -336,5 +344,4 @@
 <div id="jump_to_overlay"></div>
 <script src="../_static/javascripts/application.js"></script>
   
-
 </body></html>

@@ -9,7 +9,7 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>Basic Operators &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Basic Operators &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
@@ -40,7 +40,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -163,9 +163,9 @@
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> (<span class="nv">x</span>, <span class="nv">y</span>) = (<span class="m">1</span>, <span class="m">2</span>)
 </li><li><span class="c">// x is equal to 1, and y is equal to 2</span>
 </li></ol></div></div></div>
-<p>Unlike the assignment operator in C and Objective-C, the assignment operator in Swift does not itself return a value. The following statement is not valid:</p>
+<p>Unlike the assignment operator in C and Objective-C, the assignment operator in Swift doesn’t itself return a value. The following statement isn’t valid:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">if</span> <span class="nv">x</span> = <span class="nv">y</span> {
-</li><li>    <span class="c">// This is not valid, because x = y does not return a value.</span>
+</li><li>    <span class="c">// This isn&#39;t valid, because x = y doesn&#39;t return a value.</span>
 </li><li>}
 </li></ol></div></div></div>
 <p>This feature prevents the assignment operator (<code class="docutils literal notranslate"><span class="pre">=</span></code>) from being used by accident when the equal to operator (<code class="docutils literal notranslate"><span class="pre">==</span></code>) is actually intended. By making <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">y</span></code> invalid, Swift helps you to avoid these kinds of errors in your code.</p>
@@ -190,7 +190,7 @@
 </li></ol></div></div></div>
 <div class="section" id="ID64">
 <h3>Remainder Operator<a class="headerlink" href="BasicOperators.html#ID64" title="Permalink to this headline"></a></h3>
-<p>The <em>remainder operator</em> (<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span></code>) works out how many multiples of <code class="docutils literal notranslate"><span class="pre">b</span></code> will fit inside <code class="docutils literal notranslate"><span class="pre">a</span></code> and returns the value that is left over (known as the <em>remainder</em>).</p>
+<p>The <em>remainder operator</em> (<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span></code>) works out how many multiples of <code class="docutils literal notranslate"><span class="pre">b</span></code> will fit inside <code class="docutils literal notranslate"><span class="pre">a</span></code> and returns the value that’s left over (known as the <em>remainder</em>).</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The remainder operator (<code class="docutils literal notranslate"><span class="pre">%</span></code>) is also known as a <em>modulo operator</em> in other languages. However, its behavior in Swift for negative numbers means that, strictly speaking, it’s a remainder rather than a modulo operation.</p>
@@ -263,11 +263,11 @@
 </div>
 <p>Each of the comparison operators returns a <code class="docutils literal notranslate"><span class="pre">Bool</span></code> value to indicate whether or not the statement is true:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="m">1</span> == <span class="m">1</span>   <span class="c">// true because 1 is equal to 1</span>
-</li><li><span class="m">2</span> != <span class="m">1</span>   <span class="c">// true because 2 is not equal to 1</span>
+</li><li><span class="m">2</span> != <span class="m">1</span>   <span class="c">// true because 2 isn&#39;t equal to 1</span>
 </li><li><span class="m">2</span> &gt; <span class="m">1</span>    <span class="c">// true because 2 is greater than 1</span>
 </li><li><span class="m">1</span> &lt; <span class="m">2</span>    <span class="c">// true because 1 is less than 2</span>
 </li><li><span class="m">1</span> &gt;= <span class="m">1</span>   <span class="c">// true because 1 is greater than or equal to 1</span>
-</li><li><span class="m">2</span> &lt;= <span class="m">1</span>   <span class="c">// false because 2 is not less than or equal to 1</span>
+</li><li><span class="m">2</span> &lt;= <span class="m">1</span>   <span class="c">// false because 2 isn&#39;t less than or equal to 1</span>
 </li></ol></div></div></div>
 <p>Comparison operators are often used in conditional statements, such as the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">name</span> = <span class="s">&quot;world&quot;</span>
@@ -280,7 +280,7 @@
 </li></ol></div></div></div>
 <p>For more about the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, see <a class="reference internal" href="ControlFlow.html"><span class="doc">Control Flow</span></a>.</p>
 <p>You can compare two tuples if they have the same type and the same number of values. Tuples are compared from left to right, one value at a time, until the comparison finds two values that aren’t equal. Those two values are compared, and the result of that comparison determines the overall result of the tuple comparison. If all the elements are equal, then the tuples themselves are equal. For example:</p>
-<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li>(<span class="m">1</span>, <span class="s">&quot;zebra&quot;</span>) &lt; (<span class="m">2</span>, <span class="s">&quot;apple&quot;</span>)   <span class="c">// true because 1 is less than 2; &quot;zebra&quot; and &quot;apple&quot; are not compared</span>
+<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li>(<span class="m">1</span>, <span class="s">&quot;zebra&quot;</span>) &lt; (<span class="m">2</span>, <span class="s">&quot;apple&quot;</span>)   <span class="c">// true because 1 is less than 2; &quot;zebra&quot; and &quot;apple&quot; aren&#39;t compared</span>
 </li><li>(<span class="m">3</span>, <span class="s">&quot;apple&quot;</span>) &lt; (<span class="m">3</span>, <span class="s">&quot;bird&quot;</span>)    <span class="c">// true because 3 is equal to 3, and &quot;apple&quot; is less than &quot;bird&quot;</span>
 </li><li>(<span class="m">4</span>, <span class="s">&quot;dog&quot;</span>) == (<span class="m">4</span>, <span class="s">&quot;dog&quot;</span>)      <span class="c">// true because 4 is equal to 4, and &quot;dog&quot; is equal to &quot;dog&quot;</span>
 </li></ol></div></div></div>
@@ -326,14 +326,14 @@
 </div>
 <div class="section" id="ID72">
 <h2>Nil-Coalescing Operator<a class="headerlink" href="BasicOperators.html#ID72" title="Permalink to this headline"></a></h2>
-<p>The <em>nil-coalescing operator</em> (<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">??</span> <span class="pre">b</span></code>) unwraps an optional <code class="docutils literal notranslate"><span class="pre">a</span></code> if it contains a value, or returns a default value <code class="docutils literal notranslate"><span class="pre">b</span></code> if <code class="docutils literal notranslate"><span class="pre">a</span></code> is <code class="docutils literal notranslate"><span class="pre">nil</span></code>. The expression <code class="docutils literal notranslate"><span class="pre">a</span></code> is always of an optional type. The expression <code class="docutils literal notranslate"><span class="pre">b</span></code> must match the type that is stored inside <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+<p>The <em>nil-coalescing operator</em> (<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">??</span> <span class="pre">b</span></code>) unwraps an optional <code class="docutils literal notranslate"><span class="pre">a</span></code> if it contains a value, or returns a default value <code class="docutils literal notranslate"><span class="pre">b</span></code> if <code class="docutils literal notranslate"><span class="pre">a</span></code> is <code class="docutils literal notranslate"><span class="pre">nil</span></code>. The expression <code class="docutils literal notranslate"><span class="pre">a</span></code> is always of an optional type. The expression <code class="docutils literal notranslate"><span class="pre">b</span></code> must match the type that’s stored inside <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
 <p>The nil-coalescing operator is shorthand for the code below:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">a</span> != <span class="k">nil</span> ? <span class="nv">a</span>! : <span class="nv">b</span>
 </li></ol></div></div></div>
-<p>The code above uses the ternary conditional operator and forced unwrapping (<code class="docutils literal notranslate"><span class="pre">a!</span></code>) to access the value wrapped inside <code class="docutils literal notranslate"><span class="pre">a</span></code> when <code class="docutils literal notranslate"><span class="pre">a</span></code> is not <code class="docutils literal notranslate"><span class="pre">nil</span></code>, and to return <code class="docutils literal notranslate"><span class="pre">b</span></code> otherwise. The nil-coalescing operator provides a more elegant way to encapsulate this conditional checking and unwrapping in a concise and readable form.</p>
+<p>The code above uses the ternary conditional operator and forced unwrapping (<code class="docutils literal notranslate"><span class="pre">a!</span></code>) to access the value wrapped inside <code class="docutils literal notranslate"><span class="pre">a</span></code> when <code class="docutils literal notranslate"><span class="pre">a</span></code> isn’t <code class="docutils literal notranslate"><span class="pre">nil</span></code>, and to return <code class="docutils literal notranslate"><span class="pre">b</span></code> otherwise. The nil-coalescing operator provides a more elegant way to encapsulate this conditional checking and unwrapping in a concise and readable form.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If the value of <code class="docutils literal notranslate"><span class="pre">a</span></code> is non-<code class="docutils literal notranslate"><span class="pre">nil</span></code>, the value of <code class="docutils literal notranslate"><span class="pre">b</span></code> is not evaluated. This is known as <em>short-circuit evaluation</em>.</p>
+<p class="last">If the value of <code class="docutils literal notranslate"><span class="pre">a</span></code> is non-<code class="docutils literal notranslate"><span class="pre">nil</span></code>, the value of <code class="docutils literal notranslate"><span class="pre">b</span></code> isn’t evaluated. This is known as <em>short-circuit evaluation</em>.</p>
 </div>
 <p>The example below uses the nil-coalescing operator to choose between a default color name and an optional user-defined color name:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">defaultColorName</span> = <span class="s">&quot;red&quot;</span>
@@ -346,7 +346,7 @@
 <p>If you assign a non-<code class="docutils literal notranslate"><span class="pre">nil</span></code> value to <code class="docutils literal notranslate"><span class="pre">userDefinedColorName</span></code> and perform the nil-coalescing operator check again, the value wrapped inside <code class="docutils literal notranslate"><span class="pre">userDefinedColorName</span></code> is used instead of the default:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">userDefinedColorName</span> = <span class="s">&quot;green&quot;</span>
 </li><li><span class="nv">colorNameToUse</span> = <span class="nv">userDefinedColorName</span> ?? <span class="nv">defaultColorName</span>
-</li><li><span class="c">// userDefinedColorName is not nil, so colorNameToUse is set to &quot;green&quot;</span>
+</li><li><span class="c">// userDefinedColorName isn&#39;t nil, so colorNameToUse is set to &quot;green&quot;</span>
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID73">
@@ -453,7 +453,7 @@
 <div class="section" id="ID79">
 <h3>Logical OR Operator<a class="headerlink" href="BasicOperators.html#ID79" title="Permalink to this headline"></a></h3>
 <p>The <em>logical OR operator</em> (<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">||</span> <span class="pre">b</span></code>) is an infix operator made from two adjacent pipe characters. You use it to create logical expressions in which only <em>one</em> of the two values has to be <code class="docutils literal notranslate"><span class="pre">true</span></code> for the overall expression to be <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
-<p>Like the Logical AND operator above, the Logical OR operator uses short-circuit evaluation to consider its expressions. If the left side of a Logical OR expression is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the right side is not evaluated, because it can’t change the outcome of the overall expression.</p>
+<p>Like the Logical AND operator above, the Logical OR operator uses short-circuit evaluation to consider its expressions. If the left side of a Logical OR expression is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the right side isn’t evaluated, because it can’t change the outcome of the overall expression.</p>
 <p>In the example below, the first <code class="docutils literal notranslate"><span class="pre">Bool</span></code> value (<code class="docutils literal notranslate"><span class="pre">hasDoorKey</span></code>) is <code class="docutils literal notranslate"><span class="pre">false</span></code>, but the second value (<code class="docutils literal notranslate"><span class="pre">knowsOverridePassword</span></code>) is <code class="docutils literal notranslate"><span class="pre">true</span></code>. Because one value is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the overall expression also evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code>, and access is allowed:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">hasDoorKey</span> = <span class="k">false</span>
 </li><li><span class="k">let</span> <span class="nv">knowsOverridePassword</span> = <span class="k">true</span>
@@ -504,6 +504,14 @@
         <p class="previous"><a href="TheBasics.html">The Basics</a></p>
         <p class="next"><a href="StringsAndCharacters.html">Strings and Characters</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple's beta software</a></p>
+    </div>
 </main>
 
 
@@ -513,7 +521,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

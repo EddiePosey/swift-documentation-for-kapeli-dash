@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Enumerations &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Enumerations &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <a class="dashingAutolink" name="autolink-71"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
+      <a class="dashingAutolink" name="autolink-72"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -34,7 +34,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -114,14 +114,14 @@
 
         
   <div class="section" id="enumerations">
-<a class="dashingAutolink" name="autolink-72"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Enumerations"></a><h1>Enumerations<a class="headerlink" href="Enumerations.html#enumerations" title="Permalink to this headline"></a></h1>
+<a class="dashingAutolink" name="autolink-73"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Enumerations"></a><h1>Enumerations<a class="headerlink" href="Enumerations.html#enumerations" title="Permalink to this headline"></a></h1>
 <p>An <em>enumeration</em> defines a common type for a group of related values and enables you to work with those values in a type-safe way within your code.</p>
 <p>If you are familiar with C, you will know that C enumerations assign related names to a set of integer values. Enumerations in Swift are much more flexible, and don&rsquo;t have to provide a value for each case of the enumeration. If a value (known as a <em>raw</em> value) is provided for each enumeration case, the value can be a string, a character, or a value of any integer or floating-point type.</p>
 <p>Alternatively, enumeration cases can specify associated values of <em>any</em> type to be stored along with each different case value, much as unions or variants do in other languages. You can define a common set of related cases as part of one enumeration, each of which has a different set of values of appropriate types associated with it.</p>
 <p>Enumerations in Swift are first-class types in their own right. They adopt many features traditionally supported only by classes, such as computed properties to provide additional information about the enumeration&rsquo;s current value, and instance methods to provide functionality related to the values the enumeration represents. Enumerations can also define initializers to provide an initial case value; can be extended to expand their functionality beyond their original implementation; and can conform to protocols to provide standard functionality.</p>
 <p>For more about these capabilities, see <a class="reference internal" href="Properties.html"><span class="doc">Properties</span></a>, <a class="reference internal" href="Methods.html"><span class="doc">Methods</span></a>, <a class="reference internal" href="Initialization.html"><span class="doc">Initialization</span></a>, <a class="reference internal" href="Extensions.html"><span class="doc">Extensions</span></a>, and <a class="reference internal" href="Protocols.html"><span class="doc">Protocols</span></a>.</p>
 <div class="section" id="ID146">
-<a class="dashingAutolink" name="autolink-73"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Enumeration%20Syntax"></a><h2>Enumeration Syntax<a class="headerlink" href="Enumerations.html#ID146" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-74"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Enumeration%20Syntax"></a><h2>Enumeration Syntax<a class="headerlink" href="Enumerations.html#ID146" title="Permalink to this headline"></a></h2>
 <p>You introduce enumerations with the <code class="docutils literal notranslate"><span class="pre">enum</span></code> keyword and place their entire definition within a pair of braces:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">enum</span> <span class="nv">SomeEnumeration</span> {
 </li><li>    <span class="c">// enumeration definition goes here</span>
@@ -154,7 +154,7 @@
 <p>The type of <code class="docutils literal notranslate"><span class="pre">directionToHead</span></code> is already known, and so you can drop the type when setting its value. This makes for highly readable code when working with explicitly typed enumeration values.</p>
 </div>
 <div class="section" id="ID147">
-<a class="dashingAutolink" name="autolink-74"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Matching%20Enumeration%20Values%20with%20a%20Switch%20Statement"></a><h2>Matching Enumeration Values with a Switch Statement<a class="headerlink" href="Enumerations.html#ID147" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-75"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Matching%20Enumeration%20Values%20with%20a%20Switch%20Statement"></a><h2>Matching Enumeration Values with a Switch Statement<a class="headerlink" href="Enumerations.html#ID147" title="Permalink to this headline"></a></h2>
 <p>You can match individual enumeration values with a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">directionToHead</span> = .<span class="nv">south</span>
 </li><li><span class="k">switch</span> <span class="nv">directionToHead</span> {
@@ -185,7 +185,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID581">
-<a class="dashingAutolink" name="autolink-75"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Iterating%20over%20Enumeration%20Cases"></a><h2>Iterating over Enumeration Cases<a class="headerlink" href="Enumerations.html#ID581" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-76"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Iterating%20over%20Enumeration%20Cases"></a><h2>Iterating over Enumeration Cases<a class="headerlink" href="Enumerations.html#ID581" title="Permalink to this headline"></a></h2>
 <p>For some enumerations, it&rsquo;s useful to have a collection of all of that enumeration&rsquo;s cases. You enable this by writing <code class="docutils literal notranslate"><span class="pre">:</span> <span class="pre">CaseIterable</span></code> after the enumeration&rsquo;s name. Swift exposes a collection of all the cases as an <code class="docutils literal notranslate"><span class="pre">allCases</span></code> property of the enumeration type. Here&rsquo;s an example:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">enum</span> <span class="nv">Beverage</span>: <span class="nc">CaseIterable</span> {
 </li><li>    <span class="k">case</span> <span class="nv">coffee</span>, <span class="nv">tea</span>, <span class="nv">juice</span>
@@ -205,7 +205,7 @@
 <p>The syntax used in the examples above marks the enumeration as conforming to the <a class="reference external" href="https://developer.apple.com/documentation/swift/caseiterable"><code class="docutils literal notranslate"><span class="pre">CaseIterable</span></code></a> protocol. For information about protocols, see <a class="reference internal" href="Protocols.html"><span class="doc">Protocols</span></a>.</p>
 </div>
 <div class="section" id="ID148">
-<a class="dashingAutolink" name="autolink-76"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Associated%20Values"></a><h2>Associated Values<a class="headerlink" href="Enumerations.html#ID148" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-77"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Associated%20Values"></a><h2>Associated Values<a class="headerlink" href="Enumerations.html#ID148" title="Permalink to this headline"></a></h2>
 <p>The examples in the previous section show how the cases of an enumeration are a defined (and typed) value in their own right. You can set a constant or variable to <code class="docutils literal notranslate"><span class="pre">Planet.earth</span></code>, and check for this value later. However, it&rsquo;s sometimes useful to be able to store values of other types alongside these case values. This additional information is called an <em>associated value</em>, and it varies each time you use that case as a value in your code.</p>
 <p>You can define Swift enumerations to store associated values of any given type, and the value types can be different for each case of the enumeration if needed. Enumerations similar to these are known as <em>discriminated unions</em>, <em>tagged unions</em>, or <em>variants</em> in other programming languages.</p>
 <p>For example, suppose an inventory tracking system needs to track products by two different types of barcode. Some products are labeled with 1D barcodes in UPC format, which uses the numbers <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">9</span></code>. Each barcode has a number system digit, followed by five manufacturer code digits and five product code digits. These are followed by a check digit to verify that the code has been scanned correctly:</p>
@@ -221,7 +221,7 @@
 </li></ol></div></div></div>
 <p>This can be read as:</p>
 <p>&ldquo;Define an enumeration type called <code class="docutils literal notranslate"><span class="pre">Barcode</span></code>, which can take either a value of <code class="docutils literal notranslate"><span class="pre">upc</span></code> with an associated value of type (<code class="docutils literal notranslate"><span class="pre">Int</span></code>, <code class="docutils literal notranslate"><span class="pre">Int</span></code>, <code class="docutils literal notranslate"><span class="pre">Int</span></code>, <code class="docutils literal notranslate"><span class="pre">Int</span></code>), or a value of <code class="docutils literal notranslate"><span class="pre">qrCode</span></code> with an associated value of type <code class="docutils literal notranslate"><span class="pre">String</span></code>.&rdquo;</p>
-<p>This definition doesn&rsquo;t provide any actual <code class="docutils literal notranslate"><span class="pre">Int</span></code> or <code class="docutils literal notranslate"><span class="pre">String</span></code> values&mdash;it just defines the <em>type</em> of associated values that <code class="docutils literal notranslate"><span class="pre">Barcode</span></code> constants and variables can store when they are equal to <code class="docutils literal notranslate"><span class="pre">Barcode.upc</span></code> or <code class="docutils literal notranslate"><span class="pre">Barcode.qrCode</span></code>.</p>
+<p>This definition doesn&rsquo;t provide any actual <code class="docutils literal notranslate"><span class="pre">Int</span></code> or <code class="docutils literal notranslate"><span class="pre">String</span></code> values&mdash;it just defines the <em>type</em> of associated values that <code class="docutils literal notranslate"><span class="pre">Barcode</span></code> constants and variables can store when they&rsquo;re equal to <code class="docutils literal notranslate"><span class="pre">Barcode.upc</span></code> or <code class="docutils literal notranslate"><span class="pre">Barcode.qrCode</span></code>.</p>
 <p>You can then create new barcodes using either type:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">productBarcode</span> = <span class="nv">Barcode</span>.<span class="nv">upc</span>(<span class="m">8</span>, <span class="m">85909</span>, <span class="m">51226</span>, <span class="m">3</span>)
 </li></ol></div></div></div>
@@ -250,7 +250,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID149">
-<a class="dashingAutolink" name="autolink-77"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Raw%20Values"></a><h2>Raw Values<a class="headerlink" href="Enumerations.html#ID149" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-78"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Raw%20Values"></a><h2>Raw Values<a class="headerlink" href="Enumerations.html#ID149" title="Permalink to this headline"></a></h2>
 <p>The barcode example in <a class="reference internal" href="Enumerations.html#ID148"><span class="std std-ref">Associated Values</span></a> shows how cases of an enumeration can declare that they store associated values of different types. As an alternative to associated values, enumeration cases can come prepopulated with default values (called <em>raw values</em>), which are all of the same type.</p>
 <p>Here&rsquo;s an example that stores raw ASCII values alongside named enumeration cases:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">enum</span> <span class="nv">ASCIIControlCharacter</span>: <span class="nc">Character</span> {
@@ -320,7 +320,7 @@
 </div>
 </div>
 <div class="section" id="ID536">
-<a class="dashingAutolink" name="autolink-78"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Recursive%20Enumerations"></a><h2>Recursive Enumerations<a class="headerlink" href="Enumerations.html#ID536" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-79"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Recursive%20Enumerations"></a><h2>Recursive Enumerations<a class="headerlink" href="Enumerations.html#ID536" title="Permalink to this headline"></a></h2>
 <p>A <em>recursive enumeration</em> is an enumeration that has another instance of the enumeration as the associated value for one or more of the enumeration cases. You indicate that an enumeration case is recursive by writing <code class="docutils literal notranslate"><span class="pre">indirect</span></code> before it, which tells the compiler to insert the necessary layer of indirection.</p>
 <p>For example, here is an enumeration that stores simple arithmetic expressions:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">enum</span> <span class="nv">ArithmeticExpression</span> {
@@ -367,6 +367,14 @@
         <p class="previous"><a href="Closures.html">Closures</a></p>
         <p class="next"><a href="ClassesAndStructures.html">Structures and Classes</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple&#39;s beta software</a></p>
+    </div>
 </main>
 
 
@@ -376,7 +384,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
@@ -386,5 +394,4 @@
 <div id="jump_to_overlay"></div>
 <script src="../_static/javascripts/application.js"></script>
   
-
 </body></html>

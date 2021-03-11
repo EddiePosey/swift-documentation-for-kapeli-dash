@@ -9,7 +9,7 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>Generics &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Generics &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
@@ -40,7 +40,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -308,7 +308,7 @@
 <div class="section" id="ID186">
 <h2>Type Constraints<a class="headerlink" href="Generics.html#ID186" title="Permalink to this headline"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">swapTwoValues(_:_:)</span></code> function and the <code class="docutils literal notranslate"><span class="pre">Stack</span></code> type can work with any type. However, it’s sometimes useful to enforce certain <em>type constraints</em> on the types that can be used with generic functions and generic types. Type constraints specify that a type parameter must inherit from a specific class, or conform to a particular protocol or protocol composition.</p>
-<p>For example, Swift’s <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> type places a limitation on the types that can be used as keys for a dictionary. As described in <a class="reference internal" href="CollectionTypes.html#ID113"><span class="std std-ref">Dictionaries</span></a>, the type of a dictionary’s keys must be <em>hashable</em>. That is, it must provide a way to make itself uniquely representable. <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> needs its keys to be hashable so that it can check whether it already contains a value for a particular key. Without this requirement, <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> could not tell whether it should insert or replace a value for a particular key, nor would it be able to find a value for a given key that is already in the dictionary.</p>
+<p>For example, Swift’s <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> type places a limitation on the types that can be used as keys for a dictionary. As described in <a class="reference internal" href="CollectionTypes.html#ID113"><span class="std std-ref">Dictionaries</span></a>, the type of a dictionary’s keys must be <em>hashable</em>. That is, it must provide a way to make itself uniquely representable. <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> needs its keys to be hashable so that it can check whether it already contains a value for a particular key. Without this requirement, <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> couldn’t tell whether it should insert or replace a value for a particular key, nor would it be able to find a value for a given key that’s already in the dictionary.</p>
 <p>This requirement is enforced by a type constraint on the key type for <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code>, which specifies that the key type must conform to the <code class="docutils literal notranslate"><span class="pre">Hashable</span></code> protocol, a special protocol defined in the Swift standard library. All of Swift’s basic types (such as <code class="docutils literal notranslate"><span class="pre">String</span></code>, <code class="docutils literal notranslate"><span class="pre">Int</span></code>, <code class="docutils literal notranslate"><span class="pre">Double</span></code>, and <code class="docutils literal notranslate"><span class="pre">Bool</span></code>) are hashable by default. For information about making your own custom types conform to the <code class="docutils literal notranslate"><span class="pre">Hashable</span></code> protocol, see <a class="reference external" href="https://developer.apple.com/documentation/swift/hashable#2849490">Conforming to the Hashable Protocol</a>.</p>
 <p>You can define your own type constraints when creating custom generic types, and these constraints provide much of the power of generic programming. Abstract concepts like <code class="docutils literal notranslate"><span class="pre">Hashable</span></code> characterize types in terms of their conceptual characteristics, rather than their concrete type.</p>
 <div class="section" id="ID187">
@@ -352,7 +352,7 @@
 </li></ol></div></div></div>
 <p>This function doesn’t compile as written above. The problem lies with the equality check, “<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">value</span> <span class="pre">==</span> <span class="pre">valueToFind</span></code>”. Not every type in Swift can be compared with the equal to operator (<code class="docutils literal notranslate"><span class="pre">==</span></code>). If you create your own class or structure to represent a complex data model, for example, then the meaning of “equal to” for that class or structure isn’t something that Swift can guess for you. Because of this, it isn’t possible to guarantee that this code will work for <em>every</em> possible type <code class="docutils literal notranslate"><span class="pre">T</span></code>, and an appropriate error is reported when you try to compile the code.</p>
 <p>All is not lost, however. The Swift standard library defines a protocol called <code class="docutils literal notranslate"><span class="pre">Equatable</span></code>, which requires any conforming type to implement the equal to operator (<code class="docutils literal notranslate"><span class="pre">==</span></code>) and the not equal to operator (<code class="docutils literal notranslate"><span class="pre">!=</span></code>) to compare any two values of that type. All of Swift’s standard types automatically support the <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> protocol.</p>
-<p>Any type that is <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> can be used safely with the <code class="docutils literal notranslate"><span class="pre">findIndex(of:in:)</span></code> function, because it’s guaranteed to support the equal to operator. To express this fact, you write a type constraint of <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> as part of the type parameter’s definition when you define the function:</p>
+<p>Any type that’s <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> can be used safely with the <code class="docutils literal notranslate"><span class="pre">findIndex(of:in:)</span></code> function, because it’s guaranteed to support the equal to operator. To express this fact, you write a type constraint of <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> as part of the type parameter’s definition when you define the function:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">func</span> <span class="nv">findIndex</span>&lt;<span class="nv">T</span>: <span class="nc">Equatable</span>&gt;(<span class="nv">of</span> <span class="nv">valueToFind</span>: <span class="nc">T</span>, <span class="nv">in</span> <span class="nv">array</span>:[<span class="nc">T</span>]) -&gt; <span class="nc">Int</span>? {
 </li><li>    <span class="k">for</span> (<span class="nv">index</span>, <span class="nv">value</span>) <span class="k">in</span> <span class="nv">array</span>.<span class="nv">enumerated</span>() {
 </li><li>        <span class="k">if</span> <span class="nv">value</span> == <span class="nv">valueToFind</span> {
@@ -363,7 +363,7 @@
 </li><li>}
 </li></ol></div></div></div>
 <p>The single type parameter for <code class="docutils literal notranslate"><span class="pre">findIndex(of:in:)</span></code> is written as <code class="docutils literal notranslate"><span class="pre">T:</span> <span class="pre">Equatable</span></code>, which means “any type <code class="docutils literal notranslate"><span class="pre">T</span></code> that conforms to the <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> protocol.”</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">findIndex(of:in:)</span></code> function now compiles successfully and can be used with any type that is <code class="docutils literal notranslate"><span class="pre">Equatable</span></code>, such as <code class="docutils literal notranslate"><span class="pre">Double</span></code> or <code class="docutils literal notranslate"><span class="pre">String</span></code>:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">findIndex(of:in:)</span></code> function now compiles successfully and can be used with any type that’s <code class="docutils literal notranslate"><span class="pre">Equatable</span></code>, such as <code class="docutils literal notranslate"><span class="pre">Double</span></code> or <code class="docutils literal notranslate"><span class="pre">String</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">doubleIndex</span> = <span class="nv">findIndex</span>(<span class="nv">of</span>: <span class="m">9.3</span>, <span class="nv">in</span>: [<span class="m">3.14159</span>, <span class="m">0.1</span>, <span class="m">0.25</span>])
 </li><li><span class="c">// doubleIndex is an optional Int with no value, because 9.3 isn&#39;t in the array</span>
 </li><li><span class="k">let</span> <span class="nv">stringIndex</span> = <span class="nv">findIndex</span>(<span class="nv">of</span>: <span class="s">&quot;Andrea&quot;</span>, <span class="nv">in</span>: [<span class="s">&quot;Mike&quot;</span>, <span class="s">&quot;Malcolm&quot;</span>, <span class="s">&quot;Andrea&quot;</span>])
@@ -373,7 +373,7 @@
 </div>
 <div class="section" id="ID189">
 <h2>Associated Types<a class="headerlink" href="Generics.html#ID189" title="Permalink to this headline"></a></h2>
-<p>When defining a protocol, it’s sometimes useful to declare one or more associated types as part of the protocol’s definition. An <em>associated type</em> gives a placeholder name to a type that is used as part of the protocol. The actual type to use for that associated type isn’t specified until the protocol is adopted. Associated types are specified with the <code class="docutils literal notranslate"><span class="pre">associatedtype</span></code> keyword.</p>
+<p>When defining a protocol, it’s sometimes useful to declare one or more associated types as part of the protocol’s definition. An <em>associated type</em> gives a placeholder name to a type that’s used as part of the protocol. The actual type to use for that associated type isn’t specified until the protocol is adopted. Associated types are specified with the <code class="docutils literal notranslate"><span class="pre">associatedtype</span></code> keyword.</p>
 <div class="section" id="ID190">
 <h3>Associated Types in Action<a class="headerlink" href="Generics.html#ID190" title="Permalink to this headline"></a></h3>
 <p>Here’s an example of a protocol called <code class="docutils literal notranslate"><span class="pre">Container</span></code>, which declares an associated type called <code class="docutils literal notranslate"><span class="pre">Item</span></code>:</p>
@@ -626,7 +626,7 @@
 </li><li><span class="c">// Prints &quot;648.9&quot;</span>
 </li></ol></div></div></div>
 <p>This example adds an <code class="docutils literal notranslate"><span class="pre">average()</span></code> method to containers whose <code class="docutils literal notranslate"><span class="pre">Item</span></code> type is <code class="docutils literal notranslate"><span class="pre">Double</span></code>. It iterates over the items in the container to add them up, and divides by the container’s count to compute the average. It explicitly converts the count from <code class="docutils literal notranslate"><span class="pre">Int</span></code> to <code class="docutils literal notranslate"><span class="pre">Double</span></code> to be able to do floating-point division.</p>
-<p>You can include multiple requirements in a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause that is part of an extension, just like you can for a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause that you write elsewhere. Separate each requirement in the list with a comma.</p>
+<p>You can include multiple requirements in a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause that’s part of an extension, just like you can for a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause that you write elsewhere. Separate each requirement in the list with a comma.</p>
 </div>
 <div class="section" id="ID628">
 <h2>Contextual Where Clauses<a class="headerlink" href="Generics.html#ID628" title="Permalink to this headline"></a></h2>
@@ -716,6 +716,14 @@
         <p class="previous"><a href="Protocols.html">Protocols</a></p>
         <p class="next"><a href="OpaqueTypes.html">Opaque Types</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple's beta software</a></p>
+    </div>
 </main>
 
 
@@ -725,7 +733,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

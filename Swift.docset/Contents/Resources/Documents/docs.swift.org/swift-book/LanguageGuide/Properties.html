@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Properties &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Properties &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <a class="dashingAutolink" name="autolink-158"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
+      <a class="dashingAutolink" name="autolink-165"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -34,7 +34,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -128,16 +128,16 @@
 
         
   <div class="section" id="properties">
-<a class="dashingAutolink" name="autolink-159"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Properties"></a><h1>Properties<a class="headerlink" href="Properties.html#properties" title="Permalink to this headline"></a></h1>
+<a class="dashingAutolink" name="autolink-166"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Properties"></a><h1>Properties<a class="headerlink" href="Properties.html#properties" title="Permalink to this headline"></a></h1>
 <p><em>Properties</em> associate values with a particular class, structure, or enumeration. Stored properties store constant and variable values as part of an instance, whereas computed properties calculate (rather than store) a value. Computed properties are provided by classes, structures, and enumerations. Stored properties are provided only by classes and structures.</p>
 <p>Stored and computed properties are usually associated with instances of a particular type. However, properties can also be associated with the type itself. Such properties are known as type properties.</p>
 <p>In addition, you can define property observers to monitor changes in a property&rsquo;s value, which you can respond to with custom actions. Property observers can be added to stored properties you define yourself, and also to properties that a subclass inherits from its superclass.</p>
 <p>You can also use a property wrapper to reuse code in the getter and setter of multiple properties.</p>
 <div class="section" id="ID255">
-<a class="dashingAutolink" name="autolink-160"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Stored%20Properties"></a><h2>Stored Properties<a class="headerlink" href="Properties.html#ID255" title="Permalink to this headline"></a></h2>
-<p>In its simplest form, a stored property is a constant or variable that is stored as part of an instance of a particular class or structure. Stored properties can be either <em>variable stored properties</em> (introduced by the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword) or <em>constant stored properties</em> (introduced by the <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword).</p>
+<a class="dashingAutolink" name="autolink-159"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Stored%20Properties"></a><h2>Stored Properties<a class="headerlink" href="Properties.html#ID255" title="Permalink to this headline"></a></h2>
+<p>In its simplest form, a stored property is a constant or variable that&rsquo;s stored as part of an instance of a particular class or structure. Stored properties can be either <em>variable stored properties</em> (introduced by the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword) or <em>constant stored properties</em> (introduced by the <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword).</p>
 <p>You can provide a default value for a stored property as part of its definition, as described in <a class="reference internal" href="Initialization.html#ID206"><span class="std std-ref">Default Property Values</span></a>. You can also set and modify the initial value for a stored property during initialization. This is true even for constant stored properties, as described in <a class="reference internal" href="Initialization.html#ID212"><span class="std std-ref">Assigning Constant Properties During Initialization</span></a>.</p>
-<p>The example below defines a structure called <code class="docutils literal notranslate"><span class="pre">FixedLengthRange</span></code>, which describes a range of integers whose range length cannot be changed after it is created:</p>
+<p>The example below defines a structure called <code class="docutils literal notranslate"><span class="pre">FixedLengthRange</span></code>, which describes a range of integers whose range length can&rsquo;t be changed after it&rsquo;s created:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">FixedLengthRange</span> {
 </li><li>    <span class="k">var</span> <span class="nv">firstValue</span>: <span class="nc">Int</span>
 </li><li>    <span class="k">let</span> <span class="nv">length</span>: <span class="nc">Int</span>
@@ -147,27 +147,27 @@
 </li><li><span class="nv">rangeOfThreeItems</span>.<span class="nv">firstValue</span> = <span class="m">6</span>
 </li><li><span class="c">// the range now represents integer values 6, 7, and 8</span>
 </li></ol></div></div></div>
-<p>Instances of <code class="docutils literal notranslate"><span class="pre">FixedLengthRange</span></code> have a variable stored property called <code class="docutils literal notranslate"><span class="pre">firstValue</span></code> and a constant stored property called <code class="docutils literal notranslate"><span class="pre">length</span></code>. In the example above, <code class="docutils literal notranslate"><span class="pre">length</span></code> is initialized when the new range is created and cannot be changed thereafter, because it is a constant property.</p>
+<p>Instances of <code class="docutils literal notranslate"><span class="pre">FixedLengthRange</span></code> have a variable stored property called <code class="docutils literal notranslate"><span class="pre">firstValue</span></code> and a constant stored property called <code class="docutils literal notranslate"><span class="pre">length</span></code>. In the example above, <code class="docutils literal notranslate"><span class="pre">length</span></code> is initialized when the new range is created and can&rsquo;t be changed thereafter, because it&rsquo;s a constant property.</p>
 <div class="section" id="ID256">
 <h3>Stored Properties of Constant Structure Instances<a class="headerlink" href="Properties.html#ID256" title="Permalink to this headline"></a></h3>
-<p>If you create an instance of a structure and assign that instance to a constant, you cannot modify the instance&rsquo;s properties, even if they were declared as variable properties:</p>
+<p>If you create an instance of a structure and assign that instance to a constant, you can&rsquo;t modify the instance&rsquo;s properties, even if they were declared as variable properties:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">rangeOfFourItems</span> = <span class="nv">FixedLengthRange</span>(<span class="nv">firstValue</span>: <span class="m">0</span>, <span class="nv">length</span>: <span class="m">4</span>)
 </li><li><span class="c">// this range represents integer values 0, 1, 2, and 3</span>
 </li><li><span class="nv">rangeOfFourItems</span>.<span class="nv">firstValue</span> = <span class="m">6</span>
 </li><li><span class="c">// this will report an error, even though firstValue is a variable property</span>
 </li></ol></div></div></div>
-<p>Because <code class="docutils literal notranslate"><span class="pre">rangeOfFourItems</span></code> is declared as a constant (with the <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword), it is not possible to change its <code class="docutils literal notranslate"><span class="pre">firstValue</span></code> property, even though <code class="docutils literal notranslate"><span class="pre">firstValue</span></code> is a variable property.</p>
+<p>Because <code class="docutils literal notranslate"><span class="pre">rangeOfFourItems</span></code> is declared as a constant (with the <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword), it isn&rsquo;t possible to change its <code class="docutils literal notranslate"><span class="pre">firstValue</span></code> property, even though <code class="docutils literal notranslate"><span class="pre">firstValue</span></code> is a variable property.</p>
 <p>This behavior is due to structures being <em>value types</em>. When an instance of a value type is marked as a constant, so are all of its properties.</p>
-<p>The same is not true for classes, which are <em>reference types</em>. If you assign an instance of a reference type to a constant, you can still change that instance&rsquo;s variable properties.</p>
+<p>The same isn&rsquo;t true for classes, which are <em>reference types</em>. If you assign an instance of a reference type to a constant, you can still change that instance&rsquo;s variable properties.</p>
 </div>
 <div class="section" id="ID257">
 <h3>Lazy Stored Properties<a class="headerlink" href="Properties.html#ID257" title="Permalink to this headline"></a></h3>
-<p>A <em>lazy stored property</em> is a property whose initial value is not calculated until the first time it is used. You indicate a lazy stored property by writing the <code class="docutils literal notranslate"><span class="pre">lazy</span></code> modifier before its declaration.</p>
+<p>A <em>lazy stored property</em> is a property whose initial value isn&rsquo;t calculated until the first time it&rsquo;s used. You indicate a lazy stored property by writing the <code class="docutils literal notranslate"><span class="pre">lazy</span></code> modifier before its declaration.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">You must always declare a lazy property as a variable (with the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword), because its initial value might not be retrieved until after instance initialization completes. Constant properties must always have a value <em>before</em> initialization completes, and therefore cannot be declared as lazy.</p>
+<p class="last">You must always declare a lazy property as a variable (with the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword), because its initial value might not be retrieved until after instance initialization completes. Constant properties must always have a value <em>before</em> initialization completes, and therefore can&rsquo;t be declared as lazy.</p>
 </div>
-<p>Lazy properties are useful when the initial value for a property is dependent on outside factors whose values are not known until after an instance&rsquo;s initialization is complete. Lazy properties are also useful when the initial value for a property requires complex or computationally expensive setup that should not be performed unless or until it is needed.</p>
+<p>Lazy properties are useful when the initial value for a property is dependent on outside factors whose values aren&rsquo;t known until after an instance&rsquo;s initialization is complete. Lazy properties are also useful when the initial value for a property requires complex or computationally expensive setup that shouldn&rsquo;t be performed unless or until it&rsquo;s needed.</p>
 <p>The example below uses a lazy stored property to avoid unnecessary initialization of a complex class. This example defines two classes called <code class="docutils literal notranslate"><span class="pre">DataImporter</span></code> and <code class="docutils literal notranslate"><span class="pre">DataManager</span></code>, neither of which is shown in full:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">DataImporter</span> {
 </li><li>    <span class="c">/*</span>
@@ -187,30 +187,30 @@
 </li><li><span class="k">let</span> <span class="nv">manager</span> = <span class="nv">DataManager</span>()
 </li><li><span class="nv">manager</span>.<span class="nv">data</span>.<span class="nv">append</span>(<span class="s">&#34;Some data&#34;</span>)
 </li><li><span class="nv">manager</span>.<span class="nv">data</span>.<span class="nv">append</span>(<span class="s">&#34;Some more data&#34;</span>)
-</li><li><span class="c">// the DataImporter instance for the importer property has not yet been created</span>
+</li><li><span class="c">// the DataImporter instance for the importer property hasn&#39;t yet been created</span>
 </li></ol></div></div></div>
-<p>The <code class="docutils literal notranslate"><span class="pre">DataManager</span></code> class has a stored property called <code class="docutils literal notranslate"><span class="pre">data</span></code>, which is initialized with a new, empty array of <code class="docutils literal notranslate"><span class="pre">String</span></code> values. Although the rest of its functionality is not shown, the purpose of this <code class="docutils literal notranslate"><span class="pre">DataManager</span></code> class is to manage and provide access to this array of <code class="docutils literal notranslate"><span class="pre">String</span></code> data.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">DataManager</span></code> class has a stored property called <code class="docutils literal notranslate"><span class="pre">data</span></code>, which is initialized with a new, empty array of <code class="docutils literal notranslate"><span class="pre">String</span></code> values. Although the rest of its functionality isn&rsquo;t shown, the purpose of this <code class="docutils literal notranslate"><span class="pre">DataManager</span></code> class is to manage and provide access to this array of <code class="docutils literal notranslate"><span class="pre">String</span></code> data.</p>
 <p>Part of the functionality of the <code class="docutils literal notranslate"><span class="pre">DataManager</span></code> class is the ability to import data from a file. This functionality is provided by the <code class="docutils literal notranslate"><span class="pre">DataImporter</span></code> class, which is assumed to take a nontrivial amount of time to initialize. This might be because a <code class="docutils literal notranslate"><span class="pre">DataImporter</span></code> instance needs to open a file and read its contents into memory when the <code class="docutils literal notranslate"><span class="pre">DataImporter</span></code> instance is initialized.</p>
-<p>It is possible for a <code class="docutils literal notranslate"><span class="pre">DataManager</span></code> instance to manage its data without ever importing data from a file, so there is no need to create a new <code class="docutils literal notranslate"><span class="pre">DataImporter</span></code> instance when the <code class="docutils literal notranslate"><span class="pre">DataManager</span></code> itself is created. Instead, it makes more sense to create the <code class="docutils literal notranslate"><span class="pre">DataImporter</span></code> instance if and when it is first used.</p>
-<p>Because it is marked with the <code class="docutils literal notranslate"><span class="pre">lazy</span></code> modifier, the <code class="docutils literal notranslate"><span class="pre">DataImporter</span></code> instance for the <code class="docutils literal notranslate"><span class="pre">importer</span></code> property is only created when the <code class="docutils literal notranslate"><span class="pre">importer</span></code> property is first accessed, such as when its <code class="docutils literal notranslate"><span class="pre">filename</span></code> property is queried:</p>
+<p>Because it&rsquo;s possible for a <code class="docutils literal notranslate"><span class="pre">DataManager</span></code> instance to manage its data without ever importing data from a file, <code class="docutils literal notranslate"><span class="pre">DataManager</span></code> doesn&rsquo;t create a new <code class="docutils literal notranslate"><span class="pre">DataImporter</span></code> instance when the <code class="docutils literal notranslate"><span class="pre">DataManager</span></code> itself is created. Instead, it makes more sense to create the <code class="docutils literal notranslate"><span class="pre">DataImporter</span></code> instance if and when it&rsquo;s first used.</p>
+<p>Because it&rsquo;s marked with the <code class="docutils literal notranslate"><span class="pre">lazy</span></code> modifier, the <code class="docutils literal notranslate"><span class="pre">DataImporter</span></code> instance for the <code class="docutils literal notranslate"><span class="pre">importer</span></code> property is only created when the <code class="docutils literal notranslate"><span class="pre">importer</span></code> property is first accessed, such as when its <code class="docutils literal notranslate"><span class="pre">filename</span></code> property is queried:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">print</span>(<span class="nv">manager</span>.<span class="nv">importer</span>.<span class="nv">filename</span>)
 </li><li><span class="c">// the DataImporter instance for the importer property has now been created</span>
 </li><li><span class="c">// Prints &#34;data.txt&#34;</span>
 </li></ol></div></div></div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If a property marked with the <code class="docutils literal notranslate"><span class="pre">lazy</span></code> modifier is accessed by multiple threads simultaneously and the property has not yet been initialized, there&rsquo;s no guarantee that the property will be initialized only once.</p>
+<p class="last">If a property marked with the <code class="docutils literal notranslate"><span class="pre">lazy</span></code> modifier is accessed by multiple threads simultaneously and the property hasn&rsquo;t yet been initialized, there&rsquo;s no guarantee that the property will be initialized only once.</p>
 </div>
 </div>
 <div class="section" id="ID258">
 <h3>Stored Properties and Instance Variables<a class="headerlink" href="Properties.html#ID258" title="Permalink to this headline"></a></h3>
 <p>If you have experience with Objective-C, you may know that it provides <em>two</em> ways to store values and references as part of a class instance. In addition to properties, you can use instance variables as a backing store for the values stored in a property.</p>
-<p>Swift unifies these concepts into a single property declaration. A Swift property does not have a corresponding instance variable, and the backing store for a property is not accessed directly. This approach avoids confusion about how the value is accessed in different contexts and simplifies the property&rsquo;s declaration into a single, definitive statement. All information about the property&mdash;including its name, type, and memory management characteristics&mdash;is defined in a single location as part of the type&rsquo;s definition.</p>
+<p>Swift unifies these concepts into a single property declaration. A Swift property doesn&rsquo;t have a corresponding instance variable, and the backing store for a property isn&rsquo;t accessed directly. This approach avoids confusion about how the value is accessed in different contexts and simplifies the property&rsquo;s declaration into a single, definitive statement. All information about the property&mdash;including its name, type, and memory management characteristics&mdash;is defined in a single location as part of the type&rsquo;s definition.</p>
 </div>
 </div>
 <div class="section" id="ID259">
-<a class="dashingAutolink" name="autolink-161"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Computed%20Properties"></a><h2>Computed Properties<a class="headerlink" href="Properties.html#ID259" title="Permalink to this headline"></a></h2>
-<p>In addition to stored properties, classes, structures, and enumerations can define <em>computed properties</em>, which do not actually store a value. Instead, they provide a getter and an optional setter to retrieve and set other properties and values indirectly.</p>
+<a class="dashingAutolink" name="autolink-160"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Computed%20Properties"></a><h2>Computed Properties<a class="headerlink" href="Properties.html#ID259" title="Permalink to this headline"></a></h2>
+<p>In addition to stored properties, classes, structures, and enumerations can define <em>computed properties</em>, which don&rsquo;t actually store a value. Instead, they provide a getter and an optional setter to retrieve and set other properties and values indirectly.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">Point</span> {
 </li><li>    <span class="k">var</span> <span class="nv">x</span> = <span class="m">0.0</span>, <span class="nv">y</span> = <span class="m">0.0</span>
 </li><li>}
@@ -292,10 +292,10 @@
 </div>
 <div class="section" id="ID261">
 <h3>Read-Only Computed Properties<a class="headerlink" href="Properties.html#ID261" title="Permalink to this headline"></a></h3>
-<p>A computed property with a getter but no setter is known as a <em>read-only computed property</em>. A read-only computed property always returns a value, and can be accessed through dot syntax, but cannot be set to a different value.</p>
+<p>A computed property with a getter but no setter is known as a <em>read-only computed property</em>. A read-only computed property always returns a value, and can be accessed through dot syntax, but can&rsquo;t be set to a different value.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">You must declare computed properties&mdash;including read-only computed properties&mdash;as variable properties with the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword, because their value is not fixed. The <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword is only used for constant properties, to indicate that their values cannot be changed once they are set as part of instance initialization.</p>
+<p class="last">You must declare computed properties&mdash;including read-only computed properties&mdash;as variable properties with the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword, because their value isn&rsquo;t fixed. The <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword is only used for constant properties, to indicate that their values can&rsquo;t be changed once they&rsquo;re set as part of instance initialization.</p>
 </div>
 <p>You can simplify the declaration of a read-only computed property by removing the <code class="docutils literal notranslate"><span class="pre">get</span></code> keyword and its braces:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">Cuboid</span> {
@@ -308,11 +308,11 @@
 </li><li><span class="nv">print</span>(<span class="s">&#34;the volume of fourByFiveByTwo is </span>\<span class="p">(</span><span class="nv">fourByFiveByTwo</span>.<span class="nv">volume</span><span class="p">)</span><span class="s">&#34;</span>)
 </li><li><span class="c">// Prints &#34;the volume of fourByFiveByTwo is 40.0&#34;</span>
 </li></ol></div></div></div>
-<p>This example defines a new structure called <code class="docutils literal notranslate"><span class="pre">Cuboid</span></code>, which represents a 3D rectangular box with <code class="docutils literal notranslate"><span class="pre">width</span></code>, <code class="docutils literal notranslate"><span class="pre">height</span></code>, and <code class="docutils literal notranslate"><span class="pre">depth</span></code> properties. This structure also has a read-only computed property called <code class="docutils literal notranslate"><span class="pre">volume</span></code>, which calculates and returns the current volume of the cuboid. It doesn&rsquo;t make sense for <code class="docutils literal notranslate"><span class="pre">volume</span></code> to be settable, because it would be ambiguous as to which values of <code class="docutils literal notranslate"><span class="pre">width</span></code>, <code class="docutils literal notranslate"><span class="pre">height</span></code>, and <code class="docutils literal notranslate"><span class="pre">depth</span></code> should be used for a particular <code class="docutils literal notranslate"><span class="pre">volume</span></code> value. Nonetheless, it is useful for a <code class="docutils literal notranslate"><span class="pre">Cuboid</span></code> to provide a read-only computed property to enable external users to discover its current calculated volume.</p>
+<p>This example defines a new structure called <code class="docutils literal notranslate"><span class="pre">Cuboid</span></code>, which represents a 3D rectangular box with <code class="docutils literal notranslate"><span class="pre">width</span></code>, <code class="docutils literal notranslate"><span class="pre">height</span></code>, and <code class="docutils literal notranslate"><span class="pre">depth</span></code> properties. This structure also has a read-only computed property called <code class="docutils literal notranslate"><span class="pre">volume</span></code>, which calculates and returns the current volume of the cuboid. It doesn&rsquo;t make sense for <code class="docutils literal notranslate"><span class="pre">volume</span></code> to be settable, because it would be ambiguous as to which values of <code class="docutils literal notranslate"><span class="pre">width</span></code>, <code class="docutils literal notranslate"><span class="pre">height</span></code>, and <code class="docutils literal notranslate"><span class="pre">depth</span></code> should be used for a particular <code class="docutils literal notranslate"><span class="pre">volume</span></code> value. Nonetheless, it&rsquo;s useful for a <code class="docutils literal notranslate"><span class="pre">Cuboid</span></code> to provide a read-only computed property to enable external users to discover its current calculated volume.</p>
 </div>
 </div>
 <div class="section" id="ID262">
-<a class="dashingAutolink" name="autolink-162"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Property%20Observers"></a><h2>Property Observers<a class="headerlink" href="Properties.html#ID262" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-161"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Property%20Observers"></a><h2>Property Observers<a class="headerlink" href="Properties.html#ID262" title="Permalink to this headline"></a></h2>
 <p>Property observers observe and respond to changes in a property&rsquo;s value. Property observers are called every time a property&rsquo;s value is set, even if the new value is the same as the property&rsquo;s current value.</p>
 <p>You can add property observers in the following places:</p>
 <ul class="simple">
@@ -330,7 +330,7 @@
 <p>Similarly, if you implement a <code class="docutils literal notranslate"><span class="pre">didSet</span></code> observer, it&rsquo;s passed a constant parameter containing the old property value. You can name the parameter or use the default parameter name of <code class="docutils literal notranslate"><span class="pre">oldValue</span></code>. If you assign a value to a property within its own <code class="docutils literal notranslate"><span class="pre">didSet</span></code> observer, the new value that you assign replaces the one that was just set.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">willSet</span></code> and <code class="docutils literal notranslate"><span class="pre">didSet</span></code> observers of superclass properties are called when a property is set in a subclass initializer, after the superclass initializer has been called. They are not called while a class is setting its own properties, before the superclass initializer has been called.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">willSet</span></code> and <code class="docutils literal notranslate"><span class="pre">didSet</span></code> observers of superclass properties are called when a property is set in a subclass initializer, after the superclass initializer has been called. They aren&rsquo;t called while a class is setting its own properties, before the superclass initializer has been called.</p>
 <p class="last">For more information about initializer delegation, see <a class="reference internal" href="Initialization.html#ID215"><span class="std std-ref">Initializer Delegation for Value Types</span></a> and <a class="reference internal" href="Initialization.html#ID219"><span class="std std-ref">Initializer Delegation for Class Types</span></a>.</p>
 </div>
 <p>Here&rsquo;s an example of <code class="docutils literal notranslate"><span class="pre">willSet</span></code> and <code class="docutils literal notranslate"><span class="pre">didSet</span></code> in action. The example below defines a new class called <code class="docutils literal notranslate"><span class="pre">StepCounter</span></code>, which tracks the total number of steps that a person takes while walking. This class might be used with input data from a pedometer or other step counter to keep track of a person&rsquo;s exercise during their daily routine.</p>
@@ -359,15 +359,15 @@
 </li></ol></div></div></div>
 <p>The <code class="docutils literal notranslate"><span class="pre">StepCounter</span></code> class declares a <code class="docutils literal notranslate"><span class="pre">totalSteps</span></code> property of type <code class="docutils literal notranslate"><span class="pre">Int</span></code>. This is a stored property with <code class="docutils literal notranslate"><span class="pre">willSet</span></code> and <code class="docutils literal notranslate"><span class="pre">didSet</span></code> observers.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">willSet</span></code> and <code class="docutils literal notranslate"><span class="pre">didSet</span></code> observers for <code class="docutils literal notranslate"><span class="pre">totalSteps</span></code> are called whenever the property is assigned a new value. This is true even if the new value is the same as the current value.</p>
-<p>This example&rsquo;s <code class="docutils literal notranslate"><span class="pre">willSet</span></code> observer uses a custom parameter name of <code class="docutils literal notranslate"><span class="pre">newTotalSteps</span></code> for the upcoming new value. In this example, it simply prints out the value that is about to be set.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">didSet</span></code> observer is called after the value of <code class="docutils literal notranslate"><span class="pre">totalSteps</span></code> is updated. It compares the new value of <code class="docutils literal notranslate"><span class="pre">totalSteps</span></code> against the old value. If the total number of steps has increased, a message is printed to indicate how many new steps have been taken. The <code class="docutils literal notranslate"><span class="pre">didSet</span></code> observer does not provide a custom parameter name for the old value, and the default name of <code class="docutils literal notranslate"><span class="pre">oldValue</span></code> is used instead.</p>
+<p>This example&rsquo;s <code class="docutils literal notranslate"><span class="pre">willSet</span></code> observer uses a custom parameter name of <code class="docutils literal notranslate"><span class="pre">newTotalSteps</span></code> for the upcoming new value. In this example, it simply prints out the value that&rsquo;s about to be set.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">didSet</span></code> observer is called after the value of <code class="docutils literal notranslate"><span class="pre">totalSteps</span></code> is updated. It compares the new value of <code class="docutils literal notranslate"><span class="pre">totalSteps</span></code> against the old value. If the total number of steps has increased, a message is printed to indicate how many new steps have been taken. The <code class="docutils literal notranslate"><span class="pre">didSet</span></code> observer doesn&rsquo;t provide a custom parameter name for the old value, and the default name of <code class="docutils literal notranslate"><span class="pre">oldValue</span></code> is used instead.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If you pass a property that has observers to a function as an in-out parameter, the <code class="docutils literal notranslate"><span class="pre">willSet</span></code> and <code class="docutils literal notranslate"><span class="pre">didSet</span></code> observers are always called. This is because of the copy-in copy-out memory model for in-out parameters: The value is always written back to the property at the end of the function. For a detailed discussion of the behavior of in-out parameters, see <a class="reference internal" href="https://docs.swift.org/swift-book/ReferenceManual/Declarations.html#ID545"><span class="std std-ref">In-Out Parameters</span></a>.</p>
 </div>
 </div>
 <div class="section" id="ID617">
-<a class="dashingAutolink" name="autolink-163"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Property%20Wrappers"></a><h2>Property Wrappers<a class="headerlink" href="Properties.html#ID617" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-162"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Property%20Wrappers"></a><h2>Property Wrappers<a class="headerlink" href="Properties.html#ID617" title="Permalink to this headline"></a></h2>
 <p>A property wrapper adds a layer of separation between code that manages how a property is stored and the code that defines a property. For example, if you have properties that provide thread-safety checks or store their underlying data in a database, you have to write that code on every property. When you use a property wrapper, you write the management code once when you define the wrapper, and then reuse that management code by applying it to multiple properties.</p>
 <p>To define a property wrapper, you make a structure, enumeration, or class that defines a <code class="docutils literal notranslate"><span class="pre">wrappedValue</span></code> property. In the code below, the <code class="docutils literal notranslate"><span class="pre">TwelveOrLess</span></code> structure ensures that the value it wraps always contains a number less than or equal to 12. If you ask it to store a larger number, it stores 12 instead.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li>@<span class="nv">propertyWrapper</span>
@@ -568,26 +568,26 @@
 </div>
 </div>
 <div class="section" id="ID263">
-<a class="dashingAutolink" name="autolink-164"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Global%20and%20Local%20Variables"></a><h2>Global and Local Variables<a class="headerlink" href="Properties.html#ID263" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-163"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Global%20and%20Local%20Variables"></a><h2>Global and Local Variables<a class="headerlink" href="Properties.html#ID263" title="Permalink to this headline"></a></h2>
 <p>The capabilities described above for computing and observing properties are also available to <em>global variables</em> and <em>local variables</em>. Global variables are variables that are defined outside of any function, method, closure, or type context. Local variables are variables that are defined within a function, method, or closure context.</p>
 <p>The global and local variables you have encountered in previous chapters have all been <em>stored variables</em>. Stored variables, like stored properties, provide storage for a value of a certain type and allow that value to be set and retrieved.</p>
-<p>However, you can also define <em>computed variables</em> and define observers for stored variables, in either a global or local scope. Computed variables calculate their value, rather than storing it, and they are written in the same way as computed properties.</p>
+<p>However, you can also define <em>computed variables</em> and define observers for stored variables, in either a global or local scope. Computed variables calculate their value, rather than storing it, and they&rsquo;re written in the same way as computed properties.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Global constants and variables are always computed lazily, in a similar manner to <a class="reference internal" href="Properties.html#ID257"><span class="std std-ref">Lazy Stored Properties</span></a>. Unlike lazy stored properties, global constants and variables do not need to be marked with the <code class="docutils literal notranslate"><span class="pre">lazy</span></code> modifier.</p>
+<p>Global constants and variables are always computed lazily, in a similar manner to <a class="reference internal" href="Properties.html#ID257"><span class="std std-ref">Lazy Stored Properties</span></a>. Unlike lazy stored properties, global constants and variables don&rsquo;t need to be marked with the <code class="docutils literal notranslate"><span class="pre">lazy</span></code> modifier.</p>
 <p class="last">Local constants and variables are never computed lazily.</p>
 </div>
 </div>
 <div class="section" id="ID264">
-<a class="dashingAutolink" name="autolink-165"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Properties"></a><h2>Type Properties<a class="headerlink" href="Properties.html#ID264" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-164"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Properties"></a><h2>Type Properties<a class="headerlink" href="Properties.html#ID264" title="Permalink to this headline"></a></h2>
 <p>Instance properties are properties that belong to an instance of a particular type. Every time you create a new instance of that type, it has its own set of property values, separate from any other instance.</p>
 <p>You can also define properties that belong to the type itself, not to any one instance of that type. There will only ever be one copy of these properties, no matter how many instances of that type you create. These kinds of properties are called <em>type properties</em>.</p>
-<p>Type properties are useful for defining values that are universal to <em>all</em> instances of a particular type, such as a constant property that all instances can use (like a static constant in C), or a variable property that stores a value that is global to all instances of that type (like a static variable in C).</p>
+<p>Type properties are useful for defining values that are universal to <em>all</em> instances of a particular type, such as a constant property that all instances can use (like a static constant in C), or a variable property that stores a value that&rsquo;s global to all instances of that type (like a static variable in C).</p>
 <p>Stored type properties can be variables or constants. Computed type properties are always declared as variable properties, in the same way as computed instance properties.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Unlike stored instance properties, you must always give stored type properties a default value. This is because the type itself does not have an initializer that can assign a value to a stored type property at initialization time.</p>
-<p class="last">Stored type properties are lazily initialized on their first access. They are guaranteed to be initialized only once, even when accessed by multiple threads simultaneously, and they do not need to be marked with the <code class="docutils literal notranslate"><span class="pre">lazy</span></code> modifier.</p>
+<p>Unlike stored instance properties, you must always give stored type properties a default value. This is because the type itself doesn&rsquo;t have an initializer that can assign a value to a stored type property at initialization time.</p>
+<p class="last">Stored type properties are lazily initialized on their first access. They&rsquo;re guaranteed to be initialized only once, even when accessed by multiple threads simultaneously, and they don&rsquo;t need to be marked with the <code class="docutils literal notranslate"><span class="pre">lazy</span></code> modifier.</p>
 </div>
 <div class="section" id="ID265">
 <h3>Type Property Syntax<a class="headerlink" href="Properties.html#ID265" title="Permalink to this headline"></a></h3>
@@ -657,14 +657,14 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">AudioChannel</span></code> structure defines two stored type properties to support its functionality. The first, <code class="docutils literal notranslate"><span class="pre">thresholdLevel</span></code>, defines the maximum threshold value an audio level can take. This is a constant value of <code class="docutils literal notranslate"><span class="pre">10</span></code> for all <code class="docutils literal notranslate"><span class="pre">AudioChannel</span></code> instances. If an audio signal comes in with a higher value than <code class="docutils literal notranslate"><span class="pre">10</span></code>, it will be capped to this threshold value (as described below).</p>
 <p>The second type property is a variable stored property called <code class="docutils literal notranslate"><span class="pre">maxInputLevelForAllChannels</span></code>. This keeps track of the maximum input value that has been received by <em>any</em> <code class="docutils literal notranslate"><span class="pre">AudioChannel</span></code> instance. It starts with an initial value of <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">AudioChannel</span></code> structure also defines a stored instance property called <code class="docutils literal notranslate"><span class="pre">currentLevel</span></code>, which represents the channel&rsquo;s current audio level on a scale of <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">currentLevel</span></code> property has a <code class="docutils literal notranslate"><span class="pre">didSet</span></code> property observer to check the value of <code class="docutils literal notranslate"><span class="pre">currentLevel</span></code> whenever it is set. This observer performs two checks:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">currentLevel</span></code> property has a <code class="docutils literal notranslate"><span class="pre">didSet</span></code> property observer to check the value of <code class="docutils literal notranslate"><span class="pre">currentLevel</span></code> whenever it&rsquo;s set. This observer performs two checks:</p>
 <ul class="simple">
 <li>If the new value of <code class="docutils literal notranslate"><span class="pre">currentLevel</span></code> is greater than the allowed <code class="docutils literal notranslate"><span class="pre">thresholdLevel</span></code>, the property observer caps <code class="docutils literal notranslate"><span class="pre">currentLevel</span></code> to <code class="docutils literal notranslate"><span class="pre">thresholdLevel</span></code>.</li>
 <li>If the new value of <code class="docutils literal notranslate"><span class="pre">currentLevel</span></code> (after any capping) is higher than any value previously received by <em>any</em> <code class="docutils literal notranslate"><span class="pre">AudioChannel</span></code> instance, the property observer stores the new <code class="docutils literal notranslate"><span class="pre">currentLevel</span></code> value in the <code class="docutils literal notranslate"><span class="pre">maxInputLevelForAllChannels</span></code> type property.</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">In the first of these two checks, the <code class="docutils literal notranslate"><span class="pre">didSet</span></code> observer sets <code class="docutils literal notranslate"><span class="pre">currentLevel</span></code> to a different value. This does not, however, cause the observer to be called again.</p>
+<p class="last">In the first of these two checks, the <code class="docutils literal notranslate"><span class="pre">didSet</span></code> observer sets <code class="docutils literal notranslate"><span class="pre">currentLevel</span></code> to a different value. This doesn&rsquo;t, however, cause the observer to be called again.</p>
 </div>
 <p>You can use the <code class="docutils literal notranslate"><span class="pre">AudioChannel</span></code> structure to create two new audio channels called <code class="docutils literal notranslate"><span class="pre">leftChannel</span></code> and <code class="docutils literal notranslate"><span class="pre">rightChannel</span></code>, to represent the audio levels of a stereo sound system:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">leftChannel</span> = <span class="nv">AudioChannel</span>()
@@ -694,6 +694,14 @@
         <p class="previous"><a href="ClassesAndStructures.html">Structures and Classes</a></p>
         <p class="next"><a href="Methods.html">Methods</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple&#39;s beta software</a></p>
+    </div>
 </main>
 
 
@@ -703,7 +711,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
@@ -713,5 +721,4 @@
 <div id="jump_to_overlay"></div>
 <script src="../_static/javascripts/application.js"></script>
   
-
 </body></html>

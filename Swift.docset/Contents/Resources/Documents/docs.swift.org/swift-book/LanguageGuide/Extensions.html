@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Extensions &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Extensions &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <a class="dashingAutolink" name="autolink-84"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
+      <a class="dashingAutolink" name="autolink-85"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -34,7 +34,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -113,8 +113,8 @@
 
         
   <div class="section" id="extensions">
-<a class="dashingAutolink" name="autolink-85"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Extensions"></a><h1>Extensions<a class="headerlink" href="Extensions.html#extensions" title="Permalink to this headline"></a></h1>
-<p><em>Extensions</em> add new functionality to an existing class, structure, enumeration, or protocol type. This includes the ability to extend types for which you do not have access to the original source code (known as <em>retroactive modeling</em>). Extensions are similar to categories in Objective-C. (Unlike Objective-C categories, Swift extensions do not have names.)</p>
+<a class="dashingAutolink" name="autolink-86"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Extensions"></a><h1>Extensions<a class="headerlink" href="Extensions.html#extensions" title="Permalink to this headline"></a></h1>
+<p><em>Extensions</em> add new functionality to an existing class, structure, enumeration, or protocol type. This includes the ability to extend types for which you don&rsquo;t have access to the original source code (known as <em>retroactive modeling</em>). Extensions are similar to categories in Objective-C. (Unlike Objective-C categories, Swift extensions don&rsquo;t have names.)</p>
 <p>Extensions in Swift can:</p>
 <ul class="simple">
 <li>Add computed instance properties and computed type properties</li>
@@ -127,10 +127,10 @@
 <p>In Swift, you can even extend a protocol to provide implementations of its requirements or add additional functionality that conforming types can take advantage of. For more details, see <a class="reference internal" href="Protocols.html#ID521"><span class="std std-ref">Protocol Extensions</span></a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Extensions can add new functionality to a type, but they cannot override existing functionality.</p>
+<p class="last">Extensions can add new functionality to a type, but they can&rsquo;t override existing functionality.</p>
 </div>
 <div class="section" id="ID470">
-<a class="dashingAutolink" name="autolink-86"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Extension%20Syntax"></a><h2>Extension Syntax<a class="headerlink" href="Extensions.html#ID470" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-87"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Extension%20Syntax"></a><h2>Extension Syntax<a class="headerlink" href="Extensions.html#ID470" title="Permalink to this headline"></a></h2>
 <p>Declare extensions with the <code class="docutils literal notranslate"><span class="pre">extension</span></code> keyword:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">SomeType</span> {
 </li><li>    <span class="c">// new functionality to add to SomeType goes here</span>
@@ -149,7 +149,7 @@
 </div>
 </div>
 <div class="section" id="ID152">
-<a class="dashingAutolink" name="autolink-87"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Computed%20Properties"></a><h2>Computed Properties<a class="headerlink" href="Extensions.html#ID152" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-88"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Computed%20Properties"></a><h2>Computed Properties<a class="headerlink" href="Extensions.html#ID152" title="Permalink to this headline"></a></h2>
 <p>Extensions can add computed instance properties and computed type properties to existing types. This example adds five computed instance properties to Swift&rsquo;s built-in <code class="docutils literal notranslate"><span class="pre">Double</span></code> type, to provide basic support for working with distance units:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">Double</span> {
 </li><li>    <span class="k">var</span> <span class="nv">km</span>: <span class="nc">Double</span> { <span class="k">return</span> <span class="k">self</span> * <span class="m">1_000.0</span> }
@@ -165,24 +165,24 @@
 </li><li><span class="nv">print</span>(<span class="s">&#34;Three feet is </span>\<span class="p">(</span><span class="nv">threeFeet</span><span class="p">)</span><span class="s"> meters&#34;</span>)
 </li><li><span class="c">// Prints &#34;Three feet is 0.914399970739201 meters&#34;</span>
 </li></ol></div></div></div>
-<p>These computed properties express that a <code class="docutils literal notranslate"><span class="pre">Double</span></code> value should be considered as a certain unit of length. Although they are implemented as computed properties, the names of these properties can be appended to a floating-point literal value with dot syntax, as a way to use that literal value to perform distance conversions.</p>
+<p>These computed properties express that a <code class="docutils literal notranslate"><span class="pre">Double</span></code> value should be considered as a certain unit of length. Although they&rsquo;re implemented as computed properties, the names of these properties can be appended to a floating-point literal value with dot syntax, as a way to use that literal value to perform distance conversions.</p>
 <p>In this example, a <code class="docutils literal notranslate"><span class="pre">Double</span></code> value of <code class="docutils literal notranslate"><span class="pre">1.0</span></code> is considered to represent &ldquo;one meter&rdquo;. This is why the <code class="docutils literal notranslate"><span class="pre">m</span></code> computed property returns <code class="docutils literal notranslate"><span class="pre">self</span></code>&mdash;the expression <code class="docutils literal notranslate"><span class="pre">1.m</span></code> is considered to calculate a <code class="docutils literal notranslate"><span class="pre">Double</span></code> value of <code class="docutils literal notranslate"><span class="pre">1.0</span></code>.</p>
 <p>Other units require some conversion to be expressed as a value measured in meters. One kilometer is the same as 1,000 meters, so the <code class="docutils literal notranslate"><span class="pre">km</span></code> computed property multiplies the value by <code class="docutils literal notranslate"><span class="pre">1_000.00</span></code> to convert into a number expressed in meters. Similarly, there are 3.28084 feet in a meter, and so the <code class="docutils literal notranslate"><span class="pre">ft</span></code> computed property divides the underlying <code class="docutils literal notranslate"><span class="pre">Double</span></code> value by <code class="docutils literal notranslate"><span class="pre">3.28084</span></code>, to convert it from feet to meters.</p>
-<p>These properties are read-only computed properties, and so they are expressed without the <code class="docutils literal notranslate"><span class="pre">get</span></code> keyword, for brevity. Their return value is of type <code class="docutils literal notranslate"><span class="pre">Double</span></code>, and can be used within mathematical calculations wherever a <code class="docutils literal notranslate"><span class="pre">Double</span></code> is accepted:</p>
+<p>These properties are read-only computed properties, and so they&rsquo;re expressed without the <code class="docutils literal notranslate"><span class="pre">get</span></code> keyword, for brevity. Their return value is of type <code class="docutils literal notranslate"><span class="pre">Double</span></code>, and can be used within mathematical calculations wherever a <code class="docutils literal notranslate"><span class="pre">Double</span></code> is accepted:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">aMarathon</span> = <span class="m">42</span>.<span class="nv">km</span> + <span class="m">195</span>.<span class="nv">m</span>
 </li><li><span class="nv">print</span>(<span class="s">&#34;A marathon is </span>\<span class="p">(</span><span class="nv">aMarathon</span><span class="p">)</span><span class="s"> meters long&#34;</span>)
 </li><li><span class="c">// Prints &#34;A marathon is 42195.0 meters long&#34;</span>
 </li></ol></div></div></div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Extensions can add new computed properties, but they cannot add stored properties, or add property observers to existing properties.</p>
+<p class="last">Extensions can add new computed properties, but they can&rsquo;t add stored properties, or add property observers to existing properties.</p>
 </div>
 </div>
 <div class="section" id="ID153">
-<a class="dashingAutolink" name="autolink-88"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Initializers"></a><h2>Initializers<a class="headerlink" href="Extensions.html#ID153" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-89"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Initializers"></a><h2>Initializers<a class="headerlink" href="Extensions.html#ID153" title="Permalink to this headline"></a></h2>
 <p>Extensions can add new initializers to existing types. This enables you to extend other types to accept your own custom types as initializer parameters, or to provide additional initialization options that were not included as part of the type&rsquo;s original implementation.</p>
-<p>Extensions can add new convenience initializers to a class, but they cannot add new designated initializers or deinitializers to a class. Designated initializers and deinitializers must always be provided by the original class implementation.</p>
-<p>If you use an extension to add an initializer to a value type that provides default values for all of its stored properties and does not define any custom initializers, you can call the default initializer and memberwise initializer for that value type from within your extension&rsquo;s initializer. This wouldn&rsquo;t be the case if you had written the initializer as part of the value type&rsquo;s original implementation, as described in <a class="reference internal" href="Initialization.html#ID215"><span class="std std-ref">Initializer Delegation for Value Types</span></a>.</p>
+<p>Extensions can add new convenience initializers to a class, but they can&rsquo;t add new designated initializers or deinitializers to a class. Designated initializers and deinitializers must always be provided by the original class implementation.</p>
+<p>If you use an extension to add an initializer to a value type that provides default values for all of its stored properties and doesn&rsquo;t define any custom initializers, you can call the default initializer and memberwise initializer for that value type from within your extension&rsquo;s initializer. This wouldn&rsquo;t be the case if you had written the initializer as part of the value type&rsquo;s original implementation, as described in <a class="reference internal" href="Initialization.html#ID215"><span class="std std-ref">Initializer Delegation for Value Types</span></a>.</p>
 <p>If you use an extension to add an initializer to a structure that was declared in another module, the new initializer can&rsquo;t access <code class="docutils literal notranslate"><span class="pre">self</span></code> until it calls an initializer from the defining module.</p>
 <p>The example below defines a custom <code class="docutils literal notranslate"><span class="pre">Rect</span></code> structure to represent a geometric rectangle. The example also defines two supporting structures called <code class="docutils literal notranslate"><span class="pre">Size</span></code> and <code class="docutils literal notranslate"><span class="pre">Point</span></code>, both of which provide default values of <code class="docutils literal notranslate"><span class="pre">0.0</span></code> for all of their properties:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">Size</span> {
@@ -221,7 +221,7 @@
 </div>
 </div>
 <div class="section" id="ID154">
-<a class="dashingAutolink" name="autolink-89"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Methods"></a><h2>Methods<a class="headerlink" href="Extensions.html#ID154" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-90"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Methods"></a><h2>Methods<a class="headerlink" href="Extensions.html#ID154" title="Permalink to this headline"></a></h2>
 <p>Extensions can add new instance methods and type methods to existing types. The following example adds a new instance method called <code class="docutils literal notranslate"><span class="pre">repetitions</span></code> to the <code class="docutils literal notranslate"><span class="pre">Int</span></code> type:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">Int</span> {
 </li><li>    <span class="k">func</span> <span class="nv">repetitions</span>(<span class="nv">task</span>: () -&gt; <span class="nc">Void</span>) {
@@ -231,7 +231,7 @@
 </li><li>    }
 </li><li>}
 </li></ol></div></div></div>
-<p>The <code class="docutils literal notranslate"><span class="pre">repetitions(task:)</span></code> method takes a single argument of type <code class="docutils literal notranslate"><span class="pre">()</span> <span class="pre">-&gt;</span> <span class="pre">Void</span></code>, which indicates a function that has no parameters and does not return a value.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">repetitions(task:)</span></code> method takes a single argument of type <code class="docutils literal notranslate"><span class="pre">()</span> <span class="pre">-&gt;</span> <span class="pre">Void</span></code>, which indicates a function that has no parameters and doesn&rsquo;t return a value.</p>
 <p>After defining this extension, you can call the <code class="docutils literal notranslate"><span class="pre">repetitions(task:)</span></code> method on any integer to perform a task that many number of times:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="m">3</span>.<span class="nv">repetitions</span> {
 </li><li>    <span class="nv">print</span>(<span class="s">&#34;Hello!&#34;</span>)
@@ -256,7 +256,7 @@
 </div>
 </div>
 <div class="section" id="ID156">
-<a class="dashingAutolink" name="autolink-90"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Subscripts"></a><h2>Subscripts<a class="headerlink" href="Extensions.html#ID156" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-91"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Subscripts"></a><h2>Subscripts<a class="headerlink" href="Extensions.html#ID156" title="Permalink to this headline"></a></h2>
 <p>Extensions can add new subscripts to an existing type. This example adds an integer subscript to Swift&rsquo;s built-in <code class="docutils literal notranslate"><span class="pre">Int</span></code> type. This subscript <code class="docutils literal notranslate"><span class="pre">[n]</span></code> returns the decimal digit <code class="docutils literal notranslate"><span class="pre">n</span></code> places in from the right of the number:</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">123456789[0]</span></code> returns <code class="docutils literal notranslate"><span class="pre">9</span></code></li>
@@ -281,14 +281,14 @@
 </li><li><span class="m">746381295</span>[<span class="m">8</span>]
 </li><li><span class="c">// returns 7</span>
 </li></ol></div></div></div>
-<p>If the <code class="docutils literal notranslate"><span class="pre">Int</span></code> value does not have enough digits for the requested index, the subscript implementation returns <code class="docutils literal notranslate"><span class="pre">0</span></code>, as if the number had been padded with zeros to the left:</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">Int</span></code> value doesn&rsquo;t have enough digits for the requested index, the subscript implementation returns <code class="docutils literal notranslate"><span class="pre">0</span></code>, as if the number had been padded with zeros to the left:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="m">746381295</span>[<span class="m">9</span>]
 </li><li><span class="c">// returns 0, as if you had requested:</span>
 </li><li><span class="m">0746381295</span>[<span class="m">9</span>]
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID157">
-<a class="dashingAutolink" name="autolink-91"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Nested%20Types"></a><h2>Nested Types<a class="headerlink" href="Extensions.html#ID157" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-92"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Nested%20Types"></a><h2>Nested Types<a class="headerlink" href="Extensions.html#ID157" title="Permalink to this headline"></a></h2>
 <p>Extensions can add new nested types to existing classes, structures, and enumerations:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">Int</span> {
 </li><li>    <span class="k">enum</span> <span class="nv">Kind</span> {
@@ -339,6 +339,14 @@
         <p class="previous"><a href="NestedTypes.html">Nested Types</a></p>
         <p class="next"><a href="Protocols.html">Protocols</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple&#39;s beta software</a></p>
+    </div>
 </main>
 
 
@@ -348,7 +356,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
@@ -358,5 +366,4 @@
 <div id="jump_to_overlay"></div>
 <script src="../_static/javascripts/application.js"></script>
   
-
 </body></html>
