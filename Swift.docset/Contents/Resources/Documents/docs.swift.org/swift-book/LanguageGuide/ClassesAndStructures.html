@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Structures and Classes &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Structures and Classes &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <a class="dashingAutolink" name="autolink-39"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
+      <a class="dashingAutolink" name="autolink-40"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -34,7 +34,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -117,7 +117,7 @@
 
         
   <div class="section" id="structures-and-classes">
-<a class="dashingAutolink" name="autolink-40"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Structures%20and%20Classes"></a><h1>Structures and Classes<a class="headerlink" href="ClassesAndStructures.html#structures-and-classes" title="Permalink to this headline"></a></h1>
+<a class="dashingAutolink" name="autolink-41"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Structures%20and%20Classes"></a><h1>Structures and Classes<a class="headerlink" href="ClassesAndStructures.html#structures-and-classes" title="Permalink to this headline"></a></h1>
 <p><em>Structures</em> and <em>classes</em> are general-purpose, flexible constructs that become the building blocks of your program&rsquo;s code. You define properties and methods to add functionality to your structures and classes using the same syntax you use to define constants, variables, and functions.</p>
 <p>Unlike other programming languages, Swift doesn&rsquo;t require you to create separate interface and implementation files for custom structures and classes. In Swift, you define a structure or class in a single file, and the external interface to that class or structure is automatically made available for other code to use.</p>
 <div class="admonition note">
@@ -125,7 +125,7 @@
 <p class="last">An instance of a class is traditionally known as an <em>object</em>. However, Swift structures and classes are much closer in functionality than in other languages, and much of this chapter describes functionality that applies to instances of <em>either</em> a class or a structure type. Because of this, the more general term <em>instance</em> is used.</p>
 </div>
 <div class="section" id="ID83">
-<a class="dashingAutolink" name="autolink-41"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Comparing%20Structures%20and%20Classes"></a><h2>Comparing Structures and Classes<a class="headerlink" href="ClassesAndStructures.html#ID83" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-42"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Comparing%20Structures%20and%20Classes"></a><h2>Comparing Structures and Classes<a class="headerlink" href="ClassesAndStructures.html#ID83" title="Permalink to this headline"></a></h2>
 <p>Structures and classes in Swift have many things in common. Both can:</p>
 <ul class="simple">
 <li>Define properties to store values</li>
@@ -209,10 +209,10 @@
 </div>
 </div>
 <div class="section" id="ID88">
-<a class="dashingAutolink" name="autolink-42"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Structures%20and%20Enumerations%20Are%20Value%20Types"></a><h2>Structures and Enumerations Are Value Types<a class="headerlink" href="ClassesAndStructures.html#ID88" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-43"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Structures%20and%20Enumerations%20Are%20Value%20Types"></a><h2>Structures and Enumerations Are Value Types<a class="headerlink" href="ClassesAndStructures.html#ID88" title="Permalink to this headline"></a></h2>
 <p>A <em>value type</em> is a type whose value is <em>copied</em> when it&rsquo;s assigned to a variable or constant, or when it&rsquo;s passed to a function.</p>
 <p>You&rsquo;ve actually been using value types extensively throughout the previous chapters. In fact, all of the basic types in Swift&mdash;integers, floating-point numbers, Booleans, strings, arrays and dictionaries&mdash;are value types, and are implemented as structures behind the scenes.</p>
-<p>All structures and enumerations are value types in Swift. This means that any structure and enumeration instances you create&mdash;and any value types they have as properties&mdash;are always copied when they are passed around in your code.</p>
+<p>All structures and enumerations are value types in Swift. This means that any structure and enumeration instances you create&mdash;and any value types they have as properties&mdash;are always copied when they&rsquo;re passed around in your code.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Collections defined by the standard library like arrays, dictionaries, and strings use an optimization to reduce the performance cost of copying. Instead of making a copy immediately, these collections share the memory where the elements are stored between the original instance and any copies. If one of the copies of the collection is modified, the elements are copied just before the modification. The behavior you see in your code is always as if a copy took place immediately.</p>
@@ -222,7 +222,7 @@
 </li><li><span class="k">var</span> <span class="nv">cinema</span> = <span class="nv">hd</span>
 </li></ol></div></div></div>
 <p>This example declares a constant called <code class="docutils literal notranslate"><span class="pre">hd</span></code> and sets it to a <code class="docutils literal notranslate"><span class="pre">Resolution</span></code> instance initialized with the width and height of full HD video (1920 pixels wide by 1080 pixels high).</p>
-<p>It then declares a variable called <code class="docutils literal notranslate"><span class="pre">cinema</span></code> and sets it to the current value of <code class="docutils literal notranslate"><span class="pre">hd</span></code>. Because <code class="docutils literal notranslate"><span class="pre">Resolution</span></code> is a structure, a <em>copy</em> of the existing instance is made, and this new copy is assigned to <code class="docutils literal notranslate"><span class="pre">cinema</span></code>. Even though <code class="docutils literal notranslate"><span class="pre">hd</span></code> and <code class="docutils literal notranslate"><span class="pre">cinema</span></code> now have the same width and height, they are two completely different instances behind the scenes.</p>
+<p>It then declares a variable called <code class="docutils literal notranslate"><span class="pre">cinema</span></code> and sets it to the current value of <code class="docutils literal notranslate"><span class="pre">hd</span></code>. Because <code class="docutils literal notranslate"><span class="pre">Resolution</span></code> is a structure, a <em>copy</em> of the existing instance is made, and this new copy is assigned to <code class="docutils literal notranslate"><span class="pre">cinema</span></code>. Even though <code class="docutils literal notranslate"><span class="pre">hd</span></code> and <code class="docutils literal notranslate"><span class="pre">cinema</span></code> now have the same width and height, they&rsquo;re two completely different instances behind the scenes.</p>
 <p>Next, the <code class="docutils literal notranslate"><span class="pre">width</span></code> property of <code class="docutils literal notranslate"><span class="pre">cinema</span></code> is amended to be the width of the slightly wider 2K standard used for digital cinema projection (2048 pixels wide and 1080 pixels high):</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">cinema</span>.<span class="nv">width</span> = <span class="m">2048</span>
 </li></ol></div></div></div>
@@ -234,7 +234,7 @@
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">print</span>(<span class="s">&#34;hd is still </span>\<span class="p">(</span><span class="nv">hd</span>.<span class="nv">width</span><span class="p">)</span><span class="s"> pixels wide&#34;</span>)
 </li><li><span class="c">// Prints &#34;hd is still 1920 pixels wide&#34;</span>
 </li></ol></div></div></div>
-<p>When <code class="docutils literal notranslate"><span class="pre">cinema</span></code> was given the current value of <code class="docutils literal notranslate"><span class="pre">hd</span></code>, the <em>values</em> stored in <code class="docutils literal notranslate"><span class="pre">hd</span></code> were copied into the new <code class="docutils literal notranslate"><span class="pre">cinema</span></code> instance. The end result was two completely separate instances that contained the same numeric values. However, because they are separate instances, setting the width of <code class="docutils literal notranslate"><span class="pre">cinema</span></code> to <code class="docutils literal notranslate"><span class="pre">2048</span></code> doesn&rsquo;t affect the width stored in <code class="docutils literal notranslate"><span class="pre">hd</span></code>, as shown in the figure below:</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">cinema</span></code> was given the current value of <code class="docutils literal notranslate"><span class="pre">hd</span></code>, the <em>values</em> stored in <code class="docutils literal notranslate"><span class="pre">hd</span></code> were copied into the new <code class="docutils literal notranslate"><span class="pre">cinema</span></code> instance. The end result was two completely separate instances that contained the same numeric values. However, because they&rsquo;re separate instances, setting the width of <code class="docutils literal notranslate"><span class="pre">cinema</span></code> to <code class="docutils literal notranslate"><span class="pre">2048</span></code> doesn&rsquo;t affect the width stored in <code class="docutils literal notranslate"><span class="pre">hd</span></code>, as shown in the figure below:</p>
 <img alt="../_images/sharedStateStruct_2x.png" class="align-center" src="../_images/sharedStateStruct_2x.png" style="width: 650px;"/>
 <p>The same behavior applies to enumerations:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">enum</span> <span class="nv">CompassPoint</span> {
@@ -255,8 +255,8 @@
 <p>When <code class="docutils literal notranslate"><span class="pre">rememberedDirection</span></code> is assigned the value of <code class="docutils literal notranslate"><span class="pre">currentDirection</span></code>, it&rsquo;s actually set to a copy of that value. Changing the value of <code class="docutils literal notranslate"><span class="pre">currentDirection</span></code> thereafter doesn&rsquo;t affect the copy of the original value that was stored in <code class="docutils literal notranslate"><span class="pre">rememberedDirection</span></code>.</p>
 </div>
 <div class="section" id="ID89">
-<a class="dashingAutolink" name="autolink-43"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Classes%20Are%20Reference%20Types"></a><h2>Classes Are Reference Types<a class="headerlink" href="ClassesAndStructures.html#ID89" title="Permalink to this headline"></a></h2>
-<p>Unlike value types, <em>reference types</em> are <em>not</em> copied when they are assigned to a variable or constant, or when they are passed to a function. Rather than a copy, a reference to the same existing instance is used.</p>
+<a class="dashingAutolink" name="autolink-44"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Classes%20Are%20Reference%20Types"></a><h2>Classes Are Reference Types<a class="headerlink" href="ClassesAndStructures.html#ID89" title="Permalink to this headline"></a></h2>
+<p>Unlike value types, <em>reference types</em> are <em>not</em> copied when they&rsquo;re assigned to a variable or constant, or when they&rsquo;re passed to a function. Rather than a copy, a reference to the same existing instance is used.</p>
 <p>Here&rsquo;s an example, using the <code class="docutils literal notranslate"><span class="pre">VideoMode</span></code> class defined above:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">tenEighty</span> = <span class="nv">VideoMode</span>()
 </li><li><span class="nv">tenEighty</span>.<span class="nv">resolution</span> = <span class="nv">hd</span>
@@ -269,17 +269,17 @@
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">alsoTenEighty</span> = <span class="nv">tenEighty</span>
 </li><li><span class="nv">alsoTenEighty</span>.<span class="nv">frameRate</span> = <span class="m">30.0</span>
 </li></ol></div></div></div>
-<p>Because classes are reference types, <code class="docutils literal notranslate"><span class="pre">tenEighty</span></code> and <code class="docutils literal notranslate"><span class="pre">alsoTenEighty</span></code> actually both refer to the <em>same</em> <code class="docutils literal notranslate"><span class="pre">VideoMode</span></code> instance. Effectively, they are just two different names for the same single instance, as shown in the figure below:</p>
+<p>Because classes are reference types, <code class="docutils literal notranslate"><span class="pre">tenEighty</span></code> and <code class="docutils literal notranslate"><span class="pre">alsoTenEighty</span></code> actually both refer to the <em>same</em> <code class="docutils literal notranslate"><span class="pre">VideoMode</span></code> instance. Effectively, they&rsquo;re just two different names for the same single instance, as shown in the figure below:</p>
 <img alt="../_images/sharedStateClass_2x.png" class="align-center" src="../_images/sharedStateClass_2x.png" style="width: 670px;"/>
 <p>Checking the <code class="docutils literal notranslate"><span class="pre">frameRate</span></code> property of <code class="docutils literal notranslate"><span class="pre">tenEighty</span></code> shows that it correctly reports the new frame rate of <code class="docutils literal notranslate"><span class="pre">30.0</span></code> from the underlying <code class="docutils literal notranslate"><span class="pre">VideoMode</span></code> instance:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">print</span>(<span class="s">&#34;The frameRate property of tenEighty is now </span>\<span class="p">(</span><span class="nv">tenEighty</span>.<span class="nv">frameRate</span><span class="p">)</span><span class="s">&#34;</span>)
 </li><li><span class="c">// Prints &#34;The frameRate property of tenEighty is now 30.0&#34;</span>
 </li></ol></div></div></div>
 <p>This example also shows how reference types can be harder to reason about. If <code class="docutils literal notranslate"><span class="pre">tenEighty</span></code> and <code class="docutils literal notranslate"><span class="pre">alsoTenEighty</span></code> were far apart in your program&rsquo;s code, it could be difficult to find all the ways that the video mode is changed. Wherever you use <code class="docutils literal notranslate"><span class="pre">tenEighty</span></code>, you also have to think about the code that uses <code class="docutils literal notranslate"><span class="pre">alsoTenEighty</span></code>, and vice versa. In contrast, value types are easier to reason about because all of the code that interacts with the same value is close together in your source files.</p>
-<p>Note that <code class="docutils literal notranslate"><span class="pre">tenEighty</span></code> and <code class="docutils literal notranslate"><span class="pre">alsoTenEighty</span></code> are declared as <em>constants</em>, rather than variables. However, you can still change <code class="docutils literal notranslate"><span class="pre">tenEighty.frameRate</span></code> and <code class="docutils literal notranslate"><span class="pre">alsoTenEighty.frameRate</span></code> because the values of the <code class="docutils literal notranslate"><span class="pre">tenEighty</span></code> and <code class="docutils literal notranslate"><span class="pre">alsoTenEighty</span></code> constants themselves don&rsquo;t actually change. <code class="docutils literal notranslate"><span class="pre">tenEighty</span></code> and <code class="docutils literal notranslate"><span class="pre">alsoTenEighty</span></code> themselves don&rsquo;t &ldquo;store&rdquo; the <code class="docutils literal notranslate"><span class="pre">VideoMode</span></code> instance&mdash;instead, they both <em>refer</em> to a <code class="docutils literal notranslate"><span class="pre">VideoMode</span></code> instance behind the scenes. It&rsquo;s the <code class="docutils literal notranslate"><span class="pre">frameRate</span></code> property of the underlying <code class="docutils literal notranslate"><span class="pre">VideoMode</span></code> that is changed, not the values of the constant references to that <code class="docutils literal notranslate"><span class="pre">VideoMode</span></code>.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">tenEighty</span></code> and <code class="docutils literal notranslate"><span class="pre">alsoTenEighty</span></code> are declared as <em>constants</em>, rather than variables. However, you can still change <code class="docutils literal notranslate"><span class="pre">tenEighty.frameRate</span></code> and <code class="docutils literal notranslate"><span class="pre">alsoTenEighty.frameRate</span></code> because the values of the <code class="docutils literal notranslate"><span class="pre">tenEighty</span></code> and <code class="docutils literal notranslate"><span class="pre">alsoTenEighty</span></code> constants themselves don&rsquo;t actually change. <code class="docutils literal notranslate"><span class="pre">tenEighty</span></code> and <code class="docutils literal notranslate"><span class="pre">alsoTenEighty</span></code> themselves don&rsquo;t &ldquo;store&rdquo; the <code class="docutils literal notranslate"><span class="pre">VideoMode</span></code> instance&mdash;instead, they both <em>refer</em> to a <code class="docutils literal notranslate"><span class="pre">VideoMode</span></code> instance behind the scenes. It&rsquo;s the <code class="docutils literal notranslate"><span class="pre">frameRate</span></code> property of the underlying <code class="docutils literal notranslate"><span class="pre">VideoMode</span></code> that&rsquo;s changed, not the values of the constant references to that <code class="docutils literal notranslate"><span class="pre">VideoMode</span></code>.</p>
 <div class="section" id="ID90">
 <h3>Identity Operators<a class="headerlink" href="ClassesAndStructures.html#ID90" title="Permalink to this headline"></a></h3>
-<p>Because classes are reference types, it&rsquo;s possible for multiple constants and variables to refer to the same single instance of a class behind the scenes. (The same isn&rsquo;t true for structures and enumerations, because they are always copied when they are assigned to a constant or variable, or passed to a function.)</p>
+<p>Because classes are reference types, it&rsquo;s possible for multiple constants and variables to refer to the same single instance of a class behind the scenes. (The same isn&rsquo;t true for structures and enumerations, because they&rsquo;re always copied when they&rsquo;re assigned to a constant or variable, or passed to a function.)</p>
 <p>It can sometimes be useful to find out whether two constants or variables refer to exactly the same instance of a class. To enable this, Swift provides two identity operators:</p>
 <ul class="simple">
 <li>Identical to (<code class="docutils literal notranslate"><span class="pre">===</span></code>)</li>
@@ -307,6 +307,14 @@
         <p class="previous"><a href="Enumerations.html">Enumerations</a></p>
         <p class="next"><a href="Properties.html">Properties</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple&#39;s beta software</a></p>
+    </div>
 </main>
 
 
@@ -316,7 +324,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
@@ -326,5 +334,4 @@
 <div id="jump_to_overlay"></div>
 <script src="../_static/javascripts/application.js"></script>
   
-
 </body></html>

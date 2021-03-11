@@ -9,7 +9,7 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>Memory Safety &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Memory Safety &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
@@ -40,7 +40,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -137,7 +137,7 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>If you’ve written concurrent or multithreaded code, conflicting access to memory might be a familiar problem. However, the conflicting access discussed here can happen on a single thread and <em>doesn’t</em> involve concurrent or multithreaded code.</p>
-<p class="last">If you have conflicting access to memory from within a single thread, Swift guarantees that you’ll get an error at either compile time or runtime. For multithreaded code, use <a class="reference external" href="https://developer.apple.com/documentation/code_diagnostics/thread_sanitizer">Thread Sanitizer</a> to help detect conflicting access across threads.</p>
+<p class="last">If you have conflicting access to memory from within a single thread, Swift guarantees that you’ll get an error at either compile time or runtime. For multithreaded code, use <a class="reference external" href="https://developer.apple.com/documentation/xcode/diagnosing_memory_thread_and_crash_issues_early">Thread Sanitizer</a> to help detect conflicting access across threads.</p>
 </div>
 <div class="section" id="ID573">
 <h3>Characteristics of Memory Access<a class="headerlink" href="MemorySafety.html#ID573" title="Permalink to this headline"></a></h3>
@@ -176,7 +176,7 @@
 </li><li><span class="nv">increment</span>(&amp;<span class="nv">stepSize</span>)
 </li><li><span class="c">// Error: conflicting accesses to stepSize</span>
 </li></ol></div></div></div>
-<p>In the code above, <code class="docutils literal notranslate"><span class="pre">stepSize</span></code> is a global variable, and it is normally accessible from within <code class="docutils literal notranslate"><span class="pre">increment(_:)</span></code>. However, the read access to <code class="docutils literal notranslate"><span class="pre">stepSize</span></code> overlaps with the write access to <code class="docutils literal notranslate"><span class="pre">number</span></code>. As shown in the figure below, both <code class="docutils literal notranslate"><span class="pre">number</span></code> and <code class="docutils literal notranslate"><span class="pre">stepSize</span></code> refer to the same location in memory. The read and write accesses refer to the same memory and they overlap, producing a conflict.</p>
+<p>In the code above, <code class="docutils literal notranslate"><span class="pre">stepSize</span></code> is a global variable, and it’s normally accessible from within <code class="docutils literal notranslate"><span class="pre">increment(_:)</span></code>. However, the read access to <code class="docutils literal notranslate"><span class="pre">stepSize</span></code> overlaps with the write access to <code class="docutils literal notranslate"><span class="pre">number</span></code>. As shown in the figure below, both <code class="docutils literal notranslate"><span class="pre">number</span></code> and <code class="docutils literal notranslate"><span class="pre">stepSize</span></code> refer to the same location in memory. The read and write accesses refer to the same memory and they overlap, producing a conflict.</p>
 <img alt="../_images/memory_increment_2x.png" class="align-center" src="../_images/memory_increment_2x.png" style="width: 384px;" />
 <p>One way to solve this conflict is to make an explicit copy of <code class="docutils literal notranslate"><span class="pre">stepSize</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="c">// Make an explicit copy.</span>
@@ -275,6 +275,14 @@
         <p class="previous"><a href="AutomaticReferenceCounting.html">Automatic Reference Counting</a></p>
         <p class="next"><a href="AccessControl.html">Access Control</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple's beta software</a></p>
+    </div>
 </main>
 
 
@@ -284,7 +292,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

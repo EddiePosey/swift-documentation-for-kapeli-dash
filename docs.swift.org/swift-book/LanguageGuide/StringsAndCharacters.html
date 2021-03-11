@@ -9,7 +9,7 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>Strings and Characters &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Strings and Characters &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
@@ -40,7 +40,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -147,7 +147,7 @@
   <div class="section" id="strings-and-characters">
 <h1>Strings and Characters<a class="headerlink" href="StringsAndCharacters.html#strings-and-characters" title="Permalink to this headline"></a></h1>
 <p>A <em>string</em> is a series of characters, such as <code class="docutils literal notranslate"><span class="pre">&quot;hello,</span> <span class="pre">world&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;albatross&quot;</span></code>. Swift strings are represented by the <code class="docutils literal notranslate"><span class="pre">String</span></code> type. The contents of a <code class="docutils literal notranslate"><span class="pre">String</span></code> can be accessed in various ways, including as a collection of <code class="docutils literal notranslate"><span class="pre">Character</span></code> values.</p>
-<p>Swift’s <code class="docutils literal notranslate"><span class="pre">String</span></code> and <code class="docutils literal notranslate"><span class="pre">Character</span></code> types provide a fast, Unicode-compliant way to work with text in your code. The syntax for string creation and manipulation is lightweight and readable, with a string literal syntax that is similar to C. String concatenation is as simple as combining two strings with the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator, and string mutability is managed by choosing between a constant or a variable, just like any other value in Swift. You can also use strings to insert constants, variables, literals, and expressions into longer strings, in a process known as string interpolation. This makes it easy to create custom string values for display, storage, and printing.</p>
+<p>Swift’s <code class="docutils literal notranslate"><span class="pre">String</span></code> and <code class="docutils literal notranslate"><span class="pre">Character</span></code> types provide a fast, Unicode-compliant way to work with text in your code. The syntax for string creation and manipulation is lightweight and readable, with a string literal syntax that’s similar to C. String concatenation is as simple as combining two strings with the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator, and string mutability is managed by choosing between a constant or a variable, just like any other value in Swift. You can also use strings to insert constants, variables, literals, and expressions into longer strings, in a process known as string interpolation. This makes it easy to create custom string values for display, storage, and printing.</p>
 <p>Despite this simplicity of syntax, Swift’s <code class="docutils literal notranslate"><span class="pre">String</span></code> type is a fast, modern string implementation. Every string is composed of encoding-independent Unicode characters, and provides support for accessing those characters in various Unicode representations.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -487,7 +487,7 @@
 </li><li><span class="c">// Convert the result to a String for long-term storage.</span>
 </li><li><span class="k">let</span> <span class="nv">newString</span> = <span class="nv">String</span>(<span class="nv">beginning</span>)
 </li></ol></div></div></div>
-<p>Like strings, each substring has a region of memory where the characters that make up the substring are stored. The difference between strings and substrings is that, as a performance optimization, a substring can reuse part of the memory that’s used to store the original string, or part of the memory that’s used to store another substring. (Strings have a similar optimization, but if two strings share memory, they are equal.) This performance optimization means you don’t have to pay the performance cost of copying memory until you modify either the string or substring. As mentioned above, substrings aren’t suitable for long-term storage—because they reuse the storage of the original string, the entire original string must be kept in memory as long as any of its substrings are being used.</p>
+<p>Like strings, each substring has a region of memory where the characters that make up the substring are stored. The difference between strings and substrings is that, as a performance optimization, a substring can reuse part of the memory that’s used to store the original string, or part of the memory that’s used to store another substring. (Strings have a similar optimization, but if two strings share memory, they’re equal.) This performance optimization means you don’t have to pay the performance cost of copying memory until you modify either the string or substring. As mentioned above, substrings aren’t suitable for long-term storage—because they reuse the storage of the original string, the entire original string must be kept in memory as long as any of its substrings are being used.</p>
 <p>In the example above, <code class="docutils literal notranslate"><span class="pre">greeting</span></code> is a string, which means it has a region of memory where the characters that make up the string are stored. Because <code class="docutils literal notranslate"><span class="pre">beginning</span></code> is a substring of <code class="docutils literal notranslate"><span class="pre">greeting</span></code>, it reuses the memory that <code class="docutils literal notranslate"><span class="pre">greeting</span></code> uses. In contrast, <code class="docutils literal notranslate"><span class="pre">newString</span></code> is a string—when it’s created from the substring, it has its own storage. The figure below shows these relationships:</p>
 <img alt="../_images/stringSubstring_2x.png" class="align-center" src="../_images/stringSubstring_2x.png" style="width: 366px;" />
 <div class="admonition note">
@@ -527,13 +527,13 @@
 </li><li><span class="k">let</span> <span class="nv">cyrillicCapitalLetterA</span>: <span class="nc">Character</span> = <span class="s">&quot;\u{0410}&quot;</span>
 </li><li>
 </li><li><span class="k">if</span> <span class="nv">latinCapitalLetterA</span> != <span class="nv">cyrillicCapitalLetterA</span> {
-</li><li>    <span class="nv">print</span>(<span class="s">&quot;These two characters are not equivalent.&quot;</span>)
+</li><li>    <span class="nv">print</span>(<span class="s">&quot;These two characters aren&#39;t equivalent.&quot;</span>)
 </li><li>}
-</li><li><span class="c">// Prints &quot;These two characters are not equivalent.&quot;</span>
+</li><li><span class="c">// Prints &quot;These two characters aren&#39;t equivalent.&quot;</span>
 </li></ol></div></div></div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">String and character comparisons in Swift are not locale-sensitive.</p>
+<p class="last">String and character comparisons in Swift aren’t locale-sensitive.</p>
 </div>
 </div>
 <div class="section" id="ID300">
@@ -656,6 +656,14 @@
         <p class="previous"><a href="BasicOperators.html">Basic Operators</a></p>
         <p class="next"><a href="CollectionTypes.html">Collection Types</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple's beta software</a></p>
+    </div>
 </main>
 
 
@@ -665,7 +673,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

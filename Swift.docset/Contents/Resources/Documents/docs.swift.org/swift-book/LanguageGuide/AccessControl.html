@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Access Control &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Access Control &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -34,7 +34,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -156,7 +156,7 @@
 <div class="section" id="ID4">
 <a class="dashingAutolink" name="autolink-2"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Modules%20and%20Source%20Files"></a><h2>Modules and Source Files<a class="headerlink" href="AccessControl.html#ID4" title="Permalink to this headline"></a></h2>
 <p>Swift&rsquo;s access control model is based on the concept of modules and source files.</p>
-<p>A <em>module</em> is a single unit of code distribution&mdash;a framework or application that is built and shipped as a single unit and that can be imported by another module with Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">import</span></code> keyword.</p>
+<p>A <em>module</em> is a single unit of code distribution&mdash;a framework or application that&rsquo;s built and shipped as a single unit and that can be imported by another module with Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">import</span></code> keyword.</p>
 <p>Each build target (such as an app bundle or framework) in Xcode is treated as a separate module in Swift. If you group together aspects of your app&rsquo;s code as a stand-alone framework&mdash;perhaps to encapsulate and reuse that code across multiple applications&mdash;then everything you define within that framework will be part of a separate module when it&rsquo;s imported and used within an app, or when it&rsquo;s used within another framework.</p>
 <p>A <em>source file</em> is a single Swift source code file within a module (in effect, a single file within an app or framework). Although it&rsquo;s common to define individual types in separate source files, a single source file can contain definitions for multiple types, functions, and so on.</p>
 </div>
@@ -376,7 +376,7 @@
 <div class="section" id="ID20">
 <h3>Default Initializers<a class="headerlink" href="AccessControl.html#ID20" title="Permalink to this headline"></a></h3>
 <p>As described in <a class="reference internal" href="Initialization.html#ID213"><span class="std std-ref">Default Initializers</span></a>, Swift automatically provides a <em>default initializer</em> without any arguments for any structure or base class that provides default values for all of its properties and doesn&rsquo;t provide at least one initializer itself.</p>
-<p>A default initializer has the same access level as the type it initializes, unless that type is defined as <code class="docutils literal notranslate"><span class="pre">public</span></code>. For a type that is defined as <code class="docutils literal notranslate"><span class="pre">public</span></code>, the default initializer is considered internal. If you want a public type to be initializable with a no-argument initializer when used in another module, you must explicitly provide a public no-argument initializer yourself as part of the type&rsquo;s definition.</p>
+<p>A default initializer has the same access level as the type it initializes, unless that type is defined as <code class="docutils literal notranslate"><span class="pre">public</span></code>. For a type that&rsquo;s defined as <code class="docutils literal notranslate"><span class="pre">public</span></code>, the default initializer is considered internal. If you want a public type to be initializable with a no-argument initializer when used in another module, you must explicitly provide a public no-argument initializer yourself as part of the type&rsquo;s definition.</p>
 </div>
 <div class="section" id="ID21">
 <h3>Default Memberwise Initializers for Structure Types<a class="headerlink" href="AccessControl.html#ID21" title="Permalink to this headline"></a></h3>
@@ -458,6 +458,14 @@
         <p class="previous"><a href="MemorySafety.html">Memory Safety</a></p>
         <p class="next"><a href="AdvancedOperators.html">Advanced Operators</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple&#39;s beta software</a></p>
+    </div>
 </main>
 
 
@@ -467,7 +475,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
@@ -477,5 +485,4 @@
 <div id="jump_to_overlay"></div>
 <script src="../_static/javascripts/application.js"></script>
   
-
 </body></html>

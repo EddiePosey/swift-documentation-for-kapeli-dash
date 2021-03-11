@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>The Basics &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>The Basics &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <a class="dashingAutolink" name="autolink-205"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
+      <a class="dashingAutolink" name="autolink-206"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -34,7 +34,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -143,7 +143,7 @@
 
         
   <div class="section" id="the-basics">
-<a class="dashingAutolink" name="autolink-206"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/The%20Basics"></a><h1>The Basics<a class="headerlink" href="TheBasics.html#the-basics" title="Permalink to this headline"></a></h1>
+<a class="dashingAutolink" name="autolink-207"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/The%20Basics"></a><h1>The Basics<a class="headerlink" href="TheBasics.html#the-basics" title="Permalink to this headline"></a></h1>
 <p>Swift is a new programming language for iOS, macOS, watchOS, and tvOS app development. Nonetheless, many parts of Swift will be familiar from your experience of developing in C and Objective-C.</p>
 <p>Swift provides its own versions of all fundamental C and Objective-C types, including <code class="docutils literal notranslate"><span class="pre">Int</span></code> for integers, <code class="docutils literal notranslate"><span class="pre">Double</span></code> and <code class="docutils literal notranslate"><span class="pre">Float</span></code> for floating-point values, <code class="docutils literal notranslate"><span class="pre">Bool</span></code> for Boolean values, and <code class="docutils literal notranslate"><span class="pre">String</span></code> for textual data. Swift also provides powerful versions of the three primary collection types, <code class="docutils literal notranslate"><span class="pre">Array</span></code>, <code class="docutils literal notranslate"><span class="pre">Set</span></code>, and <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code>, as described in <a class="reference internal" href="CollectionTypes.html"><span class="doc">Collection Types</span></a>.</p>
 <p>Like C, Swift uses variables to store and refer to values by an identifying name. Swift also makes extensive use of variables whose values can&rsquo;t be changed. These are known as constants, and are much more powerful than constants in C. Constants are used throughout Swift to make code safer and clearer in intent when you work with values that don&rsquo;t need to change.</p>
@@ -151,7 +151,7 @@
 <p>Swift also introduces optional types, which handle the absence of a value. Optionals say either &ldquo;there <em>is</em> a value, and it equals <em>x</em>&rdquo; or &ldquo;there <em>isn&rsquo;t</em> a value at all&rdquo;. Using optionals is similar to using <code class="docutils literal notranslate"><span class="pre">nil</span></code> with pointers in Objective-C, but they work for any type, not just classes. Not only are optionals safer and more expressive than <code class="docutils literal notranslate"><span class="pre">nil</span></code> pointers in Objective-C, they&rsquo;re at the heart of many of Swift&rsquo;s most powerful features.</p>
 <p>Swift is a <em>type-safe</em> language, which means the language helps you to be clear about the types of values your code can work with. If part of your code requires a <code class="docutils literal notranslate"><span class="pre">String</span></code>, type safety prevents you from passing it an <code class="docutils literal notranslate"><span class="pre">Int</span></code> by mistake. Likewise, type safety prevents you from accidentally passing an optional <code class="docutils literal notranslate"><span class="pre">String</span></code> to a piece of code that requires a non-optional <code class="docutils literal notranslate"><span class="pre">String</span></code>. Type safety helps you catch and fix errors as early as possible in the development process.</p>
 <div class="section" id="ID310">
-<a class="dashingAutolink" name="autolink-207"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Constants%20and%20Variables"></a><h2>Constants and Variables<a class="headerlink" href="TheBasics.html#ID310" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-208"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Constants%20and%20Variables"></a><h2>Constants and Variables<a class="headerlink" href="TheBasics.html#ID310" title="Permalink to this headline"></a></h2>
 <p>Constants and variables associate a name (such as <code class="docutils literal notranslate"><span class="pre">maximumNumberOfLoginAttempts</span></code> or <code class="docutils literal notranslate"><span class="pre">welcomeMessage</span></code>) with a value of a particular type (such as the number <code class="docutils literal notranslate"><span class="pre">10</span></code> or the string <code class="docutils literal notranslate"><span class="pre">&#34;Hello&#34;</span></code>). The value of a <em>constant</em> can&rsquo;t be changed once it&rsquo;s set, whereas a <em>variable</em> can be set to a different value in the future.</p>
 <div class="section" id="ID311">
 <h3>Declaring Constants and Variables<a class="headerlink" href="TheBasics.html#ID311" title="Permalink to this headline"></a></h3>
@@ -177,7 +177,7 @@
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">welcomeMessage</span>: <span class="nc">String</span>
 </li></ol></div></div></div>
 <p>The colon in the declaration means &ldquo;&hellip;of type&hellip;,&rdquo; so the code above can be read as:</p>
-<p>&ldquo;Declare a variable called <code class="docutils literal notranslate"><span class="pre">welcomeMessage</span></code> that is of type <code class="docutils literal notranslate"><span class="pre">String</span></code>.&rdquo;</p>
+<p>&ldquo;Declare a variable called <code class="docutils literal notranslate"><span class="pre">welcomeMessage</span></code> that&rsquo;s of type <code class="docutils literal notranslate"><span class="pre">String</span></code>.&rdquo;</p>
 <p>The phrase &ldquo;of type <code class="docutils literal notranslate"><span class="pre">String</span></code>&rdquo; means &ldquo;can store any <code class="docutils literal notranslate"><span class="pre">String</span></code> value.&rdquo; Think of it as meaning &ldquo;the type of thing&rdquo; (or &ldquo;the kind of thing&rdquo;) that can be stored.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">welcomeMessage</span></code> variable can now be set to any string value without error:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">welcomeMessage</span> = <span class="s">&#34;Hello&#34;</span>
@@ -232,7 +232,7 @@
 </div>
 </div>
 <div class="section" id="ID315">
-<a class="dashingAutolink" name="autolink-208"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Comments"></a><h2>Comments<a class="headerlink" href="TheBasics.html#ID315" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-209"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Comments"></a><h2>Comments<a class="headerlink" href="TheBasics.html#ID315" title="Permalink to this headline"></a></h2>
 <p>Use comments to include nonexecutable text in your code, as a note or reminder to yourself. Comments are ignored by the Swift compiler when your code is compiled.</p>
 <p>Comments in Swift are very similar to comments in C. Single-line comments begin with two forward-slashes (<code class="docutils literal notranslate"><span class="pre">//</span></code>):</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="c">// This is a comment.</span>
@@ -249,14 +249,14 @@
 <p>Nested multiline comments enable you to comment out large blocks of code quickly and easily, even if the code already contains multiline comments.</p>
 </div>
 <div class="section" id="ID316">
-<a class="dashingAutolink" name="autolink-209"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Semicolons"></a><h2>Semicolons<a class="headerlink" href="TheBasics.html#ID316" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-210"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Semicolons"></a><h2>Semicolons<a class="headerlink" href="TheBasics.html#ID316" title="Permalink to this headline"></a></h2>
 <p>Unlike many other languages, Swift doesn&rsquo;t require you to write a semicolon (<code class="docutils literal notranslate"><span class="pre">;</span></code>) after each statement in your code, although you can do so if you wish. However, semicolons <em>are</em> required if you want to write multiple separate statements on a single line:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">cat</span> = <span class="s">&#34;🐱&#34;</span>; <span class="nv">print</span>(<span class="nv">cat</span>)
 </li><li><span class="c">// Prints &#34;🐱&#34;</span>
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID317">
-<a class="dashingAutolink" name="autolink-210"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Integers"></a><h2>Integers<a class="headerlink" href="TheBasics.html#ID317" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-211"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Integers"></a><h2>Integers<a class="headerlink" href="TheBasics.html#ID317" title="Permalink to this headline"></a></h2>
 <p><em>Integers</em> are whole numbers with no fractional component, such as <code class="docutils literal notranslate"><span class="pre">42</span></code> and <code class="docutils literal notranslate"><span class="pre">-23</span></code>. Integers are either <em>signed</em> (positive, zero, or negative) or <em>unsigned</em> (positive or zero).</p>
 <p>Swift provides signed and unsigned integers in 8, 16, 32, and 64 bit forms. These integers follow a naming convention similar to C, in that an 8-bit unsigned integer is of type <code class="docutils literal notranslate"><span class="pre">UInt8</span></code>, and a 32-bit signed integer is of type <code class="docutils literal notranslate"><span class="pre">Int32</span></code>. Like all types in Swift, these integer types have capitalized names.</p>
 <div class="section" id="ID318">
@@ -290,7 +290,7 @@
 </div>
 </div>
 <div class="section" id="ID321">
-<a class="dashingAutolink" name="autolink-211"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Floating-Point%20Numbers"></a><h2>Floating-Point Numbers<a class="headerlink" href="TheBasics.html#ID321" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-212"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Floating-Point%20Numbers"></a><h2>Floating-Point Numbers<a class="headerlink" href="TheBasics.html#ID321" title="Permalink to this headline"></a></h2>
 <p><em>Floating-point numbers</em> are numbers with a fractional component, such as <code class="docutils literal notranslate"><span class="pre">3.14159</span></code>, <code class="docutils literal notranslate"><span class="pre">0.1</span></code>, and <code class="docutils literal notranslate"><span class="pre">-273.15</span></code>.</p>
 <p>Floating-point types can represent a much wider range of values than integer types, and can store numbers that are much larger or smaller than can be stored in an <code class="docutils literal notranslate"><span class="pre">Int</span></code>. Swift provides two signed floating-point number types:</p>
 <ul class="simple">
@@ -303,7 +303,7 @@
 </div>
 </div>
 <div class="section" id="ID322">
-<a class="dashingAutolink" name="autolink-212"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Safety%20and%20Type%20Inference"></a><h2>Type Safety and Type Inference<a class="headerlink" href="TheBasics.html#ID322" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-213"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Safety%20and%20Type%20Inference"></a><h2>Type Safety and Type Inference<a class="headerlink" href="TheBasics.html#ID322" title="Permalink to this headline"></a></h2>
 <p>Swift is a <em>type-safe</em> language. A type safe language encourages you to be clear about the types of values your code can work with. If part of your code requires a <code class="docutils literal notranslate"><span class="pre">String</span></code>, you can&rsquo;t pass it an <code class="docutils literal notranslate"><span class="pre">Int</span></code> by mistake.</p>
 <p>Because Swift is type safe, it performs <em>type checks</em> when compiling your code and flags any mismatched types as errors. This enables you to catch and fix errors as early as possible in the development process.</p>
 <p>Type-checking helps you avoid errors when you&rsquo;re working with different types of values. However, this doesn&rsquo;t mean that you have to specify the type of every constant and variable that you declare. If you don&rsquo;t specify the type of value you need, Swift uses <em>type inference</em> to work out the appropriate type. Type inference enables a compiler to deduce the type of a particular expression automatically when it compiles your code, simply by examining the values you provide.</p>
@@ -325,7 +325,7 @@
 <p>The literal value of <code class="docutils literal notranslate"><span class="pre">3</span></code> has no explicit type in and of itself, and so an appropriate output type of <code class="docutils literal notranslate"><span class="pre">Double</span></code> is inferred from the presence of a floating-point literal as part of the addition.</p>
 </div>
 <div class="section" id="ID323">
-<a class="dashingAutolink" name="autolink-213"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Numeric%20Literals"></a><h2>Numeric Literals<a class="headerlink" href="TheBasics.html#ID323" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-214"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Numeric%20Literals"></a><h2>Numeric Literals<a class="headerlink" href="TheBasics.html#ID323" title="Permalink to this headline"></a></h2>
 <p>Integer literals can be written as:</p>
 <ul class="simple">
 <li>A <em>decimal</em> number, with no prefix</li>
@@ -362,16 +362,16 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID324">
-<a class="dashingAutolink" name="autolink-214"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Numeric%20Type%20Conversion"></a><h2>Numeric Type Conversion<a class="headerlink" href="TheBasics.html#ID324" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-215"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Numeric%20Type%20Conversion"></a><h2>Numeric Type Conversion<a class="headerlink" href="TheBasics.html#ID324" title="Permalink to this headline"></a></h2>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">Int</span></code> type for all general-purpose integer constants and variables in your code, even if they&rsquo;re known to be nonnegative. Using the default integer type in everyday situations means that integer constants and variables are immediately interoperable in your code and will match the inferred type for integer literal values.</p>
 <p>Use other integer types only when they&rsquo;re specifically needed for the task at hand, because of explicitly sized data from an external source, or for performance, memory usage, or other necessary optimization. Using explicitly sized types in these situations helps to catch any accidental value overflows and implicitly documents the nature of the data being used.</p>
 <div class="section" id="ID325">
 <h3>Integer Conversion<a class="headerlink" href="TheBasics.html#ID325" title="Permalink to this headline"></a></h3>
 <p>The range of numbers that can be stored in an integer constant or variable is different for each numeric type. An <code class="docutils literal notranslate"><span class="pre">Int8</span></code> constant or variable can store numbers between <code class="docutils literal notranslate"><span class="pre">-128</span></code> and <code class="docutils literal notranslate"><span class="pre">127</span></code>, whereas a <code class="docutils literal notranslate"><span class="pre">UInt8</span></code> constant or variable can store numbers between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">255</span></code>. A number that won&rsquo;t fit into a constant or variable of a sized integer type is reported as an error when your code is compiled:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">cannotBeNegative</span>: <span class="nc">UInt8</span> = <span class="m">-1</span>
-</li><li><span class="c">// UInt8 cannot store negative numbers, and so this will report an error</span>
+</li><li><span class="c">// UInt8 can&#39;t store negative numbers, and so this will report an error</span>
 </li><li><span class="k">let</span> <span class="nv">tooBig</span>: <span class="nc">Int8</span> = <span class="nv">Int8</span>.<span class="nv">max</span> + <span class="m">1</span>
-</li><li><span class="c">// Int8 cannot store a number larger than its maximum value,</span>
+</li><li><span class="c">// Int8 can&#39;t store a number larger than its maximum value,</span>
 </li><li><span class="c">// and so this will also report an error</span>
 </li></ol></div></div></div>
 <p>Because each numeric type can store a different range of values, you must opt in to numeric type conversion on a case-by-case basis. This opt-in approach prevents hidden conversion errors and helps make type conversion intentions explicit in your code.</p>
@@ -404,9 +404,9 @@
 </div>
 </div>
 <div class="section" id="ID327">
-<a class="dashingAutolink" name="autolink-215"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Aliases"></a><h2>Type Aliases<a class="headerlink" href="TheBasics.html#ID327" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-216"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Aliases"></a><h2>Type Aliases<a class="headerlink" href="TheBasics.html#ID327" title="Permalink to this headline"></a></h2>
 <p><em>Type aliases</em> define an alternative name for an existing type. You define type aliases with the <code class="docutils literal notranslate"><span class="pre">typealias</span></code> keyword.</p>
-<p>Type aliases are useful when you want to refer to an existing type by a name that is contextually more appropriate, such as when working with data of a specific size from an external source:</p>
+<p>Type aliases are useful when you want to refer to an existing type by a name that&rsquo;s contextually more appropriate, such as when working with data of a specific size from an external source:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">typealias</span> <span class="nv">AudioSample</span> = <span class="nc">UInt16</span>
 </li></ol></div></div></div>
 <p>Once you define a type alias, you can use the alias anywhere you might use the original name:</p>
@@ -416,7 +416,7 @@
 <p>Here, <code class="docutils literal notranslate"><span class="pre">AudioSample</span></code> is defined as an alias for <code class="docutils literal notranslate"><span class="pre">UInt16</span></code>. Because it&rsquo;s an alias, the call to <code class="docutils literal notranslate"><span class="pre">AudioSample.min</span></code> actually calls <code class="docutils literal notranslate"><span class="pre">UInt16.min</span></code>, which provides an initial value of <code class="docutils literal notranslate"><span class="pre">0</span></code> for the <code class="docutils literal notranslate"><span class="pre">maxAmplitudeFound</span></code> variable.</p>
 </div>
 <div class="section" id="ID328">
-<a class="dashingAutolink" name="autolink-216"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Booleans"></a><h2>Booleans<a class="headerlink" href="TheBasics.html#ID328" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-217"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Booleans"></a><h2>Booleans<a class="headerlink" href="TheBasics.html#ID328" title="Permalink to this headline"></a></h2>
 <p>Swift has a basic <em>Boolean</em> type, called <code class="docutils literal notranslate"><span class="pre">Bool</span></code>. Boolean values are referred to as <em>logical</em>, because they can only ever be true or false. Swift provides two Boolean constant values, <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">orangesAreOrange</span> = <span class="k">true</span>
 </li><li><span class="k">let</span> <span class="nv">turnipsAreDelicious</span> = <span class="k">false</span>
@@ -447,7 +447,7 @@
 <p>As with other examples of type safety in Swift, this approach avoids accidental errors and ensures that the intention of a particular section of code is always clear.</p>
 </div>
 <div class="section" id="ID329">
-<a class="dashingAutolink" name="autolink-217"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Tuples"></a><h2>Tuples<a class="headerlink" href="TheBasics.html#ID329" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-218"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Tuples"></a><h2>Tuples<a class="headerlink" href="TheBasics.html#ID329" title="Permalink to this headline"></a></h2>
 <p><em>Tuples</em> group multiple values into a single compound value. The values within a tuple can be of any type and don&rsquo;t have to be of the same type as each other.</p>
 <p>In this example, <code class="docutils literal notranslate"><span class="pre">(404,</span> <span class="pre">&#34;Not</span> <span class="pre">Found&#34;)</span></code> is a tuple that describes an <em>HTTP status code</em>. An HTTP status code is a special value returned by a web server whenever you request a web page. A status code of <code class="docutils literal notranslate"><span class="pre">404</span> <span class="pre">Not</span> <span class="pre">Found</span></code> is returned if you request a webpage that doesn&rsquo;t exist.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">http404Error</span> = (<span class="m">404</span>, <span class="s">&#34;Not Found&#34;</span>)
@@ -489,7 +489,7 @@
 </div>
 </div>
 <div class="section" id="ID330">
-<a class="dashingAutolink" name="autolink-218"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Optionals"></a><h2>Optionals<a class="headerlink" href="TheBasics.html#ID330" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-219"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Optionals"></a><h2>Optionals<a class="headerlink" href="TheBasics.html#ID330" title="Permalink to this headline"></a></h2>
 <p>You use <em>optionals</em> in situations where a value may be absent. An optional represents two possibilities: Either there <em>is</em> a value, and you can unwrap the optional to access that value, or there <em>isn&rsquo;t</em> a value at all.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -556,13 +556,13 @@
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">if</span> <span class="k">let</span> <span class="nv">actualNumber</span> = <span class="nv">Int</span>(<span class="nv">possibleNumber</span>) {
 </li><li>    <span class="nv">print</span>(<span class="s">&#34;The string \&#34;</span>\<span class="p">(</span><span class="nv">possibleNumber</span><span class="p">)</span><span class="s">\&#34; has an integer value of </span>\<span class="p">(</span><span class="nv">actualNumber</span><span class="p">)</span><span class="s">&#34;</span>)
 </li><li>} <span class="k">else</span> {
-</li><li>    <span class="nv">print</span>(<span class="s">&#34;The string \&#34;</span>\<span class="p">(</span><span class="nv">possibleNumber</span><span class="p">)</span><span class="s">\&#34; could not be converted to an integer&#34;</span>)
+</li><li>    <span class="nv">print</span>(<span class="s">&#34;The string \&#34;</span>\<span class="p">(</span><span class="nv">possibleNumber</span><span class="p">)</span><span class="s">\&#34; couldn&#39;t be converted to an integer&#34;</span>)
 </li><li>}
 </li><li><span class="c">// Prints &#34;The string &#34;123&#34; has an integer value of 123&#34;</span>
 </li></ol></div></div></div>
 <p>This code can be read as:</p>
 <p>&ldquo;If the optional <code class="docutils literal notranslate"><span class="pre">Int</span></code> returned by <code class="docutils literal notranslate"><span class="pre">Int(possibleNumber)</span></code> contains a value, set a new constant called <code class="docutils literal notranslate"><span class="pre">actualNumber</span></code> to the value contained in the optional.&rdquo;</p>
-<p>If the conversion is successful, the <code class="docutils literal notranslate"><span class="pre">actualNumber</span></code> constant becomes available for use within the first branch of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. It has already been initialized with the value contained <em>within</em> the optional, and so there&rsquo;s no need to use the <code class="docutils literal notranslate"><span class="pre">!</span></code> suffix to access its value. In this example, <code class="docutils literal notranslate"><span class="pre">actualNumber</span></code> is simply used to print the result of the conversion.</p>
+<p>If the conversion is successful, the <code class="docutils literal notranslate"><span class="pre">actualNumber</span></code> constant becomes available for use within the first branch of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. It has already been initialized with the value contained <em>within</em> the optional, and so you don&rsquo;t use the <code class="docutils literal notranslate"><span class="pre">!</span></code> suffix to access its value. In this example, <code class="docutils literal notranslate"><span class="pre">actualNumber</span></code> is simply used to print the result of the conversion.</p>
 <p>You can use both constants and variables with optional binding. If you wanted to manipulate the value of <code class="docutils literal notranslate"><span class="pre">actualNumber</span></code> within the first branch of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, you could write <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">var</span> <span class="pre">actualNumber</span></code> instead, and the value contained within the optional would be made available as a variable rather than a constant.</p>
 <p>You can include as many optional bindings and Boolean conditions in a single <code class="docutils literal notranslate"><span class="pre">if</span></code> statement as you need to, separated by commas. If any of the values in the optional bindings are <code class="docutils literal notranslate"><span class="pre">nil</span></code> or any Boolean condition evaluates to <code class="docutils literal notranslate"><span class="pre">false</span></code>, the whole <code class="docutils literal notranslate"><span class="pre">if</span></code> statement&rsquo;s condition is considered to be <code class="docutils literal notranslate"><span class="pre">false</span></code>. The following <code class="docutils literal notranslate"><span class="pre">if</span></code> statements are equivalent:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">if</span> <span class="k">let</span> <span class="nv">firstNumber</span> = <span class="nv">Int</span>(<span class="s">&#34;4&#34;</span>), <span class="k">let</span> <span class="nv">secondNumber</span> = <span class="nv">Int</span>(<span class="s">&#34;42&#34;</span>), <span class="nv">firstNumber</span> &lt; <span class="nv">secondNumber</span> &amp;&amp; <span class="nv">secondNumber</span> &lt; <span class="m">100</span> {
@@ -621,7 +621,7 @@
 </div>
 </div>
 <div class="section" id="ID515">
-<a class="dashingAutolink" name="autolink-219"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Error%20Handling"></a><h2>Error Handling<a class="headerlink" href="TheBasics.html#ID515" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-220"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Error%20Handling"></a><h2>Error Handling<a class="headerlink" href="TheBasics.html#ID515" title="Permalink to this headline"></a></h2>
 <p>You use <em>error handling</em> to respond to error conditions your program may encounter during execution.</p>
 <p>In contrast to optionals, which can use the presence or absence of a value to communicate success or failure of a function, error handling allows you to determine the underlying cause of failure, and, if necessary, propagate the error to another part of your program.</p>
 <p>When a function encounters an error condition, it <em>throws</em> an error. That function&rsquo;s caller can then <em>catch</em> the error and respond appropriately.</p>
@@ -658,7 +658,7 @@
 <p>Throwing, catching, and propagating errors is covered in greater detail in <a class="reference internal" href="ErrorHandling.html"><span class="doc">Error Handling</span></a>.</p>
 </div>
 <div class="section" id="ID335">
-<a class="dashingAutolink" name="autolink-220"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Assertions%20and%20Preconditions"></a><h2>Assertions and Preconditions<a class="headerlink" href="TheBasics.html#ID335" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-221"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Assertions%20and%20Preconditions"></a><h2>Assertions and Preconditions<a class="headerlink" href="TheBasics.html#ID335" title="Permalink to this headline"></a></h2>
 <p><em>Assertions</em> and <em>preconditions</em> are checks that happen at runtime. You use them to make sure an essential condition is satisfied before executing any further code. If the Boolean condition in the assertion or precondition evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code>, code execution continues as usual. If the condition evaluates to <code class="docutils literal notranslate"><span class="pre">false</span></code>, the current state of the program is invalid; code execution ends, and your app is terminated.</p>
 <p>You use assertions and preconditions to express the assumptions you make and the expectations you have while coding, so you can include them as part of your code. Assertions help you find mistakes and incorrect assumptions during development, and preconditions help you detect issues in production.</p>
 <p>In addition to verifying your expectations at runtime, assertions and preconditions also become a useful form of documentation within the code. Unlike the error conditions discussed in <a class="reference internal" href="TheBasics.html#ID515"><span class="std std-ref">Error Handling</span></a> above, assertions and preconditions aren&rsquo;t used for recoverable or expected errors. Because a failed assertion or precondition indicates an invalid program state, there&rsquo;s no way to catch a failed assertion.</p>
@@ -669,7 +669,7 @@
 <p>You write an assertion by calling the <a class="reference external" href="https://developer.apple.com/documentation/swift/1541112-assert"><code class="docutils literal notranslate"><span class="pre">assert(_:_:file:line:)</span></code></a> function from the Swift standard library. You pass this function an expression that evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> and a message to display if the result of the condition is <code class="docutils literal notranslate"><span class="pre">false</span></code>. For example:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">age</span> = <span class="m">-3</span>
 </li><li><span class="nv">assert</span>(<span class="nv">age</span> &gt;= <span class="m">0</span>, <span class="s">&#34;A person&#39;s age can&#39;t be less than zero.&#34;</span>)
-</li><li><span class="c">// This assertion fails because -3 is not &gt;= 0.</span>
+</li><li><span class="c">// This assertion fails because -3 isn&#39;t &gt;= 0.</span>
 </li></ol></div></div></div>
 <p>In this example, code execution continues if <code class="docutils literal notranslate"><span class="pre">age</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code>, that is, if the value of <code class="docutils literal notranslate"><span class="pre">age</span></code> is nonnegative. If the value of <code class="docutils literal notranslate"><span class="pre">age</span></code> is negative, as in the code above, then <code class="docutils literal notranslate"><span class="pre">age</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">false</span></code>, and the assertion fails, terminating the application.</p>
 <p>You can omit the assertion message&mdash;for example, when it would just repeat the condition as prose.</p>
@@ -687,7 +687,7 @@
 </div>
 <div class="section" id="ID554">
 <h3>Enforcing Preconditions<a class="headerlink" href="TheBasics.html#ID554" title="Permalink to this headline"></a></h3>
-<p>Use a precondition whenever a condition has the potential to be false, but must <em>definitely</em> be true for your code to continue execution. For example, use a precondition to check that a subscript is not out of bounds, or to check that a function has been passed a valid value.</p>
+<p>Use a precondition whenever a condition has the potential to be false, but must <em>definitely</em> be true for your code to continue execution. For example, use a precondition to check that a subscript isn&rsquo;t out of bounds, or to check that a function has been passed a valid value.</p>
 <p>You write a precondition by calling the <a class="reference external" href="https://developer.apple.com/documentation/swift/1540960-precondition"><code class="docutils literal notranslate"><span class="pre">precondition(_:_:file:line:)</span></code></a> function. You pass this function an expression that evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> and a message to display if the result of the condition is <code class="docutils literal notranslate"><span class="pre">false</span></code>. For example:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="c">// In the implementation of a subscript...</span>
 </li><li><span class="nv">precondition</span>(<span class="nv">index</span> &gt; <span class="m">0</span>, <span class="s">&#34;Index must be greater than zero.&#34;</span>)
@@ -708,6 +708,14 @@
         <p class="previous"><a href="https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html">A Swift Tour</a></p>
         <p class="next"><a href="BasicOperators.html">Basic Operators</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple&#39;s beta software</a></p>
+    </div>
 </main>
 
 
@@ -717,7 +725,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
@@ -727,5 +735,4 @@
 <div id="jump_to_overlay"></div>
 <script src="../_static/javascripts/application.js"></script>
   
-
 </body></html>

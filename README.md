@@ -27,7 +27,7 @@ If you want to manually build the docs you can follow the steps below.
 2. In the project directory run:  
 `wget -k -r -p -np https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html`
 
-3. Open a text editor (ie. VSCode), and do a search and replace for all paragraph markings (¶). Replace the (¶) with nothing (ie. "").
+3. Open a text editor (ie. VSCode), and do a search and replace for all paragraph markings (). Replace the () with nothing (ie. "").
 
 4. Once complete run:  
 `dashing build`

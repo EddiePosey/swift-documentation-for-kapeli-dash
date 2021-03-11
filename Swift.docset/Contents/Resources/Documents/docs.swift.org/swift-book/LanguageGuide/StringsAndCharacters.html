@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Strings and Characters &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Strings and Characters &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <a class="dashingAutolink" name="autolink-184"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
+      <a class="dashingAutolink" name="autolink-185"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -34,7 +34,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -139,9 +139,9 @@
 
         
   <div class="section" id="strings-and-characters">
-<a class="dashingAutolink" name="autolink-185"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Strings%20and%20Characters"></a><h1>Strings and Characters<a class="headerlink" href="StringsAndCharacters.html#strings-and-characters" title="Permalink to this headline"></a></h1>
+<a class="dashingAutolink" name="autolink-186"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Strings%20and%20Characters"></a><h1>Strings and Characters<a class="headerlink" href="StringsAndCharacters.html#strings-and-characters" title="Permalink to this headline"></a></h1>
 <p>A <em>string</em> is a series of characters, such as <code class="docutils literal notranslate"><span class="pre">&#34;hello,</span> <span class="pre">world&#34;</span></code> or <code class="docutils literal notranslate"><span class="pre">&#34;albatross&#34;</span></code>. Swift strings are represented by the <code class="docutils literal notranslate"><span class="pre">String</span></code> type. The contents of a <code class="docutils literal notranslate"><span class="pre">String</span></code> can be accessed in various ways, including as a collection of <code class="docutils literal notranslate"><span class="pre">Character</span></code> values.</p>
-<p>Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">String</span></code> and <code class="docutils literal notranslate"><span class="pre">Character</span></code> types provide a fast, Unicode-compliant way to work with text in your code. The syntax for string creation and manipulation is lightweight and readable, with a string literal syntax that is similar to C. String concatenation is as simple as combining two strings with the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator, and string mutability is managed by choosing between a constant or a variable, just like any other value in Swift. You can also use strings to insert constants, variables, literals, and expressions into longer strings, in a process known as string interpolation. This makes it easy to create custom string values for display, storage, and printing.</p>
+<p>Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">String</span></code> and <code class="docutils literal notranslate"><span class="pre">Character</span></code> types provide a fast, Unicode-compliant way to work with text in your code. The syntax for string creation and manipulation is lightweight and readable, with a string literal syntax that&rsquo;s similar to C. String concatenation is as simple as combining two strings with the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator, and string mutability is managed by choosing between a constant or a variable, just like any other value in Swift. You can also use strings to insert constants, variables, literals, and expressions into longer strings, in a process known as string interpolation. This makes it easy to create custom string values for display, storage, and printing.</p>
 <p>Despite this simplicity of syntax, Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">String</span></code> type is a fast, modern string implementation. Every string is composed of encoding-independent Unicode characters, and provides support for accessing those characters in various Unicode representations.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -149,7 +149,7 @@
 <p class="last">For more information about using <code class="docutils literal notranslate"><span class="pre">String</span></code> with Foundation and Cocoa, see <a class="reference external" href="https://developer.apple.com/documentation/swift/string#2919514">Bridging Between String and NSString</a>.</p>
 </div>
 <div class="section" id="ID286">
-<a class="dashingAutolink" name="autolink-186"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/String%20Literals"></a><h2>String Literals<a class="headerlink" href="StringsAndCharacters.html#ID286" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-187"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/String%20Literals"></a><h2>String Literals<a class="headerlink" href="StringsAndCharacters.html#ID286" title="Permalink to this headline"></a></h2>
 <p>You can include predefined <code class="docutils literal notranslate"><span class="pre">String</span></code> values within your code as <em>string literals</em>. A string literal is a sequence of characters surrounded by double quotation marks (<code class="docutils literal notranslate"><span class="pre">&#34;</span></code>).</p>
 <p>Use a string literal as an initial value for a constant or variable:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">someString</span> = <span class="s">&#34;Some string literal value&#34;</span>
@@ -226,7 +226,7 @@
 </div>
 </div>
 <div class="section" id="ID287">
-<a class="dashingAutolink" name="autolink-187"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Initializing%20an%20Empty%20String"></a><h2>Initializing an Empty String<a class="headerlink" href="StringsAndCharacters.html#ID287" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-188"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Initializing%20an%20Empty%20String"></a><h2>Initializing an Empty String<a class="headerlink" href="StringsAndCharacters.html#ID287" title="Permalink to this headline"></a></h2>
 <p>To create an empty <code class="docutils literal notranslate"><span class="pre">String</span></code> value as the starting point for building a longer string, either assign an empty string literal to a variable, or initialize a new <code class="docutils literal notranslate"><span class="pre">String</span></code> instance with initializer syntax:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">emptyString</span> = <span class="s">&#34;&#34;</span>               <span class="c">// empty string literal</span>
 </li><li><span class="k">var</span> <span class="nv">anotherEmptyString</span> = <span class="nv">String</span>()  <span class="c">// initializer syntax</span>
@@ -240,7 +240,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID288">
-<a class="dashingAutolink" name="autolink-188"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/String%20Mutability"></a><h2>String Mutability<a class="headerlink" href="StringsAndCharacters.html#ID288" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-189"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/String%20Mutability"></a><h2>String Mutability<a class="headerlink" href="StringsAndCharacters.html#ID288" title="Permalink to this headline"></a></h2>
 <p>You indicate whether a particular <code class="docutils literal notranslate"><span class="pre">String</span></code> can be modified (or <em>mutated</em>) by assigning it to a variable (in which case it can be modified), or to a constant (in which case it can&rsquo;t be modified):</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">variableString</span> = <span class="s">&#34;Horse&#34;</span>
 </li><li><span class="nv">variableString</span> += <span class="s">&#34; and carriage&#34;</span>
@@ -256,13 +256,13 @@
 </div>
 </div>
 <div class="section" id="ID289">
-<a class="dashingAutolink" name="autolink-189"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Strings%20Are%20Value%20Types"></a><h2>Strings Are Value Types<a class="headerlink" href="StringsAndCharacters.html#ID289" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-190"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Strings%20Are%20Value%20Types"></a><h2>Strings Are Value Types<a class="headerlink" href="StringsAndCharacters.html#ID289" title="Permalink to this headline"></a></h2>
 <p>Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">String</span></code> type is a <em>value type</em>. If you create a new <code class="docutils literal notranslate"><span class="pre">String</span></code> value, that <code class="docutils literal notranslate"><span class="pre">String</span></code> value is <em>copied</em> when it&rsquo;s passed to a function or method, or when it&rsquo;s assigned to a constant or variable. In each case, a new copy of the existing <code class="docutils literal notranslate"><span class="pre">String</span></code> value is created, and the new copy is passed or assigned, not the original version. Value types are described in <a class="reference internal" href="ClassesAndStructures.html#ID88"><span class="std std-ref">Structures and Enumerations Are Value Types</span></a>.</p>
 <p>Swift&rsquo;s copy-by-default <code class="docutils literal notranslate"><span class="pre">String</span></code> behavior ensures that when a function or method passes you a <code class="docutils literal notranslate"><span class="pre">String</span></code> value, it&rsquo;s clear that you own that exact <code class="docutils literal notranslate"><span class="pre">String</span></code> value, regardless of where it came from. You can be confident that the string you are passed won&rsquo;t be modified unless you modify it yourself.</p>
 <p>Behind the scenes, Swift&rsquo;s compiler optimizes string usage so that actual copying takes place only when absolutely necessary. This means you always get great performance when working with strings as value types.</p>
 </div>
 <div class="section" id="ID290">
-<a class="dashingAutolink" name="autolink-190"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Working%20with%20Characters"></a><h2>Working with Characters<a class="headerlink" href="StringsAndCharacters.html#ID290" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-191"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Working%20with%20Characters"></a><h2>Working with Characters<a class="headerlink" href="StringsAndCharacters.html#ID290" title="Permalink to this headline"></a></h2>
 <p>You can access the individual <code class="docutils literal notranslate"><span class="pre">Character</span></code> values for a <code class="docutils literal notranslate"><span class="pre">String</span></code> by iterating over the string with a <code class="docutils literal notranslate"><span class="pre">for</span></code>-<code class="docutils literal notranslate"><span class="pre">in</span></code> loop:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">for</span> <span class="nv">character</span> <span class="k">in</span> <span class="s">&#34;Dog!🐶&#34;</span> {
 </li><li>    <span class="nv">print</span>(<span class="nv">character</span>)
@@ -285,7 +285,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID291">
-<a class="dashingAutolink" name="autolink-191"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Concatenating%20Strings%20and%20Characters"></a><h2>Concatenating Strings and Characters<a class="headerlink" href="StringsAndCharacters.html#ID291" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-192"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Concatenating%20Strings%20and%20Characters"></a><h2>Concatenating Strings and Characters<a class="headerlink" href="StringsAndCharacters.html#ID291" title="Permalink to this headline"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">String</span></code> values can be added together (or <em>concatenated</em>) with the addition operator (<code class="docutils literal notranslate"><span class="pre">+</span></code>) to create a new <code class="docutils literal notranslate"><span class="pre">String</span></code> value:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">string1</span> = <span class="s">&#34;hello&#34;</span>
 </li><li><span class="k">let</span> <span class="nv">string2</span> = <span class="s">&#34; there&#34;</span>
@@ -333,7 +333,7 @@
 <p>In the code above, concatenating <code class="docutils literal notranslate"><span class="pre">badStart</span></code> with <code class="docutils literal notranslate"><span class="pre">end</span></code> produces a two-line string, which isn&rsquo;t the desired result. Because the last line of <code class="docutils literal notranslate"><span class="pre">badStart</span></code> doesn&rsquo;t end with a line break, that line gets combined with the first line of <code class="docutils literal notranslate"><span class="pre">end</span></code>. In contrast, both lines of <code class="docutils literal notranslate"><span class="pre">goodStart</span></code> end with a line break, so when it&rsquo;s combined with <code class="docutils literal notranslate"><span class="pre">end</span></code> the result has three lines, as expected.</p>
 </div>
 <div class="section" id="ID292">
-<a class="dashingAutolink" name="autolink-192"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/String%20Interpolation"></a><h2>String Interpolation<a class="headerlink" href="StringsAndCharacters.html#ID292" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-193"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/String%20Interpolation"></a><h2>String Interpolation<a class="headerlink" href="StringsAndCharacters.html#ID292" title="Permalink to this headline"></a></h2>
 <p><em>String interpolation</em> is a way to construct a new <code class="docutils literal notranslate"><span class="pre">String</span></code> value from a mix of constants, variables, literals, and expressions by including their values inside a string literal. You can use string interpolation in both single-line and multiline string literals. Each item that you insert into the string literal is wrapped in a pair of parentheses, prefixed by a backslash (<code class="docutils literal notranslate"><span class="pre">\</span></code>):</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">multiplier</span> = <span class="m">3</span>
 </li><li><span class="k">let</span> <span class="nv">message</span> = <span class="s">&#34;</span>\<span class="p">(</span><span class="nv">multiplier</span><span class="p">)</span><span class="s"> times 2.5 is </span>\<span class="p">(</span><span class="nv">Double</span>(<span class="nv">multiplier</span>) * <span class="m">2.5</span><span class="p">)</span><span class="s">&#34;</span>
@@ -355,7 +355,7 @@
 </div>
 </div>
 <div class="section" id="ID293">
-<a class="dashingAutolink" name="autolink-193"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Unicode"></a><h2>Unicode<a class="headerlink" href="StringsAndCharacters.html#ID293" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-194"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Unicode"></a><h2>Unicode<a class="headerlink" href="StringsAndCharacters.html#ID293" title="Permalink to this headline"></a></h2>
 <p><em>Unicode</em> is an international standard for encoding, representing, and processing text in different writing systems. It enables you to represent almost any character from any language in a standardized form, and to read and write those characters to and from an external source such as a text file or web page. Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">String</span></code> and <code class="docutils literal notranslate"><span class="pre">Character</span></code> types are fully Unicode-compliant, as described in this section.</p>
 <div class="section" id="ID294">
 <h3>Unicode Scalar Values<a class="headerlink" href="StringsAndCharacters.html#ID294" title="Permalink to this headline"></a></h3>
@@ -387,7 +387,7 @@
 </div>
 </div>
 <div class="section" id="ID297">
-<a class="dashingAutolink" name="autolink-194"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Counting%20Characters"></a><h2>Counting Characters<a class="headerlink" href="StringsAndCharacters.html#ID297" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-195"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Counting%20Characters"></a><h2>Counting Characters<a class="headerlink" href="StringsAndCharacters.html#ID297" title="Permalink to this headline"></a></h2>
 <p>To retrieve a count of the <code class="docutils literal notranslate"><span class="pre">Character</span></code> values in a string, use the <code class="docutils literal notranslate"><span class="pre">count</span></code> property of the string:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">unusualMenagerie</span> = <span class="s">&#34;Koala 🐨, Snail 🐌, Penguin 🐧, Dromedary 🐪&#34;</span>
 </li><li><span class="nv">print</span>(<span class="s">&#34;unusualMenagerie has </span>\<span class="p">(</span><span class="nv">unusualMenagerie</span>.<span class="nv">count</span><span class="p">)</span><span class="s"> characters&#34;</span>)
@@ -411,7 +411,7 @@
 </div>
 </div>
 <div class="section" id="ID494">
-<a class="dashingAutolink" name="autolink-195"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Accessing%20and%20Modifying%20a%20String"></a><h2>Accessing and Modifying a String<a class="headerlink" href="StringsAndCharacters.html#ID494" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-196"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Accessing%20and%20Modifying%20a%20String"></a><h2>Accessing and Modifying a String<a class="headerlink" href="StringsAndCharacters.html#ID494" title="Permalink to this headline"></a></h2>
 <p>You access and modify a string through its methods and properties, or by using subscript syntax.</p>
 <div class="section" id="ID534">
 <h3>String Indices<a class="headerlink" href="StringsAndCharacters.html#ID534" title="Permalink to this headline"></a></h3>
@@ -471,7 +471,7 @@
 </div>
 </div>
 <div class="section" id="ID555">
-<a class="dashingAutolink" name="autolink-196"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Substrings"></a><h2>Substrings<a class="headerlink" href="StringsAndCharacters.html#ID555" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-197"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Substrings"></a><h2>Substrings<a class="headerlink" href="StringsAndCharacters.html#ID555" title="Permalink to this headline"></a></h2>
 <p>When you get a substring from a string&mdash;for example, using a subscript or a method like <code class="docutils literal notranslate"><span class="pre">prefix(_:)</span></code>&mdash;the result is an instance of <a class="reference external" href="https://developer.apple.com/documentation/swift/substring"><code class="docutils literal notranslate"><span class="pre">Substring</span></code></a>, not another string. Substrings in Swift have most of the same methods as strings, which means you can work with substrings the same way you work with strings. However, unlike strings, you use substrings for only a short amount of time while performing actions on a string. When you&rsquo;re ready to store the result for a longer time, you convert the substring to an instance of <code class="docutils literal notranslate"><span class="pre">String</span></code>. For example:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">greeting</span> = <span class="s">&#34;Hello, world!&#34;</span>
 </li><li><span class="k">let</span> <span class="nv">index</span> = <span class="nv">greeting</span>.<span class="nv">firstIndex</span>(<span class="nv">of</span>: <span class="s">&#34;,&#34;</span>) ?? <span class="nv">greeting</span>.<span class="nv">endIndex</span>
@@ -481,7 +481,7 @@
 </li><li><span class="c">// Convert the result to a String for long-term storage.</span>
 </li><li><span class="k">let</span> <span class="nv">newString</span> = <span class="nv">String</span>(<span class="nv">beginning</span>)
 </li></ol></div></div></div>
-<p>Like strings, each substring has a region of memory where the characters that make up the substring are stored. The difference between strings and substrings is that, as a performance optimization, a substring can reuse part of the memory that&rsquo;s used to store the original string, or part of the memory that&rsquo;s used to store another substring. (Strings have a similar optimization, but if two strings share memory, they are equal.) This performance optimization means you don&rsquo;t have to pay the performance cost of copying memory until you modify either the string or substring. As mentioned above, substrings aren&rsquo;t suitable for long-term storage&mdash;because they reuse the storage of the original string, the entire original string must be kept in memory as long as any of its substrings are being used.</p>
+<p>Like strings, each substring has a region of memory where the characters that make up the substring are stored. The difference between strings and substrings is that, as a performance optimization, a substring can reuse part of the memory that&rsquo;s used to store the original string, or part of the memory that&rsquo;s used to store another substring. (Strings have a similar optimization, but if two strings share memory, they&rsquo;re equal.) This performance optimization means you don&rsquo;t have to pay the performance cost of copying memory until you modify either the string or substring. As mentioned above, substrings aren&rsquo;t suitable for long-term storage&mdash;because they reuse the storage of the original string, the entire original string must be kept in memory as long as any of its substrings are being used.</p>
 <p>In the example above, <code class="docutils literal notranslate"><span class="pre">greeting</span></code> is a string, which means it has a region of memory where the characters that make up the string are stored. Because <code class="docutils literal notranslate"><span class="pre">beginning</span></code> is a substring of <code class="docutils literal notranslate"><span class="pre">greeting</span></code>, it reuses the memory that <code class="docutils literal notranslate"><span class="pre">greeting</span></code> uses. In contrast, <code class="docutils literal notranslate"><span class="pre">newString</span></code> is a string&mdash;when it&rsquo;s created from the substring, it has its own storage. The figure below shows these relationships:</p>
 <img alt="../_images/stringSubstring_2x.png" class="align-center" src="../_images/stringSubstring_2x.png" style="width: 366px;"/>
 <div class="admonition note">
@@ -490,7 +490,7 @@
 </div>
 </div>
 <div class="section" id="ID298">
-<a class="dashingAutolink" name="autolink-197"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Comparing%20Strings"></a><h2>Comparing Strings<a class="headerlink" href="StringsAndCharacters.html#ID298" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-198"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Comparing%20Strings"></a><h2>Comparing Strings<a class="headerlink" href="StringsAndCharacters.html#ID298" title="Permalink to this headline"></a></h2>
 <p>Swift provides three ways to compare textual values: string and character equality, prefix equality, and suffix equality.</p>
 <div class="section" id="ID299">
 <h3>String and Character Equality<a class="headerlink" href="StringsAndCharacters.html#ID299" title="Permalink to this headline"></a></h3>
@@ -521,13 +521,13 @@
 </li><li><span class="k">let</span> <span class="nv">cyrillicCapitalLetterA</span>: <span class="nc">Character</span> = <span class="s">&#34;\u{0410}&#34;</span>
 </li><li>
 </li><li><span class="k">if</span> <span class="nv">latinCapitalLetterA</span> != <span class="nv">cyrillicCapitalLetterA</span> {
-</li><li>    <span class="nv">print</span>(<span class="s">&#34;These two characters are not equivalent.&#34;</span>)
+</li><li>    <span class="nv">print</span>(<span class="s">&#34;These two characters aren&#39;t equivalent.&#34;</span>)
 </li><li>}
-</li><li><span class="c">// Prints &#34;These two characters are not equivalent.&#34;</span>
+</li><li><span class="c">// Prints &#34;These two characters aren&#39;t equivalent.&#34;</span>
 </li></ol></div></div></div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">String and character comparisons in Swift are not locale-sensitive.</p>
+<p class="last">String and character comparisons in Swift aren&rsquo;t locale-sensitive.</p>
 </div>
 </div>
 <div class="section" id="ID300">
@@ -578,7 +578,7 @@
 </div>
 </div>
 <div class="section" id="ID301">
-<a class="dashingAutolink" name="autolink-198"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Unicode%20Representations%20of%20Strings"></a><h2>Unicode Representations of Strings<a class="headerlink" href="StringsAndCharacters.html#ID301" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-199"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Unicode%20Representations%20of%20Strings"></a><h2>Unicode Representations of Strings<a class="headerlink" href="StringsAndCharacters.html#ID301" title="Permalink to this headline"></a></h2>
 <p>When a Unicode string is written to a text file or some other storage, the Unicode scalars in that string are encoded in one of several Unicode-defined <em>encoding forms</em>. Each form encodes the string in small chunks known as <em>code units</em>. These include the UTF-8 encoding form (which encodes a string as 8-bit code units), the UTF-16 encoding form (which encodes a string as 16-bit code units), and the UTF-32 encoding form (which encodes a string as 32-bit code units).</p>
 <p>Swift provides several different ways to access Unicode representations of strings. You can iterate over the string with a <code class="docutils literal notranslate"><span class="pre">for</span></code>-<code class="docutils literal notranslate"><span class="pre">in</span></code> statement, to access its individual <code class="docutils literal notranslate"><span class="pre">Character</span></code> values as Unicode extended grapheme clusters. This process is described in <a class="reference internal" href="StringsAndCharacters.html#ID290"><span class="std std-ref">Working with Characters</span></a>.</p>
 <p>Alternatively, access a <code class="docutils literal notranslate"><span class="pre">String</span></code> value in one of three other Unicode-compliant representations:</p>
@@ -650,6 +650,14 @@
         <p class="previous"><a href="BasicOperators.html">Basic Operators</a></p>
         <p class="next"><a href="CollectionTypes.html">Collection Types</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple&#39;s beta software</a></p>
+    </div>
 </main>
 
 
@@ -659,7 +667,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
@@ -669,5 +677,4 @@
 <div id="jump_to_overlay"></div>
 <script src="../_static/javascripts/application.js"></script>
   
-
 </body></html>

@@ -9,7 +9,7 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>Error Handling &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Error Handling &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
@@ -40,7 +40,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -148,7 +148,7 @@
 <p>When a function throws an error, it changes the flow of your program, so it’s important that you can quickly identify places in your code that can throw errors. To identify these places in your code, write the <code class="docutils literal notranslate"><span class="pre">try</span></code> keyword—or the <code class="docutils literal notranslate"><span class="pre">try?</span></code> or <code class="docutils literal notranslate"><span class="pre">try!</span></code> variation—before a piece of code that calls a function, method, or initializer that can throw an error. These keywords are described in the sections below.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Error handling in Swift resembles exception handling in other languages, with the use of the <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">catch</span></code> and <code class="docutils literal notranslate"><span class="pre">throw</span></code> keywords. Unlike exception handling in many languages—including Objective-C—error handling in Swift does not involve unwinding the call stack, a process that can be computationally expensive. As such, the performance characteristics of a <code class="docutils literal notranslate"><span class="pre">throw</span></code> statement are comparable to those of a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement.</p>
+<p class="last">Error handling in Swift resembles exception handling in other languages, with the use of the <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">catch</span></code> and <code class="docutils literal notranslate"><span class="pre">throw</span></code> keywords. Unlike exception handling in many languages—including Objective-C—error handling in Swift doesn’t involve unwinding the call stack, a process that can be computationally expensive. As such, the performance characteristics of a <code class="docutils literal notranslate"><span class="pre">throw</span></code> statement are comparable to those of a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement.</p>
 </div>
 <div class="section" id="ID510">
 <h3>Propagating Errors Using Throwing Functions<a class="headerlink" href="ErrorHandling.html#ID510" title="Permalink to this headline"></a></h3>
@@ -162,7 +162,7 @@
 <p class="first admonition-title">Note</p>
 <p class="last">Only throwing functions can propagate errors. Any errors thrown inside a nonthrowing function must be handled inside the function.</p>
 </div>
-<p>In the example below, the <code class="docutils literal notranslate"><span class="pre">VendingMachine</span></code> class has a <code class="docutils literal notranslate"><span class="pre">vend(itemNamed:)</span></code> method that throws an appropriate <code class="docutils literal notranslate"><span class="pre">VendingMachineError</span></code> if the requested item is not available, is out of stock, or has a cost that exceeds the current deposited amount:</p>
+<p>In the example below, the <code class="docutils literal notranslate"><span class="pre">VendingMachine</span></code> class has a <code class="docutils literal notranslate"><span class="pre">vend(itemNamed:)</span></code> method that throws an appropriate <code class="docutils literal notranslate"><span class="pre">VendingMachineError</span></code> if the requested item isn’t available, is out of stock, or has a cost that exceeds the current deposited amount:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">Item</span> {
 </li><li>    <span class="k">var</span> <span class="nv">price</span>: <span class="nc">Int</span>
 </li><li>    <span class="k">var</span> <span class="nv">count</span>: <span class="nc">Int</span>
@@ -224,7 +224,7 @@
 </div>
 <div class="section" id="ID541">
 <h3>Handling Errors Using Do-Catch<a class="headerlink" href="ErrorHandling.html#ID541" title="Permalink to this headline"></a></h3>
-<p>You use a <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">catch</span></code> statement to handle errors by running a block of code. If an error is thrown by the code in the <code class="docutils literal notranslate"><span class="pre">do</span></code> clause, it is matched against the <code class="docutils literal notranslate"><span class="pre">catch</span></code> clauses to determine which one of them can handle the error.</p>
+<p>You use a <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">catch</span></code> statement to handle errors by running a block of code. If an error is thrown by the code in the <code class="docutils literal notranslate"><span class="pre">do</span></code> clause, it’s matched against the <code class="docutils literal notranslate"><span class="pre">catch</span></code> clauses to determine which one of them can handle the error.</p>
 <p>Here is the general form of a <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">catch</span></code> statement:</p>
 <div class="syntax-outline highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">do</span> {
 </li><li>    <span class="k">try</span> <span class="gi">expression</span>
@@ -315,7 +315,7 @@
 <div class="section" id="ID513">
 <h3>Disabling Error Propagation<a class="headerlink" href="ErrorHandling.html#ID513" title="Permalink to this headline"></a></h3>
 <p>Sometimes you know a throwing function or method won’t, in fact, throw an error at runtime. On those occasions, you can write <code class="docutils literal notranslate"><span class="pre">try!</span></code> before the expression to disable error propagation and wrap the call in a runtime assertion that no error will be thrown. If an error actually is thrown, you’ll get a runtime error.</p>
-<p>For example, the following code uses a <code class="docutils literal notranslate"><span class="pre">loadImage(atPath:)</span></code> function, which loads the image resource at a given path or throws an error if the image can’t be loaded. In this case, because the image is shipped with the application, no error will be thrown at runtime, so it is appropriate to disable error propagation.</p>
+<p>For example, the following code uses a <code class="docutils literal notranslate"><span class="pre">loadImage(atPath:)</span></code> function, which loads the image resource at a given path or throws an error if the image can’t be loaded. In this case, because the image is shipped with the application, no error will be thrown at runtime, so it’s appropriate to disable error propagation.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">photo</span> = <span class="k">try</span>! <span class="nv">loadImage</span>(<span class="nv">atPath</span>: <span class="s">&quot;./Resources/John Appleseed.jpg&quot;</span>)
 </li></ol></div></div></div>
 </div>
@@ -351,6 +351,14 @@
         <p class="previous"><a href="OptionalChaining.html">Optional Chaining</a></p>
         <p class="next"><a href="TypeCasting.html">Type Casting</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple's beta software</a></p>
+    </div>
 </main>
 
 
@@ -360,7 +368,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

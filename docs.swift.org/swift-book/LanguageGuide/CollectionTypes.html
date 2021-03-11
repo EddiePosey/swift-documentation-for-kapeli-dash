@@ -9,7 +9,7 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>Collection Types &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Collection Types &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
@@ -40,7 +40,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -146,17 +146,17 @@
 <h1>Collection Types<a class="headerlink" href="CollectionTypes.html#collection-types" title="Permalink to this headline"></a></h1>
 <p>Swift provides three primary <em>collection types</em>, known as arrays, sets, and dictionaries, for storing collections of values. Arrays are ordered collections of values. Sets are unordered collections of unique values. Dictionaries are unordered collections of key-value associations.</p>
 <img alt="../_images/CollectionTypes_intro_2x.png" class="align-center" src="../_images/CollectionTypes_intro_2x.png" style="width: 670px;" />
-<p>Arrays, sets, and dictionaries in Swift are always clear about the types of values and keys that they can store. This means that you cannot insert a value of the wrong type into a collection by mistake. It also means you can be confident about the type of values you will retrieve from a collection.</p>
+<p>Arrays, sets, and dictionaries in Swift are always clear about the types of values and keys that they can store. This means that you can’t insert a value of the wrong type into a collection by mistake. It also means you can be confident about the type of values you will retrieve from a collection.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Swift’s array, set, and dictionary types are implemented as <em>generic collections</em>. For more about generic types and collections, see <a class="reference internal" href="Generics.html"><span class="doc">Generics</span></a>.</p>
 </div>
 <div class="section" id="ID106">
 <h2>Mutability of Collections<a class="headerlink" href="CollectionTypes.html#ID106" title="Permalink to this headline"></a></h2>
-<p>If you create an array, a set, or a dictionary, and assign it to a variable, the collection that is created will be <em>mutable</em>. This means that you can change (or <em>mutate</em>) the collection after it’s created by adding, removing, or changing items in the collection. If you assign an array, a set, or a dictionary to a constant, that collection is <em>immutable</em>, and its size and contents cannot be changed.</p>
+<p>If you create an array, a set, or a dictionary, and assign it to a variable, the collection that’s created will be <em>mutable</em>. This means that you can change (or <em>mutate</em>) the collection after it’s created by adding, removing, or changing items in the collection. If you assign an array, a set, or a dictionary to a constant, that collection is <em>immutable</em>, and its size and contents can’t be changed.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">It is good practice to create immutable collections in all cases where the collection does not need to change. Doing so makes it easier for you to reason about your code and enables the Swift compiler to optimize the performance of the collections you create.</p>
+<p class="last">It’s good practice to create immutable collections in all cases where the collection doesn’t need to change. Doing so makes it easier for you to reason about your code and enables the Swift compiler to optimize the performance of the collections you create.</p>
 </div>
 </div>
 <div class="section" id="ID107">
@@ -212,7 +212,7 @@
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">shoppingList</span>: [<span class="nc">String</span>] = [<span class="s">&quot;Eggs&quot;</span>, <span class="s">&quot;Milk&quot;</span>]
 </li><li><span class="c">// shoppingList has been initialized with two initial items</span>
 </li></ol></div></div></div>
-<p>The <code class="docutils literal notranslate"><span class="pre">shoppingList</span></code> variable is declared as “an array of string values”, written as <code class="docutils literal notranslate"><span class="pre">[String]</span></code>. Because this particular array has specified a value type of <code class="docutils literal notranslate"><span class="pre">String</span></code>, it is allowed to store <code class="docutils literal notranslate"><span class="pre">String</span></code> values only. Here, the <code class="docutils literal notranslate"><span class="pre">shoppingList</span></code> array is initialized with two <code class="docutils literal notranslate"><span class="pre">String</span></code> values (<code class="docutils literal notranslate"><span class="pre">&quot;Eggs&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Milk&quot;</span></code>), written within an array literal.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">shoppingList</span></code> variable is declared as “an array of string values”, written as <code class="docutils literal notranslate"><span class="pre">[String]</span></code>. Because this particular array has specified a value type of <code class="docutils literal notranslate"><span class="pre">String</span></code>, it’s allowed to store <code class="docutils literal notranslate"><span class="pre">String</span></code> values only. Here, the <code class="docutils literal notranslate"><span class="pre">shoppingList</span></code> array is initialized with two <code class="docutils literal notranslate"><span class="pre">String</span></code> values (<code class="docutils literal notranslate"><span class="pre">&quot;Eggs&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Milk&quot;</span></code>), written within an array literal.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The <code class="docutils literal notranslate"><span class="pre">shoppingList</span></code> array is declared as a variable (with the <code class="docutils literal notranslate"><span class="pre">var</span></code> introducer) and not a constant (with the <code class="docutils literal notranslate"><span class="pre">let</span></code> introducer) because more items are added to the shopping list in the examples below.</p>
@@ -234,9 +234,9 @@
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">if</span> <span class="nv">shoppingList</span>.<span class="nv">isEmpty</span> {
 </li><li>    <span class="nv">print</span>(<span class="s">&quot;The shopping list is empty.&quot;</span>)
 </li><li>} <span class="k">else</span> {
-</li><li>    <span class="nv">print</span>(<span class="s">&quot;The shopping list is not empty.&quot;</span>)
+</li><li>    <span class="nv">print</span>(<span class="s">&quot;The shopping list isn&#39;t empty.&quot;</span>)
 </li><li>}
-</li><li><span class="c">// Prints &quot;The shopping list is not empty.&quot;</span>
+</li><li><span class="c">// Prints &quot;The shopping list isn&#39;t empty.&quot;</span>
 </li></ol></div></div></div>
 <p>You can add a new item to the end of an array by calling the array’s <code class="docutils literal notranslate"><span class="pre">append(_:)</span></code> method:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">shoppingList</span>.<span class="nv">append</span>(<span class="s">&quot;Flour&quot;</span>)
@@ -271,7 +271,7 @@
 </li><li><span class="c">// &quot;Maple Syrup&quot; is now the first item in the list</span>
 </li></ol></div></div></div>
 <p>This call to the <code class="docutils literal notranslate"><span class="pre">insert(_:at:)</span></code> method inserts a new item with a value of <code class="docutils literal notranslate"><span class="pre">&quot;Maple</span> <span class="pre">Syrup&quot;</span></code> at the very beginning of the shopping list, indicated by an index of <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
-<p>Similarly, you remove an item from the array with the <code class="docutils literal notranslate"><span class="pre">remove(at:)</span></code> method. This method removes the item at the specified index and returns the removed item (although you can ignore the returned value if you do not need it):</p>
+<p>Similarly, you remove an item from the array with the <code class="docutils literal notranslate"><span class="pre">remove(at:)</span></code> method. This method removes the item at the specified index and returns the removed item (although you can ignore the returned value if you don’t need it):</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">mapleSyrup</span> = <span class="nv">shoppingList</span>.<span class="nv">remove</span>(<span class="nv">at</span>: <span class="m">0</span>)
 </li><li><span class="c">// the item that was at index 0 has just been removed</span>
 </li><li><span class="c">// shoppingList now contains 6 items, and no Maple Syrup</span>
@@ -279,7 +279,7 @@
 </li></ol></div></div></div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you try to access or modify a value for an index that is outside of an array’s existing bounds, you will trigger a runtime error. You can check that an index is valid before using it by comparing it to the array’s <code class="docutils literal notranslate"><span class="pre">count</span></code> property. The largest valid index in an array is <code class="docutils literal notranslate"><span class="pre">count</span> <span class="pre">-</span> <span class="pre">1</span></code> because arrays are indexed from zero—however, when <code class="docutils literal notranslate"><span class="pre">count</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code> (meaning the array is empty), there are no valid indexes.</p>
+<p class="last">If you try to access or modify a value for an index that’s outside of an array’s existing bounds, you will trigger a runtime error. You can check that an index is valid before using it by comparing it to the array’s <code class="docutils literal notranslate"><span class="pre">count</span></code> property. The largest valid index in an array is <code class="docutils literal notranslate"><span class="pre">count</span> <span class="pre">-</span> <span class="pre">1</span></code> because arrays are indexed from zero—however, when <code class="docutils literal notranslate"><span class="pre">count</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code> (meaning the array is empty), there are no valid indexes.</p>
 </div>
 <p>Any gaps in an array are closed when an item is removed, and so the value at index <code class="docutils literal notranslate"><span class="pre">0</span></code> is once again equal to <code class="docutils literal notranslate"><span class="pre">&quot;Six</span> <span class="pre">eggs&quot;</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">firstItem</span> = <span class="nv">shoppingList</span>[<span class="m">0</span>]
@@ -319,7 +319,7 @@
 </div>
 <div class="section" id="ID484">
 <h2>Sets<a class="headerlink" href="CollectionTypes.html#ID484" title="Permalink to this headline"></a></h2>
-<p>A <em>set</em> stores distinct values of the same type in a collection with no defined ordering. You can use a set instead of an array when the order of items is not important, or when you need to ensure that an item only appears once.</p>
+<p>A <em>set</em> stores distinct values of the same type in a collection with no defined ordering. You can use a set instead of an array when the order of items isn’t important, or when you need to ensure that an item only appears once.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>Swift’s <code class="docutils literal notranslate"><span class="pre">Set</span></code> type is bridged to Foundation’s <code class="docutils literal notranslate"><span class="pre">NSSet</span></code> class.</p>
@@ -327,7 +327,7 @@
 </div>
 <div class="section" id="ID493">
 <h3>Hash Values for Set Types<a class="headerlink" href="CollectionTypes.html#ID493" title="Permalink to this headline"></a></h3>
-<p>A type must be <em>hashable</em> in order to be stored in a set—that is, the type must provide a way to compute a <em>hash value</em> for itself. A hash value is an <code class="docutils literal notranslate"><span class="pre">Int</span></code> value that is the same for all objects that compare equally, such that if <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code>, the hash value of <code class="docutils literal notranslate"><span class="pre">a</span></code> is equal to the hash value of <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<p>A type must be <em>hashable</em> in order to be stored in a set—that is, the type must provide a way to compute a <em>hash value</em> for itself. A hash value is an <code class="docutils literal notranslate"><span class="pre">Int</span></code> value that’s the same for all objects that compare equally, such that if <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code>, the hash value of <code class="docutils literal notranslate"><span class="pre">a</span></code> is equal to the hash value of <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
 <p>All of Swift’s basic types (such as <code class="docutils literal notranslate"><span class="pre">String</span></code>, <code class="docutils literal notranslate"><span class="pre">Int</span></code>, <code class="docutils literal notranslate"><span class="pre">Double</span></code>, and <code class="docutils literal notranslate"><span class="pre">Bool</span></code>) are hashable by default, and can be used as set value types or dictionary key types. Enumeration case values without associated values (as described in <a class="reference internal" href="Enumerations.html"><span class="doc">Enumerations</span></a>) are also hashable by default.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -336,7 +336,7 @@
 </div>
 <div class="section" id="ID485">
 <h3>Set Type Syntax<a class="headerlink" href="CollectionTypes.html#ID485" title="Permalink to this headline"></a></h3>
-<p>The type of a Swift set is written as <code class="docutils literal notranslate"><span class="pre">Set&lt;Element&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">Element</span></code> is the type that the set is allowed to store. Unlike arrays, sets do not have an equivalent shorthand form.</p>
+<p>The type of a Swift set is written as <code class="docutils literal notranslate"><span class="pre">Set&lt;Element&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">Element</span></code> is the type that the set is allowed to store. Unlike arrays, sets don’t have an equivalent shorthand form.</p>
 </div>
 <div class="section" id="ID503">
 <h3>Creating and Initializing an Empty Set<a class="headerlink" href="CollectionTypes.html#ID503" title="Permalink to this headline"></a></h3>
@@ -363,12 +363,12 @@
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">favoriteGenres</span>: <span class="nc">Set</span>&lt;<span class="nc">String</span>&gt; = [<span class="s">&quot;Rock&quot;</span>, <span class="s">&quot;Classical&quot;</span>, <span class="s">&quot;Hip hop&quot;</span>]
 </li><li><span class="c">// favoriteGenres has been initialized with three initial items</span>
 </li></ol></div></div></div>
-<p>The <code class="docutils literal notranslate"><span class="pre">favoriteGenres</span></code> variable is declared as “a set of <code class="docutils literal notranslate"><span class="pre">String</span></code> values”, written as <code class="docutils literal notranslate"><span class="pre">Set&lt;String&gt;</span></code>. Because this particular set has specified a value type of <code class="docutils literal notranslate"><span class="pre">String</span></code>, it is <em>only</em> allowed to store <code class="docutils literal notranslate"><span class="pre">String</span></code> values. Here, the <code class="docutils literal notranslate"><span class="pre">favoriteGenres</span></code> set is initialized with three <code class="docutils literal notranslate"><span class="pre">String</span></code> values (<code class="docutils literal notranslate"><span class="pre">&quot;Rock&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Classical&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;Hip</span> <span class="pre">hop&quot;</span></code>), written within an array literal.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">favoriteGenres</span></code> variable is declared as “a set of <code class="docutils literal notranslate"><span class="pre">String</span></code> values”, written as <code class="docutils literal notranslate"><span class="pre">Set&lt;String&gt;</span></code>. Because this particular set has specified a value type of <code class="docutils literal notranslate"><span class="pre">String</span></code>, it’s <em>only</em> allowed to store <code class="docutils literal notranslate"><span class="pre">String</span></code> values. Here, the <code class="docutils literal notranslate"><span class="pre">favoriteGenres</span></code> set is initialized with three <code class="docutils literal notranslate"><span class="pre">String</span></code> values (<code class="docutils literal notranslate"><span class="pre">&quot;Rock&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Classical&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;Hip</span> <span class="pre">hop&quot;</span></code>), written within an array literal.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The <code class="docutils literal notranslate"><span class="pre">favoriteGenres</span></code> set is declared as a variable (with the <code class="docutils literal notranslate"><span class="pre">var</span></code> introducer) and not a constant (with the <code class="docutils literal notranslate"><span class="pre">let</span></code> introducer) because items are added and removed in the examples below.</p>
 </div>
-<p>A set type cannot be inferred from an array literal alone, so the type <code class="docutils literal notranslate"><span class="pre">Set</span></code> must be explicitly declared. However, because of Swift’s type inference, you don’t have to write the type of the set’s elements if you’re initializing it with an array literal that contains values of just one type. The initialization of <code class="docutils literal notranslate"><span class="pre">favoriteGenres</span></code> could have been written in a shorter form instead:</p>
+<p>A set type can’t be inferred from an array literal alone, so the type <code class="docutils literal notranslate"><span class="pre">Set</span></code> must be explicitly declared. However, because of Swift’s type inference, you don’t have to write the type of the set’s elements if you’re initializing it with an array literal that contains values of just one type. The initialization of <code class="docutils literal notranslate"><span class="pre">favoriteGenres</span></code> could have been written in a shorter form instead:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">favoriteGenres</span>: <span class="nc">Set</span> = [<span class="s">&quot;Rock&quot;</span>, <span class="s">&quot;Classical&quot;</span>, <span class="s">&quot;Hip hop&quot;</span>]
 </li></ol></div></div></div>
 <p>Because all values in the array literal are of the same type, Swift can infer that <code class="docutils literal notranslate"><span class="pre">Set&lt;String&gt;</span></code> is the correct type to use for the <code class="docutils literal notranslate"><span class="pre">favoriteGenres</span></code> variable.</p>
@@ -392,7 +392,7 @@
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">favoriteGenres</span>.<span class="nv">insert</span>(<span class="s">&quot;Jazz&quot;</span>)
 </li><li><span class="c">// favoriteGenres now contains 4 items</span>
 </li></ol></div></div></div>
-<p>You can remove an item from a set by calling the set’s <code class="docutils literal notranslate"><span class="pre">remove(_:)</span></code> method, which removes the item if it’s a member of the set, and returns the removed value, or returns <code class="docutils literal notranslate"><span class="pre">nil</span></code> if the set did not contain it. Alternatively, all items in a set can be removed with its <code class="docutils literal notranslate"><span class="pre">removeAll()</span></code> method.</p>
+<p>You can remove an item from a set by calling the set’s <code class="docutils literal notranslate"><span class="pre">remove(_:)</span></code> method, which removes the item if it’s a member of the set, and returns the removed value, or returns <code class="docutils literal notranslate"><span class="pre">nil</span></code> if the set didn’t contain it. Alternatively, all items in a set can be removed with its <code class="docutils literal notranslate"><span class="pre">removeAll()</span></code> method.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">if</span> <span class="k">let</span> <span class="nv">removedGenre</span> = <span class="nv">favoriteGenres</span>.<span class="nv">remove</span>(<span class="s">&quot;Rock&quot;</span>) {
 </li><li>    <span class="nv">print</span>(<span class="s">&quot;</span>\<span class="p">(</span><span class="nv">removedGenre</span><span class="p">)</span><span class="s">? I&#39;m over it.&quot;</span>)
 </li><li>} <span class="k">else</span> {
@@ -420,7 +420,7 @@
 </li><li><span class="c">// Hip hop</span>
 </li></ol></div></div></div>
 <p>For more about the <code class="docutils literal notranslate"><span class="pre">for</span></code>-<code class="docutils literal notranslate"><span class="pre">in</span></code> loop, see <a class="reference internal" href="ControlFlow.html#ID121"><span class="std std-ref">For-In Loops</span></a>.</p>
-<p>Swift’s <code class="docutils literal notranslate"><span class="pre">Set</span></code> type does not have a defined ordering. To iterate over the values of a set in a specific order, use the <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> method, which returns the set’s elements as an array sorted using the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator.</p>
+<p>Swift’s <code class="docutils literal notranslate"><span class="pre">Set</span></code> type doesn’t have a defined ordering. To iterate over the values of a set in a specific order, use the <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> method, which returns the set’s elements as an array sorted using the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">for</span> <span class="nv">genre</span> <span class="k">in</span> <span class="nv">favoriteGenres</span>.<span class="nv">sorted</span>() {
 </li><li>    <span class="nv">print</span>(<span class="s">&quot;</span>\<span class="p">(</span><span class="nv">genre</span><span class="p">)</span><span class="s">&quot;</span>)
 </li><li>}
@@ -483,7 +483,7 @@
 </div>
 <div class="section" id="ID113">
 <h2>Dictionaries<a class="headerlink" href="CollectionTypes.html#ID113" title="Permalink to this headline"></a></h2>
-<p>A <em>dictionary</em> stores associations between keys of the same type and values of the same type in a collection with no defined ordering. Each value is associated with a unique <em>key</em>, which acts as an identifier for that value within the dictionary. Unlike items in an array, items in a dictionary do not have a specified order. You use a dictionary when you need to look up values based on their identifier, in much the same way that a real-world dictionary is used to look up the definition for a particular word.</p>
+<p>A <em>dictionary</em> stores associations between keys of the same type and values of the same type in a collection with no defined ordering. Each value is associated with a unique <em>key</em>, which acts as an identifier for that value within the dictionary. Unlike items in an array, items in a dictionary don’t have a specified order. You use a dictionary when you need to look up values based on their identifier, in much the same way that a real-world dictionary is used to look up the definition for a particular word.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>Swift’s <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> type is bridged to Foundation’s <code class="docutils literal notranslate"><span class="pre">NSDictionary</span></code> class.</p>
@@ -544,9 +544,9 @@
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">if</span> <span class="nv">airports</span>.<span class="nv">isEmpty</span> {
 </li><li>    <span class="nv">print</span>(<span class="s">&quot;The airports dictionary is empty.&quot;</span>)
 </li><li>} <span class="k">else</span> {
-</li><li>    <span class="nv">print</span>(<span class="s">&quot;The airports dictionary is not empty.&quot;</span>)
+</li><li>    <span class="nv">print</span>(<span class="s">&quot;The airports dictionary isn&#39;t empty.&quot;</span>)
 </li><li>}
-</li><li><span class="c">// Prints &quot;The airports dictionary is not empty.&quot;</span>
+</li><li><span class="c">// Prints &quot;The airports dictionary isn&#39;t empty.&quot;</span>
 </li></ol></div></div></div>
 <p>You can add a new item to a dictionary with subscript syntax. Use a new key of the appropriate type as the subscript index, and assign a new value of the appropriate type:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">airports</span>[<span class="s">&quot;LHR&quot;</span>] = <span class="s">&quot;London&quot;</span>
@@ -563,17 +563,17 @@
 </li><li>}
 </li><li><span class="c">// Prints &quot;The old value for DUB was Dublin.&quot;</span>
 </li></ol></div></div></div>
-<p>You can also use subscript syntax to retrieve a value from the dictionary for a particular key. Because it is possible to request a key for which no value exists, a dictionary’s subscript returns an optional value of the dictionary’s value type. If the dictionary contains a value for the requested key, the subscript returns an optional value containing the existing value for that key. Otherwise, the subscript returns <code class="docutils literal notranslate"><span class="pre">nil</span></code>:</p>
+<p>You can also use subscript syntax to retrieve a value from the dictionary for a particular key. Because it’s possible to request a key for which no value exists, a dictionary’s subscript returns an optional value of the dictionary’s value type. If the dictionary contains a value for the requested key, the subscript returns an optional value containing the existing value for that key. Otherwise, the subscript returns <code class="docutils literal notranslate"><span class="pre">nil</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">if</span> <span class="k">let</span> <span class="nv">airportName</span> = <span class="nv">airports</span>[<span class="s">&quot;DUB&quot;</span>] {
 </li><li>    <span class="nv">print</span>(<span class="s">&quot;The name of the airport is </span>\<span class="p">(</span><span class="nv">airportName</span><span class="p">)</span><span class="s">.&quot;</span>)
 </li><li>} <span class="k">else</span> {
-</li><li>    <span class="nv">print</span>(<span class="s">&quot;That airport is not in the airports dictionary.&quot;</span>)
+</li><li>    <span class="nv">print</span>(<span class="s">&quot;That airport isn&#39;t in the airports dictionary.&quot;</span>)
 </li><li>}
 </li><li><span class="c">// Prints &quot;The name of the airport is Dublin Airport.&quot;</span>
 </li></ol></div></div></div>
 <p>You can use subscript syntax to remove a key-value pair from a dictionary by assigning a value of <code class="docutils literal notranslate"><span class="pre">nil</span></code> for that key:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">airports</span>[<span class="s">&quot;APL&quot;</span>] = <span class="s">&quot;Apple International&quot;</span>
-</li><li><span class="c">// &quot;Apple International&quot; is not the real airport for APL, so delete it</span>
+</li><li><span class="c">// &quot;Apple International&quot; isn&#39;t the real airport for APL, so delete it</span>
 </li><li><span class="nv">airports</span>[<span class="s">&quot;APL&quot;</span>] = <span class="k">nil</span>
 </li><li><span class="c">// APL has now been removed from the dictionary</span>
 </li></ol></div></div></div>
@@ -581,7 +581,7 @@
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">if</span> <span class="k">let</span> <span class="nv">removedValue</span> = <span class="nv">airports</span>.<span class="nv">removeValue</span>(<span class="nv">forKey</span>: <span class="s">&quot;DUB&quot;</span>) {
 </li><li>    <span class="nv">print</span>(<span class="s">&quot;The removed airport&#39;s name is </span>\<span class="p">(</span><span class="nv">removedValue</span><span class="p">)</span><span class="s">.&quot;</span>)
 </li><li>} <span class="k">else</span> {
-</li><li>    <span class="nv">print</span>(<span class="s">&quot;The airports dictionary does not contain a value for DUB.&quot;</span>)
+</li><li>    <span class="nv">print</span>(<span class="s">&quot;The airports dictionary doesn&#39;t contain a value for DUB.&quot;</span>)
 </li><li>}
 </li><li><span class="c">// Prints &quot;The removed airport&#39;s name is Dublin Airport.&quot;</span>
 </li></ol></div></div></div>
@@ -616,7 +616,7 @@
 </li><li><span class="k">let</span> <span class="nv">airportNames</span> = [<span class="nv">String</span>](<span class="nv">airports</span>.<span class="nv">values</span>)
 </li><li><span class="c">// airportNames is [&quot;London Heathrow&quot;, &quot;Toronto Pearson&quot;]</span>
 </li></ol></div></div></div>
-<p>Swift’s <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> type does not have a defined ordering. To iterate over the keys or values of a dictionary in a specific order, use the <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> method on its <code class="docutils literal notranslate"><span class="pre">keys</span></code> or <code class="docutils literal notranslate"><span class="pre">values</span></code> property.</p>
+<p>Swift’s <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> type doesn’t have a defined ordering. To iterate over the keys or values of a dictionary in a specific order, use the <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> method on its <code class="docutils literal notranslate"><span class="pre">keys</span></code> or <code class="docutils literal notranslate"><span class="pre">values</span></code> property.</p>
 </div>
 </div>
 </div>
@@ -627,6 +627,14 @@
         <p class="previous"><a href="StringsAndCharacters.html">Strings and Characters</a></p>
         <p class="next"><a href="ControlFlow.html">Control Flow</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple's beta software</a></p>
+    </div>
 </main>
 
 
@@ -636,7 +644,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

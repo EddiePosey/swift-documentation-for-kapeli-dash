@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Initialization &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Initialization &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <a class="dashingAutolink" name="autolink-120"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
+      <a class="dashingAutolink" name="autolink-121"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -34,7 +34,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -142,13 +142,13 @@
 
         
   <div class="section" id="initialization">
-<a class="dashingAutolink" name="autolink-121"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Initialization"></a><h1>Initialization<a class="headerlink" href="Initialization.html#initialization" title="Permalink to this headline"></a></h1>
-<p><em>Initialization</em> is the process of preparing an instance of a class, structure, or enumeration for use. This process involves setting an initial value for each stored property on that instance and performing any other setup or initialization that is required before the new instance is ready for use.</p>
-<p>You implement this initialization process by defining <em>initializers</em>, which are like special methods that can be called to create a new instance of a particular type. Unlike Objective-C initializers, Swift initializers do not return a value. Their primary role is to ensure that new instances of a type are correctly initialized before they are used for the first time.</p>
+<a class="dashingAutolink" name="autolink-122"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Initialization"></a><h1>Initialization<a class="headerlink" href="Initialization.html#initialization" title="Permalink to this headline"></a></h1>
+<p><em>Initialization</em> is the process of preparing an instance of a class, structure, or enumeration for use. This process involves setting an initial value for each stored property on that instance and performing any other setup or initialization that&rsquo;s required before the new instance is ready for use.</p>
+<p>You implement this initialization process by defining <em>initializers</em>, which are like special methods that can be called to create a new instance of a particular type. Unlike Objective-C initializers, Swift initializers don&rsquo;t return a value. Their primary role is to ensure that new instances of a type are correctly initialized before they&rsquo;re used for the first time.</p>
 <p>Instances of class types can also implement a <em>deinitializer</em>, which performs any custom cleanup just before an instance of that class is deallocated. For more information about deinitializers, see <a class="reference internal" href="Deinitialization.html"><span class="doc">Deinitialization</span></a>.</p>
 <div class="section" id="ID204">
-<a class="dashingAutolink" name="autolink-122"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Setting%20Initial%20Values%20for%20Stored%20Properties"></a><h2>Setting Initial Values for Stored Properties<a class="headerlink" href="Initialization.html#ID204" title="Permalink to this headline"></a></h2>
-<p>Classes and structures <em>must</em> set all of their stored properties to an appropriate initial value by the time an instance of that class or structure is created. Stored properties cannot be left in an indeterminate state.</p>
+<a class="dashingAutolink" name="autolink-123"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Setting%20Initial%20Values%20for%20Stored%20Properties"></a><h2>Setting Initial Values for Stored Properties<a class="headerlink" href="Initialization.html#ID204" title="Permalink to this headline"></a></h2>
+<p>Classes and structures <em>must</em> set all of their stored properties to an appropriate initial value by the time an instance of that class or structure is created. Stored properties can&rsquo;t be left in an indeterminate state.</p>
 <p>You can set an initial value for a stored property within an initializer, or by assigning a default property value as part of the property&rsquo;s definition. These actions are described in the following sections.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -176,7 +176,7 @@
 </div>
 <div class="section" id="ID206">
 <h3>Default Property Values<a class="headerlink" href="Initialization.html#ID206" title="Permalink to this headline"></a></h3>
-<p>You can set the initial value of a stored property from within an initializer, as shown above. Alternatively, specify a <em>default property value</em> as part of the property&rsquo;s declaration. You specify a default property value by assigning an initial value to the property when it is defined.</p>
+<p>You can set the initial value of a stored property from within an initializer, as shown above. Alternatively, specify a <em>default property value</em> as part of the property&rsquo;s declaration. You specify a default property value by assigning an initial value to the property when it&rsquo;s defined.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If a property always takes the same initial value, provide a default value rather than setting a value within an initializer. The end result is the same, but the default value ties the property&rsquo;s initialization more closely to its declaration. It makes for shorter, clearer initializers and enables you to infer the type of the property from its default value. The default value also makes it easier for you to take advantage of default initializers and initializer inheritance, as described later in this chapter.</p>
@@ -189,7 +189,7 @@
 </div>
 </div>
 <div class="section" id="ID207">
-<a class="dashingAutolink" name="autolink-123"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Customizing%20Initialization"></a><h2>Customizing Initialization<a class="headerlink" href="Initialization.html#ID207" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-124"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Customizing%20Initialization"></a><h2>Customizing Initialization<a class="headerlink" href="Initialization.html#ID207" title="Permalink to this headline"></a></h2>
 <p>You can customize the initialization process with input parameters and optional property types, or by assigning constant properties during initialization, as described in the following sections.</p>
 <div class="section" id="ID208">
 <h3>Initialization Parameters<a class="headerlink" href="Initialization.html#ID208" title="Permalink to this headline"></a></h3>
@@ -214,7 +214,7 @@
 <div class="section" id="ID209">
 <h3>Parameter Names and Argument Labels<a class="headerlink" href="Initialization.html#ID209" title="Permalink to this headline"></a></h3>
 <p>As with function and method parameters, initialization parameters can have both a parameter name for use within the initializer&rsquo;s body and an argument label for use when calling the initializer.</p>
-<p>However, initializers do not have an identifying function name before their parentheses in the way that functions and methods do. Therefore, the names and types of an initializer&rsquo;s parameters play a particularly important role in identifying which initializer should be called. Because of this, Swift provides an automatic argument label for <em>every</em> parameter in an initializer if you don&rsquo;t provide one.</p>
+<p>However, initializers don&rsquo;t have an identifying function name before their parentheses in the way that functions and methods do. Therefore, the names and types of an initializer&rsquo;s parameters play a particularly important role in identifying which initializer should be called. Because of this, Swift provides an automatic argument label for <em>every</em> parameter in an initializer if you don&rsquo;t provide one.</p>
 <p>The following example defines a structure called <code class="docutils literal notranslate"><span class="pre">Color</span></code>, with three constant properties called <code class="docutils literal notranslate"><span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">green</span></code>, and <code class="docutils literal notranslate"><span class="pre">blue</span></code>. These properties store a value between <code class="docutils literal notranslate"><span class="pre">0.0</span></code> and <code class="docutils literal notranslate"><span class="pre">1.0</span></code> to indicate the amount of red, green, and blue in the color.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Color</span></code> provides an initializer with three appropriately named parameters of type <code class="docutils literal notranslate"><span class="pre">Double</span></code> for its red, green, and blue components. <code class="docutils literal notranslate"><span class="pre">Color</span></code> also provides a second initializer with a single <code class="docutils literal notranslate"><span class="pre">white</span></code> parameter, which is used to provide the same value for all three color components.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">Color</span> {
@@ -235,15 +235,15 @@
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">magenta</span> = <span class="nv">Color</span>(<span class="nv">red</span>: <span class="m">1.0</span>, <span class="nv">green</span>: <span class="m">0.0</span>, <span class="nv">blue</span>: <span class="m">1.0</span>)
 </li><li><span class="k">let</span> <span class="nv">halfGray</span> = <span class="nv">Color</span>(<span class="nv">white</span>: <span class="m">0.5</span>)
 </li></ol></div></div></div>
-<p>Note that it is not possible to call these initializers without using argument labels. Argument labels must always be used in an initializer if they are defined, and omitting them is a compile-time error:</p>
+<p>Note that it isn&rsquo;t possible to call these initializers without using argument labels. Argument labels must always be used in an initializer if they&rsquo;re defined, and omitting them is a compile-time error:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">veryGreen</span> = <span class="nv">Color</span>(<span class="m">0.0</span>, <span class="m">1.0</span>, <span class="m">0.0</span>)
 </li><li><span class="c">// this reports a compile-time error - argument labels are required</span>
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID210">
 <h3>Initializer Parameters Without Argument Labels<a class="headerlink" href="Initialization.html#ID210" title="Permalink to this headline"></a></h3>
-<p>If you do not want to use an argument label for an initializer parameter, write an underscore (<code class="docutils literal notranslate"><span class="pre">_</span></code>) instead of an explicit argument label for that parameter to override the default behavior.</p>
-<p>Here&rsquo;s an expanded version of the <code class="docutils literal notranslate"><span class="pre">Celsius</span></code> example from <a class="reference internal" href="Initialization.html#ID208"><span class="std std-ref">Initialization Parameters</span></a> above, with an additional initializer to create a new <code class="docutils literal notranslate"><span class="pre">Celsius</span></code> instance from a <code class="docutils literal notranslate"><span class="pre">Double</span></code> value that is already in the Celsius scale:</p>
+<p>If you don&rsquo;t want to use an argument label for an initializer parameter, write an underscore (<code class="docutils literal notranslate"><span class="pre">_</span></code>) instead of an explicit argument label for that parameter to override the default behavior.</p>
+<p>Here&rsquo;s an expanded version of the <code class="docutils literal notranslate"><span class="pre">Celsius</span></code> example from <a class="reference internal" href="Initialization.html#ID208"><span class="std std-ref">Initialization Parameters</span></a> above, with an additional initializer to create a new <code class="docutils literal notranslate"><span class="pre">Celsius</span></code> instance from a <code class="docutils literal notranslate"><span class="pre">Double</span></code> value that&rsquo;s already in the Celsius scale:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">Celsius</span> {
 </li><li>    <span class="k">var</span> <span class="nv">temperatureInCelsius</span>: <span class="nc">Double</span>
 </li><li>    <span class="k">init</span>(<span class="nv">fromFahrenheit</span> <span class="nv">fahrenheit</span>: <span class="nc">Double</span>) {
@@ -259,11 +259,11 @@
 </li><li><span class="k">let</span> <span class="nv">bodyTemperature</span> = <span class="nv">Celsius</span>(<span class="m">37.0</span>)
 </li><li><span class="c">// bodyTemperature.temperatureInCelsius is 37.0</span>
 </li></ol></div></div></div>
-<p>The initializer call <code class="docutils literal notranslate"><span class="pre">Celsius(37.0)</span></code> is clear in its intent without the need for an argument label. It is therefore appropriate to write this initializer as <code class="docutils literal notranslate"><span class="pre">init(_</span> <span class="pre">celsius:</span> <span class="pre">Double)</span></code> so that it can be called by providing an unnamed <code class="docutils literal notranslate"><span class="pre">Double</span></code> value.</p>
+<p>The initializer call <code class="docutils literal notranslate"><span class="pre">Celsius(37.0)</span></code> is clear in its intent without the need for an argument label. It&rsquo;s therefore appropriate to write this initializer as <code class="docutils literal notranslate"><span class="pre">init(_</span> <span class="pre">celsius:</span> <span class="pre">Double)</span></code> so that it can be called by providing an unnamed <code class="docutils literal notranslate"><span class="pre">Double</span></code> value.</p>
 </div>
 <div class="section" id="ID211">
 <h3>Optional Property Types<a class="headerlink" href="Initialization.html#ID211" title="Permalink to this headline"></a></h3>
-<p>If your custom type has a stored property that is logically allowed to have &ldquo;no value&rdquo;&mdash;perhaps because its value cannot be set during initialization, or because it is allowed to have &ldquo;no value&rdquo; at some later point&mdash;declare the property with an <em>optional</em> type. Properties of optional type are automatically initialized with a value of <code class="docutils literal notranslate"><span class="pre">nil</span></code>, indicating that the property is deliberately intended to have &ldquo;no value yet&rdquo; during initialization.</p>
+<p>If your custom type has a stored property that&rsquo;s logically allowed to have &ldquo;no value&rdquo;&mdash;perhaps because its value can&rsquo;t be set during initialization, or because it&rsquo;s allowed to have &ldquo;no value&rdquo; at some later point&mdash;declare the property with an <em>optional</em> type. Properties of optional type are automatically initialized with a value of <code class="docutils literal notranslate"><span class="pre">nil</span></code>, indicating that the property is deliberately intended to have &ldquo;no value yet&rdquo; during initialization.</p>
 <p>The following example defines a class called <code class="docutils literal notranslate"><span class="pre">SurveyQuestion</span></code>, with an optional <code class="docutils literal notranslate"><span class="pre">String</span></code> property called <code class="docutils literal notranslate"><span class="pre">response</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">SurveyQuestion</span> {
 </li><li>    <span class="k">var</span> <span class="nv">text</span>: <span class="nc">String</span>
@@ -280,16 +280,16 @@
 </li><li><span class="c">// Prints &#34;Do you like cheese?&#34;</span>
 </li><li><span class="nv">cheeseQuestion</span>.<span class="nv">response</span> = <span class="s">&#34;Yes, I do like cheese.&#34;</span>
 </li></ol></div></div></div>
-<p>The response to a survey question cannot be known until it is asked, and so the <code class="docutils literal notranslate"><span class="pre">response</span></code> property is declared with a type of <code class="docutils literal notranslate"><span class="pre">String?</span></code>, or &ldquo;optional <code class="docutils literal notranslate"><span class="pre">String</span></code>&rdquo;. It is automatically assigned a default value of <code class="docutils literal notranslate"><span class="pre">nil</span></code>, meaning &ldquo;no string yet&rdquo;, when a new instance of <code class="docutils literal notranslate"><span class="pre">SurveyQuestion</span></code> is initialized.</p>
+<p>The response to a survey question can&rsquo;t be known until it&rsquo;s asked, and so the <code class="docutils literal notranslate"><span class="pre">response</span></code> property is declared with a type of <code class="docutils literal notranslate"><span class="pre">String?</span></code>, or &ldquo;optional <code class="docutils literal notranslate"><span class="pre">String</span></code>&rdquo;. It&rsquo;s automatically assigned a default value of <code class="docutils literal notranslate"><span class="pre">nil</span></code>, meaning &ldquo;no string yet&rdquo;, when a new instance of <code class="docutils literal notranslate"><span class="pre">SurveyQuestion</span></code> is initialized.</p>
 </div>
 <div class="section" id="ID212">
 <h3>Assigning Constant Properties During Initialization<a class="headerlink" href="Initialization.html#ID212" title="Permalink to this headline"></a></h3>
-<p>You can assign a value to a constant property at any point during initialization, as long as it is set to a definite value by the time initialization finishes. Once a constant property is assigned a value, it can&rsquo;t be further modified.</p>
+<p>You can assign a value to a constant property at any point during initialization, as long as it&rsquo;s set to a definite value by the time initialization finishes. Once a constant property is assigned a value, it can&rsquo;t be further modified.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">For class instances, a constant property can be modified during initialization only by the class that introduces it. It cannot be modified by a subclass.</p>
+<p class="last">For class instances, a constant property can be modified during initialization only by the class that introduces it. It can&rsquo;t be modified by a subclass.</p>
 </div>
-<p>You can revise the <code class="docutils literal notranslate"><span class="pre">SurveyQuestion</span></code> example from above to use a constant property rather than a variable property for the <code class="docutils literal notranslate"><span class="pre">text</span></code> property of the question, to indicate that the question does not change once an instance of <code class="docutils literal notranslate"><span class="pre">SurveyQuestion</span></code> is created. Even though the <code class="docutils literal notranslate"><span class="pre">text</span></code> property is now a constant, it can still be set within the class&rsquo;s initializer:</p>
+<p>You can revise the <code class="docutils literal notranslate"><span class="pre">SurveyQuestion</span></code> example from above to use a constant property rather than a variable property for the <code class="docutils literal notranslate"><span class="pre">text</span></code> property of the question, to indicate that the question doesn&rsquo;t change once an instance of <code class="docutils literal notranslate"><span class="pre">SurveyQuestion</span></code> is created. Even though the <code class="docutils literal notranslate"><span class="pre">text</span></code> property is now a constant, it can still be set within the class&rsquo;s initializer:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">SurveyQuestion</span> {
 </li><li>    <span class="k">let</span> <span class="nv">text</span>: <span class="nc">String</span>
 </li><li>    <span class="k">var</span> <span class="nv">response</span>: <span class="nc">String</span>?
@@ -308,8 +308,8 @@
 </div>
 </div>
 <div class="section" id="ID213">
-<a class="dashingAutolink" name="autolink-124"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Default%20Initializers"></a><h2>Default Initializers<a class="headerlink" href="Initialization.html#ID213" title="Permalink to this headline"></a></h2>
-<p>Swift provides a <em>default initializer</em> for any structure or class that provides default values for all of its properties and does not provide at least one initializer itself. The default initializer simply creates a new instance with all of its properties set to their default values.</p>
+<a class="dashingAutolink" name="autolink-125"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Default%20Initializers"></a><h2>Default Initializers<a class="headerlink" href="Initialization.html#ID213" title="Permalink to this headline"></a></h2>
+<p>Swift provides a <em>default initializer</em> for any structure or class that provides default values for all of its properties and doesn&rsquo;t provide at least one initializer itself. The default initializer simply creates a new instance with all of its properties set to their default values.</p>
 <p>This example defines a class called <code class="docutils literal notranslate"><span class="pre">ShoppingListItem</span></code>, which encapsulates the name, quantity, and purchase state of an item in a shopping list:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">ShoppingListItem</span> {
 </li><li>    <span class="k">var</span> <span class="nv">name</span>: <span class="nc">String</span>?
@@ -318,7 +318,7 @@
 </li><li>}
 </li><li><span class="k">var</span> <span class="nv">item</span> = <span class="nv">ShoppingListItem</span>()
 </li></ol></div></div></div>
-<p>Because all properties of the <code class="docutils literal notranslate"><span class="pre">ShoppingListItem</span></code> class have default values, and because it is a base class with no superclass, <code class="docutils literal notranslate"><span class="pre">ShoppingListItem</span></code> automatically gains a default initializer implementation that creates a new instance with all of its properties set to their default values. (The <code class="docutils literal notranslate"><span class="pre">name</span></code> property is an optional <code class="docutils literal notranslate"><span class="pre">String</span></code> property, and so it automatically receives a default value of <code class="docutils literal notranslate"><span class="pre">nil</span></code>, even though this value is not written in the code.) The example above uses the default initializer for the <code class="docutils literal notranslate"><span class="pre">ShoppingListItem</span></code> class to create a new instance of the class with initializer syntax, written as <code class="docutils literal notranslate"><span class="pre">ShoppingListItem()</span></code>, and assigns this new instance to a variable called <code class="docutils literal notranslate"><span class="pre">item</span></code>.</p>
+<p>Because all properties of the <code class="docutils literal notranslate"><span class="pre">ShoppingListItem</span></code> class have default values, and because it&rsquo;s a base class with no superclass, <code class="docutils literal notranslate"><span class="pre">ShoppingListItem</span></code> automatically gains a default initializer implementation that creates a new instance with all of its properties set to their default values. (The <code class="docutils literal notranslate"><span class="pre">name</span></code> property is an optional <code class="docutils literal notranslate"><span class="pre">String</span></code> property, and so it automatically receives a default value of <code class="docutils literal notranslate"><span class="pre">nil</span></code>, even though this value isn&rsquo;t written in the code.) The example above uses the default initializer for the <code class="docutils literal notranslate"><span class="pre">ShoppingListItem</span></code> class to create a new instance of the class with initializer syntax, written as <code class="docutils literal notranslate"><span class="pre">ShoppingListItem()</span></code>, and assigns this new instance to a variable called <code class="docutils literal notranslate"><span class="pre">item</span></code>.</p>
 <div class="section" id="ID214">
 <h3>Memberwise Initializers for Structure Types<a class="headerlink" href="Initialization.html#ID214" title="Permalink to this headline"></a></h3>
 <p>Structure types automatically receive a <em>memberwise initializer</em> if they don&rsquo;t define any of their own custom initializers. Unlike a default initializer, the structure receives a memberwise initializer even if it has stored properties that don&rsquo;t have default values.</p>
@@ -342,11 +342,11 @@
 </div>
 </div>
 <div class="section" id="ID215">
-<a class="dashingAutolink" name="autolink-125"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Initializer%20Delegation%20for%20Value%20Types"></a><h2>Initializer Delegation for Value Types<a class="headerlink" href="Initialization.html#ID215" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-126"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Initializer%20Delegation%20for%20Value%20Types"></a><h2>Initializer Delegation for Value Types<a class="headerlink" href="Initialization.html#ID215" title="Permalink to this headline"></a></h2>
 <p>Initializers can call other initializers to perform part of an instance&rsquo;s initialization. This process, known as <em>initializer delegation</em>, avoids duplicating code across multiple initializers.</p>
-<p>The rules for how initializer delegation works, and for what forms of delegation are allowed, are different for value types and class types. Value types (structures and enumerations) do not support inheritance, and so their initializer delegation process is relatively simple, because they can only delegate to another initializer that they provide themselves. Classes, however, can inherit from other classes, as described in <a class="reference internal" href="Inheritance.html"><span class="doc">Inheritance</span></a>. This means that classes have additional responsibilities for ensuring that all stored properties they inherit are assigned a suitable value during initialization. These responsibilities are described in <a class="reference internal" href="Initialization.html#ID216"><span class="std std-ref">Class Inheritance and Initialization</span></a> below.</p>
+<p>The rules for how initializer delegation works, and for what forms of delegation are allowed, are different for value types and class types. Value types (structures and enumerations) don&rsquo;t support inheritance, and so their initializer delegation process is relatively simple, because they can only delegate to another initializer that they provide themselves. Classes, however, can inherit from other classes, as described in <a class="reference internal" href="Inheritance.html"><span class="doc">Inheritance</span></a>. This means that classes have additional responsibilities for ensuring that all stored properties they inherit are assigned a suitable value during initialization. These responsibilities are described in <a class="reference internal" href="Initialization.html#ID216"><span class="std std-ref">Class Inheritance and Initialization</span></a> below.</p>
 <p>For value types, you use <code class="docutils literal notranslate"><span class="pre">self.init</span></code> to refer to other initializers from the same value type when writing your own custom initializers. You can call <code class="docutils literal notranslate"><span class="pre">self.init</span></code> only from within an initializer.</p>
-<p>Note that if you define a custom initializer for a value type, you will no longer have access to the default initializer (or the memberwise initializer, if it is a structure) for that type. This constraint prevents a situation in which additional essential setup provided in a more complex initializer is accidentally circumvented by someone using one of the automatic initializers.</p>
+<p>Note that if you define a custom initializer for a value type, you will no longer have access to the default initializer (or the memberwise initializer, if it&rsquo;s a structure) for that type. This constraint prevents a situation in which additional essential setup provided in a more complex initializer is accidentally circumvented by someone using one of the automatic initializers.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If you want your custom value type to be initializable with the default initializer and memberwise initializer, and also with your own custom initializers, write your custom initializers in an extension rather than as part of the value type&rsquo;s original implementation. For more information, see <a class="reference internal" href="Extensions.html"><span class="doc">Extensions</span></a>.</p>
@@ -375,11 +375,11 @@
 </li><li>    }
 </li><li>}
 </li></ol></div></div></div>
-<p>The first <code class="docutils literal notranslate"><span class="pre">Rect</span></code> initializer, <code class="docutils literal notranslate"><span class="pre">init()</span></code>, is functionally the same as the default initializer that the structure would have received if it did not have its own custom initializers. This initializer has an empty body, represented by an empty pair of curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Calling this initializer returns a <code class="docutils literal notranslate"><span class="pre">Rect</span></code> instance whose <code class="docutils literal notranslate"><span class="pre">origin</span></code> and <code class="docutils literal notranslate"><span class="pre">size</span></code> properties are both initialized with the default values of <code class="docutils literal notranslate"><span class="pre">Point(x:</span> <span class="pre">0.0,</span> <span class="pre">y:</span> <span class="pre">0.0)</span></code> and <code class="docutils literal notranslate"><span class="pre">Size(width:</span> <span class="pre">0.0,</span> <span class="pre">height:</span> <span class="pre">0.0)</span></code> from their property definitions:</p>
+<p>The first <code class="docutils literal notranslate"><span class="pre">Rect</span></code> initializer, <code class="docutils literal notranslate"><span class="pre">init()</span></code>, is functionally the same as the default initializer that the structure would have received if it didn&rsquo;t have its own custom initializers. This initializer has an empty body, represented by an empty pair of curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Calling this initializer returns a <code class="docutils literal notranslate"><span class="pre">Rect</span></code> instance whose <code class="docutils literal notranslate"><span class="pre">origin</span></code> and <code class="docutils literal notranslate"><span class="pre">size</span></code> properties are both initialized with the default values of <code class="docutils literal notranslate"><span class="pre">Point(x:</span> <span class="pre">0.0,</span> <span class="pre">y:</span> <span class="pre">0.0)</span></code> and <code class="docutils literal notranslate"><span class="pre">Size(width:</span> <span class="pre">0.0,</span> <span class="pre">height:</span> <span class="pre">0.0)</span></code> from their property definitions:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">basicRect</span> = <span class="nv">Rect</span>()
 </li><li><span class="c">// basicRect&#39;s origin is (0.0, 0.0) and its size is (0.0, 0.0)</span>
 </li></ol></div></div></div>
-<p>The second <code class="docutils literal notranslate"><span class="pre">Rect</span></code> initializer, <code class="docutils literal notranslate"><span class="pre">init(origin:size:)</span></code>, is functionally the same as the memberwise initializer that the structure would have received if it did not have its own custom initializers. This initializer simply assigns the <code class="docutils literal notranslate"><span class="pre">origin</span></code> and <code class="docutils literal notranslate"><span class="pre">size</span></code> argument values to the appropriate stored properties:</p>
+<p>The second <code class="docutils literal notranslate"><span class="pre">Rect</span></code> initializer, <code class="docutils literal notranslate"><span class="pre">init(origin:size:)</span></code>, is functionally the same as the memberwise initializer that the structure would have received if it didn&rsquo;t have its own custom initializers. This initializer simply assigns the <code class="docutils literal notranslate"><span class="pre">origin</span></code> and <code class="docutils literal notranslate"><span class="pre">size</span></code> argument values to the appropriate stored properties:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">originRect</span> = <span class="nv">Rect</span>(<span class="nv">origin</span>: <span class="nv">Point</span>(<span class="nv">x</span>: <span class="m">2.0</span>, <span class="nv">y</span>: <span class="m">2.0</span>),
 </li><li>                      <span class="nv">size</span>: <span class="nv">Size</span>(<span class="nv">width</span>: <span class="m">5.0</span>, <span class="nv">height</span>: <span class="m">5.0</span>))
 </li><li><span class="c">// originRect&#39;s origin is (2.0, 2.0) and its size is (5.0, 5.0)</span>
@@ -389,23 +389,23 @@
 </li><li>                      <span class="nv">size</span>: <span class="nv">Size</span>(<span class="nv">width</span>: <span class="m">3.0</span>, <span class="nv">height</span>: <span class="m">3.0</span>))
 </li><li><span class="c">// centerRect&#39;s origin is (2.5, 2.5) and its size is (3.0, 3.0)</span>
 </li></ol></div></div></div>
-<p>The <code class="docutils literal notranslate"><span class="pre">init(center:size:)</span></code> initializer could have assigned the new values of <code class="docutils literal notranslate"><span class="pre">origin</span></code> and <code class="docutils literal notranslate"><span class="pre">size</span></code> to the appropriate properties itself. However, it is more convenient (and clearer in intent) for the <code class="docutils literal notranslate"><span class="pre">init(center:size:)</span></code> initializer to take advantage of an existing initializer that already provides exactly that functionality.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">init(center:size:)</span></code> initializer could have assigned the new values of <code class="docutils literal notranslate"><span class="pre">origin</span></code> and <code class="docutils literal notranslate"><span class="pre">size</span></code> to the appropriate properties itself. However, it&rsquo;s more convenient (and clearer in intent) for the <code class="docutils literal notranslate"><span class="pre">init(center:size:)</span></code> initializer to take advantage of an existing initializer that already provides exactly that functionality.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">For an alternative way to write this example without defining the <code class="docutils literal notranslate"><span class="pre">init()</span></code> and <code class="docutils literal notranslate"><span class="pre">init(origin:size:)</span></code> initializers yourself, see <a class="reference internal" href="Extensions.html"><span class="doc">Extensions</span></a>.</p>
 </div>
 </div>
 <div class="section" id="ID216">
-<a class="dashingAutolink" name="autolink-126"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Class%20Inheritance%20and%20Initialization"></a><h2>Class Inheritance and Initialization<a class="headerlink" href="Initialization.html#ID216" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-127"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Class%20Inheritance%20and%20Initialization"></a><h2>Class Inheritance and Initialization<a class="headerlink" href="Initialization.html#ID216" title="Permalink to this headline"></a></h2>
 <p>All of a class&rsquo;s stored properties&mdash;including any properties the class inherits from its superclass&mdash;<em>must</em> be assigned an initial value during initialization.</p>
 <p>Swift defines two kinds of initializers for class types to help ensure all stored properties receive an initial value. These are known as designated initializers and convenience initializers.</p>
 <div class="section" id="ID217">
 <h3>Designated Initializers and Convenience Initializers<a class="headerlink" href="Initialization.html#ID217" title="Permalink to this headline"></a></h3>
 <p><em>Designated initializers</em> are the primary initializers for a class. A designated initializer fully initializes all properties introduced by that class and calls an appropriate superclass initializer to continue the initialization process up the superclass chain.</p>
-<p>Classes tend to have very few designated initializers, and it is quite common for a class to have only one. Designated initializers are &ldquo;funnel&rdquo; points through which initialization takes place, and through which the initialization process continues up the superclass chain.</p>
+<p>Classes tend to have very few designated initializers, and it&rsquo;s quite common for a class to have only one. Designated initializers are &ldquo;funnel&rdquo; points through which initialization takes place, and through which the initialization process continues up the superclass chain.</p>
 <p>Every class must have at least one designated initializer. In some cases, this requirement is satisfied by inheriting one or more designated initializers from a superclass, as described in <a class="reference internal" href="Initialization.html#ID222"><span class="std std-ref">Automatic Initializer Inheritance</span></a> below.</p>
 <p><em>Convenience initializers</em> are secondary, supporting initializers for a class. You can define a convenience initializer to call a designated initializer from the same class as the convenience initializer with some of the designated initializer&rsquo;s parameters set to default values. You can also define a convenience initializer to create an instance of that class for a specific use case or input value type.</p>
-<p>You do not have to provide convenience initializers if your class does not require them. Create convenience initializers whenever a shortcut to a common initialization pattern will save time or make initialization of the class clearer in intent.</p>
+<p>You don&rsquo;t have to provide convenience initializers if your class doesn&rsquo;t require them. Create convenience initializers whenever a shortcut to a common initialization pattern will save time or make initialization of the class clearer in intent.</p>
 </div>
 <div class="section" id="ID218">
 <h3>Syntax for Designated and Convenience Initializers<a class="headerlink" href="Initialization.html#ID218" title="Permalink to this headline"></a></h3>
@@ -438,7 +438,7 @@
 </ul>
 <p>These rules are illustrated in the figure below:</p>
 <img alt="../_images/initializerDelegation01_2x.png" class="align-center" src="../_images/initializerDelegation01_2x.png" style="width: 448px;"/>
-<p>Here, the superclass has a single designated initializer and two convenience initializers. One convenience initializer calls another convenience initializer, which in turn calls the single designated initializer. This satisfies rules 2 and 3 from above. The superclass does not itself have a further superclass, and so rule 1 does not apply.</p>
+<p>Here, the superclass has a single designated initializer and two convenience initializers. One convenience initializer calls another convenience initializer, which in turn calls the single designated initializer. This satisfies rules 2 and 3 from above. The superclass doesn&rsquo;t itself have a further superclass, and so rule 1 doesn&rsquo;t apply.</p>
 <p>The subclass in this figure has two designated initializers and one convenience initializer. The convenience initializer must call one of the two designated initializers, because it can only call another initializer from the same class. This satisfies rules 2 and 3 from above. Both designated initializers must call the single designated initializer from the superclass, to satisfy rule 1 from above.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -450,10 +450,10 @@
 <div class="section" id="ID220">
 <h3>Two-Phase Initialization<a class="headerlink" href="Initialization.html#ID220" title="Permalink to this headline"></a></h3>
 <p>Class initialization in Swift is a two-phase process. In the first phase, each stored property is assigned an initial value by the class that introduced it. Once the initial state for every stored property has been determined, the second phase begins, and each class is given the opportunity to customize its stored properties further before the new instance is considered ready for use.</p>
-<p>The use of a two-phase initialization process makes initialization safe, while still giving complete flexibility to each class in a class hierarchy. Two-phase initialization prevents property values from being accessed before they are initialized, and prevents property values from being set to a different value by another initializer unexpectedly.</p>
+<p>The use of a two-phase initialization process makes initialization safe, while still giving complete flexibility to each class in a class hierarchy. Two-phase initialization prevents property values from being accessed before they&rsquo;re initialized, and prevents property values from being set to a different value by another initializer unexpectedly.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Swift&rsquo;s two-phase initialization process is similar to initialization in Objective-C. The main difference is that during phase 1, Objective-C assigns zero or null values (such as <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">nil</span></code>) to every property. Swift&rsquo;s initialization flow is more flexible in that it lets you set custom initial values, and can cope with types for which <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">nil</span></code> is not a valid default value.</p>
+<p class="last">Swift&rsquo;s two-phase initialization process is similar to initialization in Objective-C. The main difference is that during phase 1, Objective-C assigns zero or null values (such as <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">nil</span></code>) to every property. Swift&rsquo;s initialization flow is more flexible in that it lets you set custom initial values, and can cope with types for which <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">nil</span></code> isn&rsquo;t a valid default value.</p>
 </div>
 <p>Swift&rsquo;s compiler performs four helpful safety-checks to make sure that two-phase initialization is completed without error:</p>
 <dl class="docutils">
@@ -467,14 +467,14 @@
 <dt><strong>Safety check 3</strong></dt>
 <dd>A convenience initializer must delegate to another initializer before assigning a value to <em>any</em> property (including properties defined by the same class). If it doesn&rsquo;t, the new value the convenience initializer assigns will be overwritten by its own class&rsquo;s designated initializer.</dd>
 <dt><strong>Safety check 4</strong></dt>
-<dd>An initializer cannot call any instance methods, read the values of any instance properties, or refer to <code class="docutils literal notranslate"><span class="pre">self</span></code> as a value until after the first phase of initialization is complete.</dd>
+<dd>An initializer can&rsquo;t call any instance methods, read the values of any instance properties, or refer to <code class="docutils literal notranslate"><span class="pre">self</span></code> as a value until after the first phase of initialization is complete.</dd>
 </dl>
-<p>The class instance is not fully valid until the first phase ends. Properties can only be accessed, and methods can only be called, once the class instance is known to be valid at the end of the first phase.</p>
+<p>The class instance isn&rsquo;t fully valid until the first phase ends. Properties can only be accessed, and methods can only be called, once the class instance is known to be valid at the end of the first phase.</p>
 <p>Here&rsquo;s how two-phase initialization plays out, based on the four safety checks above:</p>
 <p><strong>Phase 1</strong></p>
 <ul class="simple">
 <li>A designated or convenience initializer is called on a class.</li>
-<li>Memory for a new instance of that class is allocated. The memory is not yet initialized.</li>
+<li>Memory for a new instance of that class is allocated. The memory isn&rsquo;t yet initialized.</li>
 <li>A designated initializer for that class confirms that all stored properties introduced by that class have a value. The memory for these stored properties is now initialized.</li>
 <li>The designated initializer hands off to a superclass initializer to perform the same task for its own stored properties.</li>
 <li>This continues up the class inheritance chain until the top of the chain is reached.</li>
@@ -487,22 +487,22 @@
 </ul>
 <p>Here&rsquo;s how phase 1 looks for an initialization call for a hypothetical subclass and superclass:</p>
 <img alt="../_images/twoPhaseInitialization01_2x.png" class="align-center" src="../_images/twoPhaseInitialization01_2x.png" style="width: 448px;"/>
-<p>In this example, initialization begins with a call to a convenience initializer on the subclass. This convenience initializer cannot yet modify any properties. It delegates across to a designated initializer from the same class.</p>
+<p>In this example, initialization begins with a call to a convenience initializer on the subclass. This convenience initializer can&rsquo;t yet modify any properties. It delegates across to a designated initializer from the same class.</p>
 <p>The designated initializer makes sure that all of the subclass&rsquo;s properties have a value, as per safety check 1. It then calls a designated initializer on its superclass to continue the initialization up the chain.</p>
 <p>The superclass&rsquo;s designated initializer makes sure that all of the superclass properties have a value. There are no further superclasses to initialize, and so no further delegation is needed.</p>
 <p>As soon as all properties of the superclass have an initial value, its memory is considered fully initialized, and phase 1 is complete.</p>
 <p>Here&rsquo;s how phase 2 looks for the same initialization call:</p>
 <img alt="../_images/twoPhaseInitialization02_2x.png" class="align-center" src="../_images/twoPhaseInitialization02_2x.png" style="width: 448px;"/>
-<p>The superclass&rsquo;s designated initializer now has an opportunity to customize the instance further (although it does not have to).</p>
-<p>Once the superclass&rsquo;s designated initializer is finished, the subclass&rsquo;s designated initializer can perform additional customization (although again, it does not have to).</p>
+<p>The superclass&rsquo;s designated initializer now has an opportunity to customize the instance further (although it doesn&rsquo;t have to).</p>
+<p>Once the superclass&rsquo;s designated initializer is finished, the subclass&rsquo;s designated initializer can perform additional customization (although again, it doesn&rsquo;t have to).</p>
 <p>Finally, once the subclass&rsquo;s designated initializer is finished, the convenience initializer that was originally called can perform additional customization.</p>
 </div>
 <div class="section" id="ID221">
 <h3>Initializer Inheritance and Overriding<a class="headerlink" href="Initialization.html#ID221" title="Permalink to this headline"></a></h3>
-<p>Unlike subclasses in Objective-C, Swift subclasses do not inherit their superclass initializers by default. Swift&rsquo;s approach prevents a situation in which a simple initializer from a superclass is inherited by a more specialized subclass and is used to create a new instance of the subclass that is not fully or correctly initialized.</p>
+<p>Unlike subclasses in Objective-C, Swift subclasses don&rsquo;t inherit their superclass initializers by default. Swift&rsquo;s approach prevents a situation in which a simple initializer from a superclass is inherited by a more specialized subclass and is used to create a new instance of the subclass that isn&rsquo;t fully or correctly initialized.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Superclass initializers <em>are</em> inherited in certain circumstances, but only when it is safe and appropriate to do so. For more information, see <a class="reference internal" href="Initialization.html#ID222"><span class="std std-ref">Automatic Initializer Inheritance</span></a> below.</p>
+<p class="last">Superclass initializers <em>are</em> inherited in certain circumstances, but only when it&rsquo;s safe and appropriate to do so. For more information, see <a class="reference internal" href="Initialization.html#ID222"><span class="std std-ref">Automatic Initializer Inheritance</span></a> below.</p>
 </div>
 <p>If you want a custom subclass to present one or more of the same initializers as its superclass, you can provide a custom implementation of those initializers within the subclass.</p>
 <p>When you write a subclass initializer that matches a superclass <em>designated</em> initializer, you are effectively providing an override of that designated initializer. Therefore, you must write the <code class="docutils literal notranslate"><span class="pre">override</span></code> modifier before the subclass&rsquo;s initializer definition. This is true even if you are overriding an automatically provided default initializer, as described in <a class="reference internal" href="Initialization.html#ID213"><span class="std std-ref">Default Initializers</span></a>.</p>
@@ -511,7 +511,7 @@
 <p class="first admonition-title">Note</p>
 <p class="last">You always write the <code class="docutils literal notranslate"><span class="pre">override</span></code> modifier when overriding a superclass designated initializer, even if your subclass&rsquo;s implementation of the initializer is a convenience initializer.</p>
 </div>
-<p>Conversely, if you write a subclass initializer that matches a superclass <em>convenience</em> initializer, that superclass convenience initializer can never be called directly by your subclass, as per the rules described above in <a class="reference internal" href="Initialization.html#ID219"><span class="std std-ref">Initializer Delegation for Class Types</span></a>. Therefore, your subclass is not (strictly speaking) providing an override of the superclass initializer. As a result, you do not write the <code class="docutils literal notranslate"><span class="pre">override</span></code> modifier when providing a matching implementation of a superclass convenience initializer.</p>
+<p>Conversely, if you write a subclass initializer that matches a superclass <em>convenience</em> initializer, that superclass convenience initializer can never be called directly by your subclass, as per the rules described above in <a class="reference internal" href="Initialization.html#ID219"><span class="std std-ref">Initializer Delegation for Class Types</span></a>. Therefore, your subclass is not (strictly speaking) providing an override of the superclass initializer. As a result, you don&rsquo;t write the <code class="docutils literal notranslate"><span class="pre">override</span></code> modifier when providing a matching implementation of a superclass convenience initializer.</p>
 <p>The example below defines a base class called <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code>. This base class declares a stored property called <code class="docutils literal notranslate"><span class="pre">numberOfWheels</span></code>, with a default <code class="docutils literal notranslate"><span class="pre">Int</span></code> value of <code class="docutils literal notranslate"><span class="pre">0</span></code>. The <code class="docutils literal notranslate"><span class="pre">numberOfWheels</span></code> property is used by a computed property called <code class="docutils literal notranslate"><span class="pre">description</span></code> to create a <code class="docutils literal notranslate"><span class="pre">String</span></code> description of the vehicle&rsquo;s characteristics:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">Vehicle</span> {
 </li><li>    <span class="k">var</span> <span class="nv">numberOfWheels</span> = <span class="m">0</span>
@@ -520,7 +520,7 @@
 </li><li>    }
 </li><li>}
 </li></ol></div></div></div>
-<p>The <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code> class provides a default value for its only stored property, and does not provide any custom initializers itself. As a result, it automatically receives a default initializer, as described in <a class="reference internal" href="Initialization.html#ID213"><span class="std std-ref">Default Initializers</span></a>. The default initializer (when available) is always a designated initializer for a class, and can be used to create a new <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code> instance with a <code class="docutils literal notranslate"><span class="pre">numberOfWheels</span></code> of <code class="docutils literal notranslate"><span class="pre">0</span></code>:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code> class provides a default value for its only stored property, and doesn&rsquo;t provide any custom initializers itself. As a result, it automatically receives a default initializer, as described in <a class="reference internal" href="Initialization.html#ID213"><span class="std std-ref">Default Initializers</span></a>. The default initializer (when available) is always a designated initializer for a class, and can be used to create a new <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code> instance with a <code class="docutils literal notranslate"><span class="pre">numberOfWheels</span></code> of <code class="docutils literal notranslate"><span class="pre">0</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">vehicle</span> = <span class="nv">Vehicle</span>()
 </li><li><span class="nv">print</span>(<span class="s">&#34;Vehicle: </span>\<span class="p">(</span><span class="nv">vehicle</span>.<span class="nv">description</span><span class="p">)</span><span class="s">&#34;</span>)
 </li><li><span class="c">// Vehicle: 0 wheel(s)</span>
@@ -560,12 +560,12 @@
 </li></ol></div></div></div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Subclasses can modify inherited variable properties during initialization, but can not modify inherited constant properties.</p>
+<p class="last">Subclasses can modify inherited variable properties during initialization, but can&rsquo;t modify inherited constant properties.</p>
 </div>
 </div>
 <div class="section" id="ID222">
 <h3>Automatic Initializer Inheritance<a class="headerlink" href="Initialization.html#ID222" title="Permalink to this headline"></a></h3>
-<p>As mentioned above, subclasses do not inherit their superclass initializers by default. However, superclass initializers <em>are</em> automatically inherited if certain conditions are met. In practice, this means that you do not need to write initializer overrides in many common scenarios, and can inherit your superclass initializers with minimal effort whenever it is safe to do so.</p>
+<p>As mentioned above, subclasses don&rsquo;t inherit their superclass initializers by default. However, superclass initializers <em>are</em> automatically inherited if certain conditions are met. In practice, this means that you don&rsquo;t need to write initializer overrides in many common scenarios, and can inherit your superclass initializers with minimal effort whenever it&rsquo;s safe to do so.</p>
 <p>Assuming that you provide default values for any new properties you introduce in a subclass, the following two rules apply:</p>
 <dl class="docutils">
 <dt><strong>Rule 1</strong></dt>
@@ -595,11 +595,11 @@
 </li></ol></div></div></div>
 <p>The figure below shows the initializer chain for the <code class="docutils literal notranslate"><span class="pre">Food</span></code> class:</p>
 <img alt="../_images/initializersExample01_2x.png" class="align-center" src="../_images/initializersExample01_2x.png" style="width: 482px;"/>
-<p>Classes do not have a default memberwise initializer, and so the <code class="docutils literal notranslate"><span class="pre">Food</span></code> class provides a designated initializer that takes a single argument called <code class="docutils literal notranslate"><span class="pre">name</span></code>. This initializer can be used to create a new <code class="docutils literal notranslate"><span class="pre">Food</span></code> instance with a specific name:</p>
+<p>Classes don&rsquo;t have a default memberwise initializer, and so the <code class="docutils literal notranslate"><span class="pre">Food</span></code> class provides a designated initializer that takes a single argument called <code class="docutils literal notranslate"><span class="pre">name</span></code>. This initializer can be used to create a new <code class="docutils literal notranslate"><span class="pre">Food</span></code> instance with a specific name:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">namedMeat</span> = <span class="nv">Food</span>(<span class="nv">name</span>: <span class="s">&#34;Bacon&#34;</span>)
 </li><li><span class="c">// namedMeat&#39;s name is &#34;Bacon&#34;</span>
 </li></ol></div></div></div>
-<p>The <code class="docutils literal notranslate"><span class="pre">init(name:</span> <span class="pre">String)</span></code> initializer from the <code class="docutils literal notranslate"><span class="pre">Food</span></code> class is provided as a <em>designated</em> initializer, because it ensures that all stored properties of a new <code class="docutils literal notranslate"><span class="pre">Food</span></code> instance are fully initialized. The <code class="docutils literal notranslate"><span class="pre">Food</span></code> class does not have a superclass, and so the <code class="docutils literal notranslate"><span class="pre">init(name:</span> <span class="pre">String)</span></code> initializer does not need to call <code class="docutils literal notranslate"><span class="pre">super.init()</span></code> to complete its initialization.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">init(name:</span> <span class="pre">String)</span></code> initializer from the <code class="docutils literal notranslate"><span class="pre">Food</span></code> class is provided as a <em>designated</em> initializer, because it ensures that all stored properties of a new <code class="docutils literal notranslate"><span class="pre">Food</span></code> instance are fully initialized. The <code class="docutils literal notranslate"><span class="pre">Food</span></code> class doesn&rsquo;t have a superclass, and so the <code class="docutils literal notranslate"><span class="pre">init(name:</span> <span class="pre">String)</span></code> initializer doesn&rsquo;t need to call <code class="docutils literal notranslate"><span class="pre">super.init()</span></code> to complete its initialization.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Food</span></code> class also provides a <em>convenience</em> initializer, <code class="docutils literal notranslate"><span class="pre">init()</span></code>, with no arguments. The <code class="docutils literal notranslate"><span class="pre">init()</span></code> initializer provides a default placeholder name for a new food by delegating across to the <code class="docutils literal notranslate"><span class="pre">Food</span></code> class&rsquo;s <code class="docutils literal notranslate"><span class="pre">init(name:</span> <span class="pre">String)</span></code> with a <code class="docutils literal notranslate"><span class="pre">name</span></code> value of <code class="docutils literal notranslate"><span class="pre">[Unnamed]</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">mysteryMeat</span> = <span class="nv">Food</span>()
 </li><li><span class="c">// mysteryMeat&#39;s name is &#34;[Unnamed]&#34;</span>
@@ -619,7 +619,7 @@
 <p>The figure below shows the initializer chain for the <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> class:</p>
 <img alt="../_images/initializersExample02_2x.png" class="align-center" src="../_images/initializersExample02_2x.png" style="width: 482px;"/>
 <p>The <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> class has a single designated initializer, <code class="docutils literal notranslate"><span class="pre">init(name:</span> <span class="pre">String,</span> <span class="pre">quantity:</span> <span class="pre">Int)</span></code>, which can be used to populate all of the properties of a new <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> instance. This initializer starts by assigning the passed <code class="docutils literal notranslate"><span class="pre">quantity</span></code> argument to the <code class="docutils literal notranslate"><span class="pre">quantity</span></code> property, which is the only new property introduced by <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code>. After doing so, the initializer delegates up to the <code class="docutils literal notranslate"><span class="pre">init(name:</span> <span class="pre">String)</span></code> initializer of the <code class="docutils literal notranslate"><span class="pre">Food</span></code> class. This process satisfies safety check 1 from <a class="reference internal" href="Initialization.html#ID220"><span class="std std-ref">Two-Phase Initialization</span></a> above.</p>
-<p><code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> also defines a convenience initializer, <code class="docutils literal notranslate"><span class="pre">init(name:</span> <span class="pre">String)</span></code>, which is used to create a <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> instance by name alone. This convenience initializer assumes a quantity of <code class="docutils literal notranslate"><span class="pre">1</span></code> for any <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> instance that is created without an explicit quantity. The definition of this convenience initializer makes <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> instances quicker and more convenient to create, and avoids code duplication when creating several single-quantity <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> instances. This convenience initializer simply delegates across to the class&rsquo;s designated initializer, passing in a <code class="docutils literal notranslate"><span class="pre">quantity</span></code> value of <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> also defines a convenience initializer, <code class="docutils literal notranslate"><span class="pre">init(name:</span> <span class="pre">String)</span></code>, which is used to create a <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> instance by name alone. This convenience initializer assumes a quantity of <code class="docutils literal notranslate"><span class="pre">1</span></code> for any <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> instance that&rsquo;s created without an explicit quantity. The definition of this convenience initializer makes <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> instances quicker and more convenient to create, and avoids code duplication when creating several single-quantity <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> instances. This convenience initializer simply delegates across to the class&rsquo;s designated initializer, passing in a <code class="docutils literal notranslate"><span class="pre">quantity</span></code> value of <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">init(name:</span> <span class="pre">String)</span></code> convenience initializer provided by <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> takes the same parameters as the <code class="docutils literal notranslate"><span class="pre">init(name:</span> <span class="pre">String)</span></code> <em>designated</em> initializer from <code class="docutils literal notranslate"><span class="pre">Food</span></code>. Because this convenience initializer overrides a designated initializer from its superclass, it must be marked with the <code class="docutils literal notranslate"><span class="pre">override</span></code> modifier (as described in <a class="reference internal" href="Initialization.html#ID221"><span class="std std-ref">Initializer Inheritance and Overriding</span></a>).</p>
 <p>Even though <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> provides the <code class="docutils literal notranslate"><span class="pre">init(name:</span> <span class="pre">String)</span></code> initializer as a convenience initializer, <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> has nonetheless provided an implementation of all of its superclass&rsquo;s designated initializers. Therefore, <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> automatically inherits all of its superclass&rsquo;s convenience initializers too.</p>
 <p>In this example, the superclass for <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> is <code class="docutils literal notranslate"><span class="pre">Food</span></code>, which has a single convenience initializer called <code class="docutils literal notranslate"><span class="pre">init()</span></code>. This initializer is therefore inherited by <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code>. The inherited version of <code class="docutils literal notranslate"><span class="pre">init()</span></code> functions in exactly the same way as the <code class="docutils literal notranslate"><span class="pre">Food</span></code> version, except that it delegates to the <code class="docutils literal notranslate"><span class="pre">RecipeIngredient</span></code> version of <code class="docutils literal notranslate"><span class="pre">init(name:</span> <span class="pre">String)</span></code> rather than the <code class="docutils literal notranslate"><span class="pre">Food</span></code> version.</p>
@@ -641,9 +641,9 @@
 </li></ol></div></div></div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">ShoppingListItem</span></code> does not define an initializer to provide an initial value for <code class="docutils literal notranslate"><span class="pre">purchased</span></code>, because items in a shopping list (as modeled here) always start out unpurchased.</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">ShoppingListItem</span></code> doesn&rsquo;t define an initializer to provide an initial value for <code class="docutils literal notranslate"><span class="pre">purchased</span></code>, because items in a shopping list (as modeled here) always start out unpurchased.</p>
 </div>
-<p>Because it provides a default value for all of the properties it introduces and does not define any initializers itself, <code class="docutils literal notranslate"><span class="pre">ShoppingListItem</span></code> automatically inherits <em>all</em> of the designated and convenience initializers from its superclass.</p>
+<p>Because it provides a default value for all of the properties it introduces and doesn&rsquo;t define any initializers itself, <code class="docutils literal notranslate"><span class="pre">ShoppingListItem</span></code> automatically inherits <em>all</em> of the designated and convenience initializers from its superclass.</p>
 <p>The figure below shows the overall initializer chain for all three classes:</p>
 <img alt="../_images/initializersExample03_2x.png" class="align-center" src="../_images/initializersExample03_2x.png" style="width: 482px;"/>
 <p>You can use all three of the inherited initializers to create a new <code class="docutils literal notranslate"><span class="pre">ShoppingListItem</span></code> instance:</p>
@@ -661,23 +661,23 @@
 </li><li><span class="c">// 1 x Bacon ✘</span>
 </li><li><span class="c">// 6 x Eggs ✘</span>
 </li></ol></div></div></div>
-<p>Here, a new array called <code class="docutils literal notranslate"><span class="pre">breakfastList</span></code> is created from an array literal containing three new <code class="docutils literal notranslate"><span class="pre">ShoppingListItem</span></code> instances. The type of the array is inferred to be <code class="docutils literal notranslate"><span class="pre">[ShoppingListItem]</span></code>. After the array is created, the name of the <code class="docutils literal notranslate"><span class="pre">ShoppingListItem</span></code> at the start of the array is changed from <code class="docutils literal notranslate"><span class="pre">&#34;[Unnamed]&#34;</span></code> to <code class="docutils literal notranslate"><span class="pre">&#34;Orange</span> <span class="pre">juice&#34;</span></code> and it is marked as having been purchased. Printing the description of each item in the array shows that their default states have been set as expected.</p>
+<p>Here, a new array called <code class="docutils literal notranslate"><span class="pre">breakfastList</span></code> is created from an array literal containing three new <code class="docutils literal notranslate"><span class="pre">ShoppingListItem</span></code> instances. The type of the array is inferred to be <code class="docutils literal notranslate"><span class="pre">[ShoppingListItem]</span></code>. After the array is created, the name of the <code class="docutils literal notranslate"><span class="pre">ShoppingListItem</span></code> at the start of the array is changed from <code class="docutils literal notranslate"><span class="pre">&#34;[Unnamed]&#34;</span></code> to <code class="docutils literal notranslate"><span class="pre">&#34;Orange</span> <span class="pre">juice&#34;</span></code> and it&rsquo;s marked as having been purchased. Printing the description of each item in the array shows that their default states have been set as expected.</p>
 </div>
 </div>
 <div class="section" id="ID224">
-<a class="dashingAutolink" name="autolink-127"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Failable%20Initializers"></a><h2>Failable Initializers<a class="headerlink" href="Initialization.html#ID224" title="Permalink to this headline"></a></h2>
-<p>It is sometimes useful to define a class, structure, or enumeration for which initialization can fail. This failure might be triggered by invalid initialization parameter values, the absence of a required external resource, or some other condition that prevents initialization from succeeding.</p>
+<a class="dashingAutolink" name="autolink-128"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Failable%20Initializers"></a><h2>Failable Initializers<a class="headerlink" href="Initialization.html#ID224" title="Permalink to this headline"></a></h2>
+<p>It&rsquo;s sometimes useful to define a class, structure, or enumeration for which initialization can fail. This failure might be triggered by invalid initialization parameter values, the absence of a required external resource, or some other condition that prevents initialization from succeeding.</p>
 <p>To cope with initialization conditions that can fail, define one or more failable initializers as part of a class, structure, or enumeration definition. You write a failable initializer by placing a question mark after the <code class="docutils literal notranslate"><span class="pre">init</span></code> keyword (<code class="docutils literal notranslate"><span class="pre">init?</span></code>).</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">You cannot define a failable and a nonfailable initializer with the same parameter types and names.</p>
+<p class="last">You can&rsquo;t define a failable and a nonfailable initializer with the same parameter types and names.</p>
 </div>
 <p>A failable initializer creates an <em>optional</em> value of the type it initializes. You write <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">nil</span></code> within a failable initializer to indicate a point at which initialization failure can be triggered.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Strictly speaking, initializers do not return a value. Rather, their role is to ensure that <code class="docutils literal notranslate"><span class="pre">self</span></code> is fully and correctly initialized by the time that initialization ends. Although you write <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">nil</span></code> to trigger an initialization failure, you do not use the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword to indicate initialization success.</p>
+<p class="last">Strictly speaking, initializers don&rsquo;t return a value. Rather, their role is to ensure that <code class="docutils literal notranslate"><span class="pre">self</span></code> is fully and correctly initialized by the time that initialization ends. Although you write <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">nil</span></code> to trigger an initialization failure, you don&rsquo;t use the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword to indicate initialization success.</p>
 </div>
-<p>For instance, failable initializers are implemented for numeric type conversions. To ensure conversion between numeric types maintains the value exactly, use the <code class="docutils literal notranslate"><span class="pre">init(exactly:)</span></code> initializer. If the type conversion cannot maintain the value, the initializer fails.</p>
+<p>For instance, failable initializers are implemented for numeric type conversions. To ensure conversion between numeric types maintains the value exactly, use the <code class="docutils literal notranslate"><span class="pre">init(exactly:)</span></code> initializer. If the type conversion can&rsquo;t maintain the value, the initializer fails.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">wholeNumber</span>: <span class="nc">Double</span> = <span class="m">12345.0</span>
 </li><li><span class="k">let</span> <span class="nv">pi</span> = <span class="m">3.14159</span>
 </li><li>
@@ -690,9 +690,9 @@
 </li><li><span class="c">// valueChanged is of type Int?, not Int</span>
 </li><li>
 </li><li><span class="k">if</span> <span class="nv">valueChanged</span> == <span class="k">nil</span> {
-</li><li>    <span class="nv">print</span>(<span class="s">&#34;</span>\<span class="p">(</span><span class="nv">pi</span><span class="p">)</span><span class="s"> conversion to Int does not maintain value&#34;</span>)
+</li><li>    <span class="nv">print</span>(<span class="s">&#34;</span>\<span class="p">(</span><span class="nv">pi</span><span class="p">)</span><span class="s"> conversion to Int doesn&#39;t maintain value&#34;</span>)
 </li><li>}
-</li><li><span class="c">// Prints &#34;3.14159 conversion to Int does not maintain value&#34;</span>
+</li><li><span class="c">// Prints &#34;3.14159 conversion to Int doesn&#39;t maintain value&#34;</span>
 </li></ol></div></div></div>
 <p>The example below defines a structure called <code class="docutils literal notranslate"><span class="pre">Animal</span></code>, with a constant <code class="docutils literal notranslate"><span class="pre">String</span></code> property called <code class="docutils literal notranslate"><span class="pre">species</span></code>. The <code class="docutils literal notranslate"><span class="pre">Animal</span></code> structure also defines a failable initializer with a single parameter called <code class="docutils literal notranslate"><span class="pre">species</span></code>. This initializer checks if the <code class="docutils literal notranslate"><span class="pre">species</span></code> value passed to the initializer is an empty string. If an empty string is found, an initialization failure is triggered. Otherwise, the <code class="docutils literal notranslate"><span class="pre">species</span></code> property&rsquo;s value is set, and initialization succeeds:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">Animal</span> {
@@ -717,17 +717,17 @@
 </li><li><span class="c">// anonymousCreature is of type Animal?, not Animal</span>
 </li><li>
 </li><li><span class="k">if</span> <span class="nv">anonymousCreature</span> == <span class="k">nil</span> {
-</li><li>    <span class="nv">print</span>(<span class="s">&#34;The anonymous creature could not be initialized&#34;</span>)
+</li><li>    <span class="nv">print</span>(<span class="s">&#34;The anonymous creature couldn&#39;t be initialized&#34;</span>)
 </li><li>}
-</li><li><span class="c">// Prints &#34;The anonymous creature could not be initialized&#34;</span>
+</li><li><span class="c">// Prints &#34;The anonymous creature couldn&#39;t be initialized&#34;</span>
 </li></ol></div></div></div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Checking for an empty string value (such as <code class="docutils literal notranslate"><span class="pre">&#34;&#34;</span></code> rather than <code class="docutils literal notranslate"><span class="pre">&#34;Giraffe&#34;</span></code>) is not the same as checking for <code class="docutils literal notranslate"><span class="pre">nil</span></code> to indicate the absence of an <em>optional</em> <code class="docutils literal notranslate"><span class="pre">String</span></code> value. In the example above, an empty string (<code class="docutils literal notranslate"><span class="pre">&#34;&#34;</span></code>) is a valid, non-optional <code class="docutils literal notranslate"><span class="pre">String</span></code>. However, it is not appropriate for an animal to have an empty string as the value of its <code class="docutils literal notranslate"><span class="pre">species</span></code> property. To model this restriction, the failable initializer triggers an initialization failure if an empty string is found.</p>
+<p class="last">Checking for an empty string value (such as <code class="docutils literal notranslate"><span class="pre">&#34;&#34;</span></code> rather than <code class="docutils literal notranslate"><span class="pre">&#34;Giraffe&#34;</span></code>) isn&rsquo;t the same as checking for <code class="docutils literal notranslate"><span class="pre">nil</span></code> to indicate the absence of an <em>optional</em> <code class="docutils literal notranslate"><span class="pre">String</span></code> value. In the example above, an empty string (<code class="docutils literal notranslate"><span class="pre">&#34;&#34;</span></code>) is a valid, non-optional <code class="docutils literal notranslate"><span class="pre">String</span></code>. However, it&rsquo;s not appropriate for an animal to have an empty string as the value of its <code class="docutils literal notranslate"><span class="pre">species</span></code> property. To model this restriction, the failable initializer triggers an initialization failure if an empty string is found.</p>
 </div>
 <div class="section" id="ID225">
 <h3>Failable Initializers for Enumerations<a class="headerlink" href="Initialization.html#ID225" title="Permalink to this headline"></a></h3>
-<p>You can use a failable initializer to select an appropriate enumeration case based on one or more parameters. The initializer can then fail if the provided parameters do not match an appropriate enumeration case.</p>
+<p>You can use a failable initializer to select an appropriate enumeration case based on one or more parameters. The initializer can then fail if the provided parameters don&rsquo;t match an appropriate enumeration case.</p>
 <p>The example below defines an enumeration called <code class="docutils literal notranslate"><span class="pre">TemperatureUnit</span></code>, with three possible states (<code class="docutils literal notranslate"><span class="pre">kelvin</span></code>, <code class="docutils literal notranslate"><span class="pre">celsius</span></code>, and <code class="docutils literal notranslate"><span class="pre">fahrenheit</span></code>). A failable initializer is used to find an appropriate enumeration case for a <code class="docutils literal notranslate"><span class="pre">Character</span></code> value representing a temperature symbol:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">enum</span> <span class="nv">TemperatureUnit</span> {
 </li><li>    <span class="k">case</span> <span class="nv">kelvin</span>, <span class="nv">celsius</span>, <span class="nv">fahrenheit</span>
@@ -745,7 +745,7 @@
 </li><li>    }
 </li><li>}
 </li></ol></div></div></div>
-<p>You can use this failable initializer to choose an appropriate enumeration case for the three possible states and to cause initialization to fail if the parameter does not match one of these states:</p>
+<p>You can use this failable initializer to choose an appropriate enumeration case for the three possible states and to cause initialization to fail if the parameter doesn&rsquo;t match one of these states:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">fahrenheitUnit</span> = <span class="nv">TemperatureUnit</span>(<span class="nv">symbol</span>: <span class="s">&#34;F&#34;</span>)
 </li><li><span class="k">if</span> <span class="nv">fahrenheitUnit</span> != <span class="k">nil</span> {
 </li><li>    <span class="nv">print</span>(<span class="s">&#34;This is a defined temperature unit, so initialization succeeded.&#34;</span>)
@@ -754,9 +754,9 @@
 </li><li>
 </li><li><span class="k">let</span> <span class="nv">unknownUnit</span> = <span class="nv">TemperatureUnit</span>(<span class="nv">symbol</span>: <span class="s">&#34;X&#34;</span>)
 </li><li><span class="k">if</span> <span class="nv">unknownUnit</span> == <span class="k">nil</span> {
-</li><li>    <span class="nv">print</span>(<span class="s">&#34;This is not a defined temperature unit, so initialization failed.&#34;</span>)
+</li><li>    <span class="nv">print</span>(<span class="s">&#34;This isn&#39;t a defined temperature unit, so initialization failed.&#34;</span>)
 </li><li>}
-</li><li><span class="c">// Prints &#34;This is not a defined temperature unit, so initialization failed.&#34;</span>
+</li><li><span class="c">// Prints &#34;This isn&#39;t a defined temperature unit, so initialization failed.&#34;</span>
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID226">
@@ -775,9 +775,9 @@
 </li><li>
 </li><li><span class="k">let</span> <span class="nv">unknownUnit</span> = <span class="nv">TemperatureUnit</span>(<span class="nv">rawValue</span>: <span class="s">&#34;X&#34;</span>)
 </li><li><span class="k">if</span> <span class="nv">unknownUnit</span> == <span class="k">nil</span> {
-</li><li>    <span class="nv">print</span>(<span class="s">&#34;This is not a defined temperature unit, so initialization failed.&#34;</span>)
+</li><li>    <span class="nv">print</span>(<span class="s">&#34;This isn&#39;t a defined temperature unit, so initialization failed.&#34;</span>)
 </li><li>}
-</li><li><span class="c">// Prints &#34;This is not a defined temperature unit, so initialization failed.&#34;</span>
+</li><li><span class="c">// Prints &#34;This isn&#39;t a defined temperature unit, so initialization failed.&#34;</span>
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID228">
@@ -786,7 +786,7 @@
 <p>In either case, if you delegate to another initializer that causes initialization to fail, the entire initialization process fails immediately, and no further initialization code is executed.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">A failable initializer can also delegate to a nonfailable initializer. Use this approach if you need to add a potential failure state to an existing initialization process that does not otherwise fail.</p>
+<p class="last">A failable initializer can also delegate to a nonfailable initializer. Use this approach if you need to add a potential failure state to an existing initialization process that doesn&rsquo;t otherwise fail.</p>
 </div>
 <p>The example below defines a subclass of <code class="docutils literal notranslate"><span class="pre">Product</span></code> called <code class="docutils literal notranslate"><span class="pre">CartItem</span></code>. The <code class="docutils literal notranslate"><span class="pre">CartItem</span></code> class models an item in an online shopping cart. <code class="docutils literal notranslate"><span class="pre">CartItem</span></code> introduces a stored constant property called <code class="docutils literal notranslate"><span class="pre">quantity</span></code> and ensures that this property always has a value of at least <code class="docutils literal notranslate"><span class="pre">1</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">Product</span> {
@@ -832,13 +832,13 @@
 </div>
 <div class="section" id="ID229">
 <h3>Overriding a Failable Initializer<a class="headerlink" href="Initialization.html#ID229" title="Permalink to this headline"></a></h3>
-<p>You can override a superclass failable initializer in a subclass, just like any other initializer. Alternatively, you can override a superclass failable initializer with a subclass <em>nonfailable</em> initializer. This enables you to define a subclass for which initialization cannot fail, even though initialization of the superclass is allowed to fail.</p>
+<p>You can override a superclass failable initializer in a subclass, just like any other initializer. Alternatively, you can override a superclass failable initializer with a subclass <em>nonfailable</em> initializer. This enables you to define a subclass for which initialization can&rsquo;t fail, even though initialization of the superclass is allowed to fail.</p>
 <p>Note that if you override a failable superclass initializer with a nonfailable subclass initializer, the only way to delegate up to the superclass initializer is to force-unwrap the result of the failable superclass initializer.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">You can override a failable initializer with a nonfailable initializer but not the other way around.</p>
 </div>
-<p>The example below defines a class called <code class="docutils literal notranslate"><span class="pre">Document</span></code>. This class models a document that can be initialized with a <code class="docutils literal notranslate"><span class="pre">name</span></code> property that is either a nonempty string value or <code class="docutils literal notranslate"><span class="pre">nil</span></code>, but cannot be an empty string:</p>
+<p>The example below defines a class called <code class="docutils literal notranslate"><span class="pre">Document</span></code>. This class models a document that can be initialized with a <code class="docutils literal notranslate"><span class="pre">name</span></code> property that&rsquo;s either a nonempty string value or <code class="docutils literal notranslate"><span class="pre">nil</span></code>, but can&rsquo;t be an empty string:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">Document</span> {
 </li><li>    <span class="k">var</span> <span class="nv">name</span>: <span class="nc">String</span>?
 </li><li>    <span class="c">// this initializer creates a document with a nil name value</span>
@@ -866,7 +866,7 @@
 </li><li>    }
 </li><li>}
 </li></ol></div></div></div>
-<p>The <code class="docutils literal notranslate"><span class="pre">AutomaticallyNamedDocument</span></code> overrides its superclass&rsquo;s failable <code class="docutils literal notranslate"><span class="pre">init?(name:)</span></code> initializer with a nonfailable <code class="docutils literal notranslate"><span class="pre">init(name:)</span></code> initializer. Because <code class="docutils literal notranslate"><span class="pre">AutomaticallyNamedDocument</span></code> copes with the empty string case in a different way than its superclass, its initializer does not need to fail, and so it provides a nonfailable version of the initializer instead.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">AutomaticallyNamedDocument</span></code> overrides its superclass&rsquo;s failable <code class="docutils literal notranslate"><span class="pre">init?(name:)</span></code> initializer with a nonfailable <code class="docutils literal notranslate"><span class="pre">init(name:)</span></code> initializer. Because <code class="docutils literal notranslate"><span class="pre">AutomaticallyNamedDocument</span></code> copes with the empty string case in a different way than its superclass, its initializer doesn&rsquo;t need to fail, and so it provides a nonfailable version of the initializer instead.</p>
 <p>You can use forced unwrapping in an initializer to call a failable initializer from the superclass as part of the implementation of a subclass&rsquo;s nonfailable initializer. For example, the <code class="docutils literal notranslate"><span class="pre">UntitledDocument</span></code> subclass below is always named <code class="docutils literal notranslate"><span class="pre">&#34;[Untitled]&#34;</span></code>, and it uses the failable <code class="docutils literal notranslate"><span class="pre">init(name:)</span></code> initializer from its superclass during initialization.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">UntitledDocument</span>: <span class="nc">Document</span> {
 </li><li>    <span class="k">override</span> <span class="k">init</span>() {
@@ -883,7 +883,7 @@
 </div>
 </div>
 <div class="section" id="ID231">
-<a class="dashingAutolink" name="autolink-128"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Required%20Initializers"></a><h2>Required Initializers<a class="headerlink" href="Initialization.html#ID231" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-129"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Required%20Initializers"></a><h2>Required Initializers<a class="headerlink" href="Initialization.html#ID231" title="Permalink to this headline"></a></h2>
 <p>Write the <code class="docutils literal notranslate"><span class="pre">required</span></code> modifier before the definition of a class initializer to indicate that every subclass of the class must implement that initializer:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">SomeClass</span> {
 </li><li>    <span class="k">required</span> <span class="k">init</span>() {
@@ -891,7 +891,7 @@
 </li><li>    }
 </li><li>}
 </li></ol></div></div></div>
-<p>You must also write the <code class="docutils literal notranslate"><span class="pre">required</span></code> modifier before every subclass implementation of a required initializer, to indicate that the initializer requirement applies to further subclasses in the chain. You do not write the <code class="docutils literal notranslate"><span class="pre">override</span></code> modifier when overriding a required designated initializer:</p>
+<p>You must also write the <code class="docutils literal notranslate"><span class="pre">required</span></code> modifier before every subclass implementation of a required initializer, to indicate that the initializer requirement applies to further subclasses in the chain. You don&rsquo;t write the <code class="docutils literal notranslate"><span class="pre">override</span></code> modifier when overriding a required designated initializer:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">SomeSubclass</span>: <span class="nc">SomeClass</span> {
 </li><li>    <span class="k">required</span> <span class="k">init</span>() {
 </li><li>        <span class="c">// subclass implementation of the required initializer goes here</span>
@@ -900,11 +900,11 @@
 </li></ol></div></div></div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">You do not have to provide an explicit implementation of a required initializer if you can satisfy the requirement with an inherited initializer.</p>
+<p class="last">You don&rsquo;t have to provide an explicit implementation of a required initializer if you can satisfy the requirement with an inherited initializer.</p>
 </div>
 </div>
 <div class="section" id="ID232">
-<a class="dashingAutolink" name="autolink-129"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Setting%20a%20Default%20Property%20Value%20with%20a%20Closure%20or%20Function"></a><h2>Setting a Default Property Value with a Closure or Function<a class="headerlink" href="Initialization.html#ID232" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-130"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Setting%20a%20Default%20Property%20Value%20with%20a%20Closure%20or%20Function"></a><h2>Setting a Default Property Value with a Closure or Function<a class="headerlink" href="Initialization.html#ID232" title="Permalink to this headline"></a></h2>
 <p>If a stored property&rsquo;s default value requires some customization or setup, you can use a closure or global function to provide a customized default value for that property. Whenever a new instance of the type that the property belongs to is initialized, the closure or function is called, and its return value is assigned as the property&rsquo;s default value.</p>
 <p>These kinds of closures or functions typically create a temporary value of the same type as the property, tailor that value to represent the desired initial state, and then return that temporary value to be used as the property&rsquo;s default value.</p>
 <p>Here&rsquo;s a skeleton outline of how a closure can be used to provide a default property value:</p>
@@ -919,7 +919,7 @@
 <p>Note that the closure&rsquo;s end curly brace is followed by an empty pair of parentheses. This tells Swift to execute the closure immediately. If you omit these parentheses, you are trying to assign the closure itself to the property, and not the return value of the closure.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you use a closure to initialize a property, remember that the rest of the instance has not yet been initialized at the point that the closure is executed. This means that you cannot access any other property values from within your closure, even if those properties have default values. You also cannot use the implicit <code class="docutils literal notranslate"><span class="pre">self</span></code> property, or call any of the instance&rsquo;s methods.</p>
+<p class="last">If you use a closure to initialize a property, remember that the rest of the instance hasn&rsquo;t yet been initialized at the point that the closure is executed. This means that you can&rsquo;t access any other property values from within your closure, even if those properties have default values. You also can&rsquo;t use the implicit <code class="docutils literal notranslate"><span class="pre">self</span></code> property, or call any of the instance&rsquo;s methods.</p>
 </div>
 <p>The example below defines a structure called <code class="docutils literal notranslate"><span class="pre">Chessboard</span></code>, which models a board for the game of chess. Chess is played on an 8 x 8 board, with alternating black and white squares.</p>
 <img alt="../_images/chessBoard_2x.png" class="align-center" src="../_images/chessBoard_2x.png" style="width: 230px;"/>
@@ -959,6 +959,14 @@
         <p class="previous"><a href="Inheritance.html">Inheritance</a></p>
         <p class="next"><a href="Deinitialization.html">Deinitialization</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple&#39;s beta software</a></p>
+    </div>
 </main>
 
 
@@ -968,7 +976,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
@@ -978,5 +986,4 @@
 <div id="jump_to_overlay"></div>
 <script src="../_static/javascripts/application.js"></script>
   
-
 </body></html>

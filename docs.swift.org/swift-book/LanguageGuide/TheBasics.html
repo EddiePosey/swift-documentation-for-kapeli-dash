@@ -9,7 +9,7 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>The Basics &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>The Basics &mdash; The Swift Programming Language (Swift 5.4)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
@@ -40,7 +40,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.4</div></h2>
 
     <ul>
     <ul class="current">
@@ -183,7 +183,7 @@
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">welcomeMessage</span>: <span class="nc">String</span>
 </li></ol></div></div></div>
 <p>The colon in the declaration means “…of type…,” so the code above can be read as:</p>
-<p>“Declare a variable called <code class="docutils literal notranslate"><span class="pre">welcomeMessage</span></code> that is of type <code class="docutils literal notranslate"><span class="pre">String</span></code>.”</p>
+<p>“Declare a variable called <code class="docutils literal notranslate"><span class="pre">welcomeMessage</span></code> that’s of type <code class="docutils literal notranslate"><span class="pre">String</span></code>.”</p>
 <p>The phrase “of type <code class="docutils literal notranslate"><span class="pre">String</span></code>” means “can store any <code class="docutils literal notranslate"><span class="pre">String</span></code> value.” Think of it as meaning “the type of thing” (or “the kind of thing”) that can be stored.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">welcomeMessage</span></code> variable can now be set to any string value without error:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">welcomeMessage</span> = <span class="s">&quot;Hello&quot;</span>
@@ -375,9 +375,9 @@
 <h3>Integer Conversion<a class="headerlink" href="TheBasics.html#ID325" title="Permalink to this headline"></a></h3>
 <p>The range of numbers that can be stored in an integer constant or variable is different for each numeric type. An <code class="docutils literal notranslate"><span class="pre">Int8</span></code> constant or variable can store numbers between <code class="docutils literal notranslate"><span class="pre">-128</span></code> and <code class="docutils literal notranslate"><span class="pre">127</span></code>, whereas a <code class="docutils literal notranslate"><span class="pre">UInt8</span></code> constant or variable can store numbers between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">255</span></code>. A number that won’t fit into a constant or variable of a sized integer type is reported as an error when your code is compiled:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">cannotBeNegative</span>: <span class="nc">UInt8</span> = <span class="m">-1</span>
-</li><li><span class="c">// UInt8 cannot store negative numbers, and so this will report an error</span>
+</li><li><span class="c">// UInt8 can&#39;t store negative numbers, and so this will report an error</span>
 </li><li><span class="k">let</span> <span class="nv">tooBig</span>: <span class="nc">Int8</span> = <span class="nv">Int8</span>.<span class="nv">max</span> + <span class="m">1</span>
-</li><li><span class="c">// Int8 cannot store a number larger than its maximum value,</span>
+</li><li><span class="c">// Int8 can&#39;t store a number larger than its maximum value,</span>
 </li><li><span class="c">// and so this will also report an error</span>
 </li></ol></div></div></div>
 <p>Because each numeric type can store a different range of values, you must opt in to numeric type conversion on a case-by-case basis. This opt-in approach prevents hidden conversion errors and helps make type conversion intentions explicit in your code.</p>
@@ -412,7 +412,7 @@
 <div class="section" id="ID327">
 <h2>Type Aliases<a class="headerlink" href="TheBasics.html#ID327" title="Permalink to this headline"></a></h2>
 <p><em>Type aliases</em> define an alternative name for an existing type. You define type aliases with the <code class="docutils literal notranslate"><span class="pre">typealias</span></code> keyword.</p>
-<p>Type aliases are useful when you want to refer to an existing type by a name that is contextually more appropriate, such as when working with data of a specific size from an external source:</p>
+<p>Type aliases are useful when you want to refer to an existing type by a name that’s contextually more appropriate, such as when working with data of a specific size from an external source:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">typealias</span> <span class="nv">AudioSample</span> = <span class="nc">UInt16</span>
 </li></ol></div></div></div>
 <p>Once you define a type alias, you can use the alias anywhere you might use the original name:</p>
@@ -562,13 +562,13 @@
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">if</span> <span class="k">let</span> <span class="nv">actualNumber</span> = <span class="nv">Int</span>(<span class="nv">possibleNumber</span>) {
 </li><li>    <span class="nv">print</span>(<span class="s">&quot;The string \&quot;</span>\<span class="p">(</span><span class="nv">possibleNumber</span><span class="p">)</span><span class="s">\&quot; has an integer value of </span>\<span class="p">(</span><span class="nv">actualNumber</span><span class="p">)</span><span class="s">&quot;</span>)
 </li><li>} <span class="k">else</span> {
-</li><li>    <span class="nv">print</span>(<span class="s">&quot;The string \&quot;</span>\<span class="p">(</span><span class="nv">possibleNumber</span><span class="p">)</span><span class="s">\&quot; could not be converted to an integer&quot;</span>)
+</li><li>    <span class="nv">print</span>(<span class="s">&quot;The string \&quot;</span>\<span class="p">(</span><span class="nv">possibleNumber</span><span class="p">)</span><span class="s">\&quot; couldn&#39;t be converted to an integer&quot;</span>)
 </li><li>}
 </li><li><span class="c">// Prints &quot;The string &quot;123&quot; has an integer value of 123&quot;</span>
 </li></ol></div></div></div>
 <p>This code can be read as:</p>
 <p>“If the optional <code class="docutils literal notranslate"><span class="pre">Int</span></code> returned by <code class="docutils literal notranslate"><span class="pre">Int(possibleNumber)</span></code> contains a value, set a new constant called <code class="docutils literal notranslate"><span class="pre">actualNumber</span></code> to the value contained in the optional.”</p>
-<p>If the conversion is successful, the <code class="docutils literal notranslate"><span class="pre">actualNumber</span></code> constant becomes available for use within the first branch of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. It has already been initialized with the value contained <em>within</em> the optional, and so there’s no need to use the <code class="docutils literal notranslate"><span class="pre">!</span></code> suffix to access its value. In this example, <code class="docutils literal notranslate"><span class="pre">actualNumber</span></code> is simply used to print the result of the conversion.</p>
+<p>If the conversion is successful, the <code class="docutils literal notranslate"><span class="pre">actualNumber</span></code> constant becomes available for use within the first branch of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. It has already been initialized with the value contained <em>within</em> the optional, and so you don’t use the <code class="docutils literal notranslate"><span class="pre">!</span></code> suffix to access its value. In this example, <code class="docutils literal notranslate"><span class="pre">actualNumber</span></code> is simply used to print the result of the conversion.</p>
 <p>You can use both constants and variables with optional binding. If you wanted to manipulate the value of <code class="docutils literal notranslate"><span class="pre">actualNumber</span></code> within the first branch of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, you could write <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">var</span> <span class="pre">actualNumber</span></code> instead, and the value contained within the optional would be made available as a variable rather than a constant.</p>
 <p>You can include as many optional bindings and Boolean conditions in a single <code class="docutils literal notranslate"><span class="pre">if</span></code> statement as you need to, separated by commas. If any of the values in the optional bindings are <code class="docutils literal notranslate"><span class="pre">nil</span></code> or any Boolean condition evaluates to <code class="docutils literal notranslate"><span class="pre">false</span></code>, the whole <code class="docutils literal notranslate"><span class="pre">if</span></code> statement’s condition is considered to be <code class="docutils literal notranslate"><span class="pre">false</span></code>. The following <code class="docutils literal notranslate"><span class="pre">if</span></code> statements are equivalent:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">if</span> <span class="k">let</span> <span class="nv">firstNumber</span> = <span class="nv">Int</span>(<span class="s">&quot;4&quot;</span>), <span class="k">let</span> <span class="nv">secondNumber</span> = <span class="nv">Int</span>(<span class="s">&quot;42&quot;</span>), <span class="nv">firstNumber</span> &lt; <span class="nv">secondNumber</span> &amp;&amp; <span class="nv">secondNumber</span> &lt; <span class="m">100</span> {
@@ -675,7 +675,7 @@
 <p>You write an assertion by calling the <a class="reference external" href="https://developer.apple.com/documentation/swift/1541112-assert"><code class="docutils literal notranslate"><span class="pre">assert(_:_:file:line:)</span></code></a> function from the Swift standard library. You pass this function an expression that evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> and a message to display if the result of the condition is <code class="docutils literal notranslate"><span class="pre">false</span></code>. For example:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">age</span> = <span class="m">-3</span>
 </li><li><span class="nv">assert</span>(<span class="nv">age</span> &gt;= <span class="m">0</span>, <span class="s">&quot;A person&#39;s age can&#39;t be less than zero.&quot;</span>)
-</li><li><span class="c">// This assertion fails because -3 is not &gt;= 0.</span>
+</li><li><span class="c">// This assertion fails because -3 isn&#39;t &gt;= 0.</span>
 </li></ol></div></div></div>
 <p>In this example, code execution continues if <code class="docutils literal notranslate"><span class="pre">age</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code>, that is, if the value of <code class="docutils literal notranslate"><span class="pre">age</span></code> is nonnegative. If the value of <code class="docutils literal notranslate"><span class="pre">age</span></code> is negative, as in the code above, then <code class="docutils literal notranslate"><span class="pre">age</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">false</span></code>, and the assertion fails, terminating the application.</p>
 <p>You can omit the assertion message—for example, when it would just repeat the condition as prose.</p>
@@ -693,7 +693,7 @@
 </div>
 <div class="section" id="ID554">
 <h3>Enforcing Preconditions<a class="headerlink" href="TheBasics.html#ID554" title="Permalink to this headline"></a></h3>
-<p>Use a precondition whenever a condition has the potential to be false, but must <em>definitely</em> be true for your code to continue execution. For example, use a precondition to check that a subscript is not out of bounds, or to check that a function has been passed a valid value.</p>
+<p>Use a precondition whenever a condition has the potential to be false, but must <em>definitely</em> be true for your code to continue execution. For example, use a precondition to check that a subscript isn’t out of bounds, or to check that a function has been passed a valid value.</p>
 <p>You write a precondition by calling the <a class="reference external" href="https://developer.apple.com/documentation/swift/1540960-precondition"><code class="docutils literal notranslate"><span class="pre">precondition(_:_:file:line:)</span></code></a> function. You pass this function an expression that evaluates to <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> and a message to display if the result of the condition is <code class="docutils literal notranslate"><span class="pre">false</span></code>. For example:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="c">// In the implementation of a subscript...</span>
 </li><li><span class="nv">precondition</span>(<span class="nv">index</span> &gt; <span class="m">0</span>, <span class="s">&quot;Index must be greater than zero.&quot;</span>)
@@ -714,6 +714,14 @@
         <p class="previous"><a href="https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html">A Swift Tour</a></p>
         <p class="next"><a href="BasicOperators.html">Basic Operators</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple's beta software</a></p>
+    </div>
 </main>
 
 
@@ -723,7 +731,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
